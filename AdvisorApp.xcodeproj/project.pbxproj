@@ -1,0 +1,347 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		7C10F06B1CF6248E0072ADF2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C10F06A1CF6248E0072ADF2 /* AppDelegate.swift */; };
+		7C10F0701CF6248E0072ADF2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7C10F06E1CF6248E0072ADF2 /* Main.storyboard */; };
+		7C10F0721CF6248E0072ADF2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7C10F0711CF6248E0072ADF2 /* Assets.xcassets */; };
+		7C10F0751CF6248E0072ADF2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7C10F0731CF6248E0072ADF2 /* LaunchScreen.storyboard */; };
+		7C10F09A1CF7338C0072ADF2 /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C10F0921CF7338C0072ADF2 /* Location.swift */; };
+		7C10F09B1CF7338C0072ADF2 /* Option.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C10F0931CF7338C0072ADF2 /* Option.swift */; };
+		7C10F09C1CF7338C0072ADF2 /* Semester.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C10F0941CF7338C0072ADF2 /* Semester.swift */; };
+		7C10F09D1CF7338C0072ADF2 /* StudyPlan.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C10F0951CF7338C0072ADF2 /* StudyPlan.swift */; };
+		7C10F09E1CF7338C0072ADF2 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C10F0961CF7338C0072ADF2 /* User.swift */; };
+		7C10F09F1CF7338C0072ADF2 /* Uv.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C10F0971CF7338C0072ADF2 /* Uv.swift */; };
+		7C10F0A01CF7338C0072ADF2 /* UvType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C10F0981CF7338C0072ADF2 /* UvType.swift */; };
+		7C10F0A11CF7338C0072ADF2 /* UvUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C10F0991CF7338C0072ADF2 /* UvUser.swift */; };
+		7C10F0A51CF733AE0072ADF2 /* StudyPlanViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C10F0A31CF733AE0072ADF2 /* StudyPlanViewController.swift */; };
+		7C10F0A61CF733AE0072ADF2 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C10F0A41CF733AE0072ADF2 /* ViewController.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		7C10F0671CF6248E0072ADF2 /* AdvisorApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AdvisorApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		7C10F06A1CF6248E0072ADF2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		7C10F06F1CF6248E0072ADF2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		7C10F0711CF6248E0072ADF2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		7C10F0741CF6248E0072ADF2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		7C10F0761CF6248E0072ADF2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7C10F0921CF7338C0072ADF2 /* Location.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
+		7C10F0931CF7338C0072ADF2 /* Option.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Option.swift; sourceTree = "<group>"; };
+		7C10F0941CF7338C0072ADF2 /* Semester.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Semester.swift; sourceTree = "<group>"; };
+		7C10F0951CF7338C0072ADF2 /* StudyPlan.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StudyPlan.swift; sourceTree = "<group>"; };
+		7C10F0961CF7338C0072ADF2 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		7C10F0971CF7338C0072ADF2 /* Uv.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Uv.swift; sourceTree = "<group>"; };
+		7C10F0981CF7338C0072ADF2 /* UvType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UvType.swift; sourceTree = "<group>"; };
+		7C10F0991CF7338C0072ADF2 /* UvUser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UvUser.swift; sourceTree = "<group>"; };
+		7C10F0A31CF733AE0072ADF2 /* StudyPlanViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StudyPlanViewController.swift; sourceTree = "<group>"; };
+		7C10F0A41CF733AE0072ADF2 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		7C10F0641CF6248E0072ADF2 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		7C10F05E1CF6248E0072ADF2 = {
+			isa = PBXGroup;
+			children = (
+				7C10F0691CF6248E0072ADF2 /* AdvisorApp */,
+				7C10F0681CF6248E0072ADF2 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		7C10F0681CF6248E0072ADF2 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				7C10F0671CF6248E0072ADF2 /* AdvisorApp.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		7C10F0691CF6248E0072ADF2 /* AdvisorApp */ = {
+			isa = PBXGroup;
+			children = (
+				7C10F0A21CF733AE0072ADF2 /* controller */,
+				7C10F0911CF7338C0072ADF2 /* model */,
+				7C10F06A1CF6248E0072ADF2 /* AppDelegate.swift */,
+				7C10F06E1CF6248E0072ADF2 /* Main.storyboard */,
+				7C10F0711CF6248E0072ADF2 /* Assets.xcassets */,
+				7C10F0731CF6248E0072ADF2 /* LaunchScreen.storyboard */,
+				7C10F0761CF6248E0072ADF2 /* Info.plist */,
+			);
+			path = AdvisorApp;
+			sourceTree = "<group>";
+		};
+		7C10F0911CF7338C0072ADF2 /* model */ = {
+			isa = PBXGroup;
+			children = (
+				7C10F0921CF7338C0072ADF2 /* Location.swift */,
+				7C10F0931CF7338C0072ADF2 /* Option.swift */,
+				7C10F0941CF7338C0072ADF2 /* Semester.swift */,
+				7C10F0951CF7338C0072ADF2 /* StudyPlan.swift */,
+				7C10F0961CF7338C0072ADF2 /* User.swift */,
+				7C10F0971CF7338C0072ADF2 /* Uv.swift */,
+				7C10F0981CF7338C0072ADF2 /* UvType.swift */,
+				7C10F0991CF7338C0072ADF2 /* UvUser.swift */,
+			);
+			path = model;
+			sourceTree = "<group>";
+		};
+		7C10F0A21CF733AE0072ADF2 /* controller */ = {
+			isa = PBXGroup;
+			children = (
+				7C10F0A31CF733AE0072ADF2 /* StudyPlanViewController.swift */,
+				7C10F0A41CF733AE0072ADF2 /* ViewController.swift */,
+			);
+			path = controller;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		7C10F0661CF6248E0072ADF2 /* AdvisorApp */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 7C10F0791CF6248E0072ADF2 /* Build configuration list for PBXNativeTarget "AdvisorApp" */;
+			buildPhases = (
+				7C10F0631CF6248E0072ADF2 /* Sources */,
+				7C10F0641CF6248E0072ADF2 /* Frameworks */,
+				7C10F0651CF6248E0072ADF2 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = AdvisorApp;
+			productName = AdvisorApp;
+			productReference = 7C10F0671CF6248E0072ADF2 /* AdvisorApp.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		7C10F05F1CF6248E0072ADF2 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0730;
+				LastUpgradeCheck = 0730;
+				ORGANIZATIONNAME = "Clément GARBAY";
+				TargetAttributes = {
+					7C10F0661CF6248E0072ADF2 = {
+						CreatedOnToolsVersion = 7.3;
+						DevelopmentTeam = 6LKFQD2FGD;
+					};
+				};
+			};
+			buildConfigurationList = 7C10F0621CF6248E0072ADF2 /* Build configuration list for PBXProject "AdvisorApp" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 7C10F05E1CF6248E0072ADF2;
+			productRefGroup = 7C10F0681CF6248E0072ADF2 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				7C10F0661CF6248E0072ADF2 /* AdvisorApp */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		7C10F0651CF6248E0072ADF2 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7C10F0751CF6248E0072ADF2 /* LaunchScreen.storyboard in Resources */,
+				7C10F0721CF6248E0072ADF2 /* Assets.xcassets in Resources */,
+				7C10F0701CF6248E0072ADF2 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		7C10F0631CF6248E0072ADF2 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7C10F09D1CF7338C0072ADF2 /* StudyPlan.swift in Sources */,
+				7C10F09F1CF7338C0072ADF2 /* Uv.swift in Sources */,
+				7C10F0A11CF7338C0072ADF2 /* UvUser.swift in Sources */,
+				7C10F09C1CF7338C0072ADF2 /* Semester.swift in Sources */,
+				7C10F0A61CF733AE0072ADF2 /* ViewController.swift in Sources */,
+				7C10F09E1CF7338C0072ADF2 /* User.swift in Sources */,
+				7C10F0A51CF733AE0072ADF2 /* StudyPlanViewController.swift in Sources */,
+				7C10F09B1CF7338C0072ADF2 /* Option.swift in Sources */,
+				7C10F09A1CF7338C0072ADF2 /* Location.swift in Sources */,
+				7C10F0A01CF7338C0072ADF2 /* UvType.swift in Sources */,
+				7C10F06B1CF6248E0072ADF2 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		7C10F06E1CF6248E0072ADF2 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				7C10F06F1CF6248E0072ADF2 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		7C10F0731CF6248E0072ADF2 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				7C10F0741CF6248E0072ADF2 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		7C10F0771CF6248E0072ADF2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		7C10F0781CF6248E0072ADF2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		7C10F07A1CF6248E0072ADF2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = AdvisorApp/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = fr.clementgarbay.AdvisorApp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		7C10F07B1CF6248E0072ADF2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = AdvisorApp/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = fr.clementgarbay.AdvisorApp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		7C10F0621CF6248E0072ADF2 /* Build configuration list for PBXProject "AdvisorApp" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7C10F0771CF6248E0072ADF2 /* Debug */,
+				7C10F0781CF6248E0072ADF2 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		7C10F0791CF6248E0072ADF2 /* Build configuration list for PBXNativeTarget "AdvisorApp" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7C10F07A1CF6248E0072ADF2 /* Debug */,
+				7C10F07B1CF6248E0072ADF2 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 7C10F05F1CF6248E0072ADF2 /* Project object */;
+}
