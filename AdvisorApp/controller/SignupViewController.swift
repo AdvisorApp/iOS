@@ -1,5 +1,5 @@
 //
-//  LoginViewController.swift
+//  SignupViewController.swift
 //  AdvisorApp
 //
 //  Created by Clément GARBAY on 27/05/2016.
@@ -8,11 +8,8 @@
 
 import UIKit
 
-class LoginViewController: UIViewController {
+class SignupViewController: UIViewController {
 
-    @IBOutlet weak var identifierTextField: UITextField!
-    @IBOutlet weak var passwordTextField: UITextField!
-    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -24,9 +21,6 @@ class LoginViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    @IBAction func signin(sender: UIButton) {
-        // Check identifier and password
-    }
 
     /*
     // MARK: - Navigation
@@ -37,8 +31,5 @@ class LoginViewController: UIViewController {
         // Pass the selected object to the new view controller.
     }
     */
-    
-    @IBAction func cancelToLoginViewController(segue: UIStoryboardSegue) {
-        
-    }
+
 }

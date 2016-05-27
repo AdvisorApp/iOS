@@ -28,6 +28,7 @@
 		7C2F6BD11CF8DD7D00E8AF5B /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C2F6BD01CF8DD7D00E8AF5B /* LoginViewController.swift */; };
 		7C2F6BD31CF8E16500E8AF5B /* AddSemesterTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C2F6BD21CF8E16500E8AF5B /* AddSemesterTableViewController.swift */; };
 		7C2F6BD51CF8E7E200E8AF5B /* AddUvTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C2F6BD41CF8E7E200E8AF5B /* AddUvTableViewController.swift */; };
+		7C2F6BD71CF8EA1C00E8AF5B /* SignupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C2F6BD61CF8EA1C00E8AF5B /* SignupViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -54,6 +55,7 @@
 		7C2F6BD01CF8DD7D00E8AF5B /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		7C2F6BD21CF8E16500E8AF5B /* AddSemesterTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddSemesterTableViewController.swift; sourceTree = "<group>"; };
 		7C2F6BD41CF8E7E200E8AF5B /* AddUvTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddUvTableViewController.swift; sourceTree = "<group>"; };
+		7C2F6BD61CF8EA1C00E8AF5B /* SignupViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignupViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -125,6 +127,7 @@
 				7C2F6BD01CF8DD7D00E8AF5B /* LoginViewController.swift */,
 				7C2F6BD21CF8E16500E8AF5B /* AddSemesterTableViewController.swift */,
 				7C2F6BD41CF8E7E200E8AF5B /* AddUvTableViewController.swift */,
+				7C2F6BD61CF8EA1C00E8AF5B /* SignupViewController.swift */,
 			);
 			name = Controller;
 			path = controller;
@@ -210,6 +213,7 @@
 				7C10F0A11CF7338C0072ADF2 /* UvUser.swift in Sources */,
 				7C10F09C1CF7338C0072ADF2 /* Semester.swift in Sources */,
 				7C10F0A61CF733AE0072ADF2 /* ViewController.swift in Sources */,
+				7C2F6BD71CF8EA1C00E8AF5B /* SignupViewController.swift in Sources */,
 				7C2F6BD31CF8E16500E8AF5B /* AddSemesterTableViewController.swift in Sources */,
 				7C10F09E1CF7338C0072ADF2 /* User.swift in Sources */,
 				7C10F0A51CF733AE0072ADF2 /* StudyPlanTableViewController.swift in Sources */,
