@@ -6,9 +6,9 @@
 //  Copyright © 2016 Clément GARBAY. All rights reserved.
 //
 
-import Foundation
+import UIKit
 
-class Option {
-    private var id: Double?
-    private var name: String?
+struct Option {
+    var id: Double
+    var name: String
 }

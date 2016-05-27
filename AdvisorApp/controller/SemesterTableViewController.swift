@@ -1,5 +1,5 @@
 //
-//  StudyplanTableViewController.swift
+//  SemesterViewController.swift
 //  AdvisorApp
 //
 //  Created by Clément GARBAY on 26/05/2016.
@@ -8,7 +8,23 @@
 
 import UIKit
 
-class StudyPlanViewController: UITableViewController {
+class SemesterTableViewController: UITableViewController {
+    
+    @IBOutlet weak var semesterNavigationItem: UINavigationItem!
+    
+    var semesters: [Semester] = [
+        Semester(id: 1, number: 1, uvs: [Uv(name: "UV1", description: "Le premier UV", chs: 2), Uv(name: "UV2", description: "Le second UV", chs: 4)]),
+        Semester(id: 2, number: 2, uvs: [])
+    ]
+    
+    var selectedStudyPlan: StudyPlan? {
+        didSet {
+            if let studyPlan = selectedStudyPlan {
+                // TODO : Where display it ?
+                // semesterNavigationItem.prompt = studyPlan.name
+            }
+        }
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,24 +44,21 @@ class StudyPlanViewController: UITableViewController {
     // MARK: - Table view data source
 
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
-        return 0
+        return 1
     }
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
-        return 0
+        return semesters.count
     }
 
-    /*
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("reuseIdentifier", forIndexPath: indexPath)
-
-        // Configure the cell...
+        let cell = tableView.dequeueReusableCellWithIdentifier("SemesterCell", forIndexPath: indexPath)
+        let semester = semesters[indexPath.row] as Semester
+        
+        cell.textLabel?.text = "Semestre \(semester.number)"
 
         return cell
     }
-    */
 
     /*
     // Override to support conditional editing of the table view.
@@ -82,14 +95,17 @@ class StudyPlanViewController: UITableViewController {
     }
     */
 
-    /*
     // MARK: - Navigation
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+        if segue.identifier == "UvSegue" {
+            if let uvViewController = segue.destinationViewController as? UvViewController, cell = sender as? UITableViewCell {
+                let indexPath = tableView.indexPathForCell(cell)
+                if let index = indexPath?.row {
+                    uvViewController.selectedSemester = semesters[index]
+                }
+            }
+        }
     }
-    */
 
 }

@@ -19,8 +19,12 @@
 		7C10F09F1CF7338C0072ADF2 /* Uv.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C10F0971CF7338C0072ADF2 /* Uv.swift */; };
 		7C10F0A01CF7338C0072ADF2 /* UvType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C10F0981CF7338C0072ADF2 /* UvType.swift */; };
 		7C10F0A11CF7338C0072ADF2 /* UvUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C10F0991CF7338C0072ADF2 /* UvUser.swift */; };
-		7C10F0A51CF733AE0072ADF2 /* StudyPlanViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C10F0A31CF733AE0072ADF2 /* StudyPlanViewController.swift */; };
+		7C10F0A51CF733AE0072ADF2 /* StudyPlanTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C10F0A31CF733AE0072ADF2 /* StudyPlanTableViewController.swift */; };
 		7C10F0A61CF733AE0072ADF2 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C10F0A41CF733AE0072ADF2 /* ViewController.swift */; };
+		7C10F0AA1CF74EE60072ADF2 /* SemesterTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C10F0A91CF74EE60072ADF2 /* SemesterTableViewController.swift */; };
+		7C10F0AC1CF7739B0072ADF2 /* AddStudyPlanTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C10F0AB1CF7739B0072ADF2 /* AddStudyPlanTableViewController.swift */; };
+		7C10F0AE1CF7965A0072ADF2 /* UvViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C10F0AD1CF7965A0072ADF2 /* UvViewController.swift */; };
+		7C2F6BCF1CF846A100E8AF5B /* UvDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C2F6BCE1CF846A100E8AF5B /* UvDetailViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,8 +42,12 @@
 		7C10F0971CF7338C0072ADF2 /* Uv.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Uv.swift; sourceTree = "<group>"; };
 		7C10F0981CF7338C0072ADF2 /* UvType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UvType.swift; sourceTree = "<group>"; };
 		7C10F0991CF7338C0072ADF2 /* UvUser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UvUser.swift; sourceTree = "<group>"; };
-		7C10F0A31CF733AE0072ADF2 /* StudyPlanViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StudyPlanViewController.swift; sourceTree = "<group>"; };
+		7C10F0A31CF733AE0072ADF2 /* StudyPlanTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StudyPlanTableViewController.swift; sourceTree = "<group>"; };
 		7C10F0A41CF733AE0072ADF2 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		7C10F0A91CF74EE60072ADF2 /* SemesterTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SemesterTableViewController.swift; sourceTree = "<group>"; };
+		7C10F0AB1CF7739B0072ADF2 /* AddStudyPlanTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddStudyPlanTableViewController.swift; sourceTree = "<group>"; };
+		7C10F0AD1CF7965A0072ADF2 /* UvViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UvViewController.swift; sourceTree = "<group>"; };
+		7C2F6BCE1CF846A100E8AF5B /* UvDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UvDetailViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,8 +80,8 @@
 		7C10F0691CF6248E0072ADF2 /* AdvisorApp */ = {
 			isa = PBXGroup;
 			children = (
-				7C10F0A21CF733AE0072ADF2 /* controller */,
-				7C10F0911CF7338C0072ADF2 /* model */,
+				7C10F0A21CF733AE0072ADF2 /* Controller */,
+				7C10F0911CF7338C0072ADF2 /* Model */,
 				7C10F06A1CF6248E0072ADF2 /* AppDelegate.swift */,
 				7C10F06E1CF6248E0072ADF2 /* Main.storyboard */,
 				7C10F0711CF6248E0072ADF2 /* Assets.xcassets */,
@@ -83,7 +91,7 @@
 			path = AdvisorApp;
 			sourceTree = "<group>";
 		};
-		7C10F0911CF7338C0072ADF2 /* model */ = {
+		7C10F0911CF7338C0072ADF2 /* Model */ = {
 			isa = PBXGroup;
 			children = (
 				7C10F0921CF7338C0072ADF2 /* Location.swift */,
@@ -95,15 +103,21 @@
 				7C10F0981CF7338C0072ADF2 /* UvType.swift */,
 				7C10F0991CF7338C0072ADF2 /* UvUser.swift */,
 			);
+			name = Model;
 			path = model;
 			sourceTree = "<group>";
 		};
-		7C10F0A21CF733AE0072ADF2 /* controller */ = {
+		7C10F0A21CF733AE0072ADF2 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				7C10F0A31CF733AE0072ADF2 /* StudyPlanViewController.swift */,
+				7C10F0A31CF733AE0072ADF2 /* StudyPlanTableViewController.swift */,
 				7C10F0A41CF733AE0072ADF2 /* ViewController.swift */,
+				7C10F0A91CF74EE60072ADF2 /* SemesterTableViewController.swift */,
+				7C10F0AB1CF7739B0072ADF2 /* AddStudyPlanTableViewController.swift */,
+				7C10F0AD1CF7965A0072ADF2 /* UvViewController.swift */,
+				7C2F6BCE1CF846A100E8AF5B /* UvDetailViewController.swift */,
 			);
+			name = Controller;
 			path = controller;
 			sourceTree = "<group>";
 		};
@@ -181,13 +195,17 @@
 			files = (
 				7C10F09D1CF7338C0072ADF2 /* StudyPlan.swift in Sources */,
 				7C10F09F1CF7338C0072ADF2 /* Uv.swift in Sources */,
+				7C10F0AC1CF7739B0072ADF2 /* AddStudyPlanTableViewController.swift in Sources */,
+				7C10F0AA1CF74EE60072ADF2 /* SemesterTableViewController.swift in Sources */,
 				7C10F0A11CF7338C0072ADF2 /* UvUser.swift in Sources */,
 				7C10F09C1CF7338C0072ADF2 /* Semester.swift in Sources */,
 				7C10F0A61CF733AE0072ADF2 /* ViewController.swift in Sources */,
 				7C10F09E1CF7338C0072ADF2 /* User.swift in Sources */,
-				7C10F0A51CF733AE0072ADF2 /* StudyPlanViewController.swift in Sources */,
+				7C10F0A51CF733AE0072ADF2 /* StudyPlanTableViewController.swift in Sources */,
+				7C10F0AE1CF7965A0072ADF2 /* UvViewController.swift in Sources */,
 				7C10F09B1CF7338C0072ADF2 /* Option.swift in Sources */,
 				7C10F09A1CF7338C0072ADF2 /* Location.swift in Sources */,
+				7C2F6BCF1CF846A100E8AF5B /* UvDetailViewController.swift in Sources */,
 				7C10F0A01CF7338C0072ADF2 /* UvType.swift in Sources */,
 				7C10F06B1CF6248E0072ADF2 /* AppDelegate.swift in Sources */,
 			);

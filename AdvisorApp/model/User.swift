@@ -6,15 +6,15 @@
 //  Copyright © 2016 Clément GARBAY. All rights reserved.
 //
 
-import Foundation
+import UIKit
 
-class User {
-    var id: Double?
-    var firstName: String?
-    var lastName: String?
-    var password: String?
-    var birthday: NSDate?
-    var remoteId: String?
-    var email: String?
+struct User {
+    var id: Double
+    var firstName: String
+    var lastName: String
+    var password: String
+    var birthday: NSDate
+    var remoteId: String
+    var email: String
 }
 

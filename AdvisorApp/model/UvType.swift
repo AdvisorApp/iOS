@@ -6,10 +6,10 @@
 //  Copyright © 2016 Clément GARBAY. All rights reserved.
 //
 
-import Foundation
+import UIKit
 
-class UvType {
-    var id: Double?
-    var type: String?
-    var hoursByCredit: Double?
+struct UvType {
+    var id: Double
+    var type: String
+    var hoursByCredit: Double
 }

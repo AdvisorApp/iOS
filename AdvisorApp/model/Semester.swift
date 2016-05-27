@@ -6,11 +6,21 @@
 //  Copyright © 2016 Clément GARBAY. All rights reserved.
 //
 
-import Foundation
+import UIKit
 
-class Semester {
-    private var id: Double?
-    private var number: Int?
-    private var studyPlan: StudyPlan?
-    private var uvs: [Uv]?
+struct Semester {
+    var id: Double
+    var number: Int
+    var studyPlan: StudyPlan?
+    var uvs: [Uv]
+    
+    init(id: Double, number: Int, uvs: [Uv]) {
+        self.id = id;
+        self.number = number
+        self.uvs = uvs
+    }
+    
+    func getSumCreditHours() -> Int {
+        return uvs.reduce(0, combine: {$0 + $1.chs!})
+    }
 }
