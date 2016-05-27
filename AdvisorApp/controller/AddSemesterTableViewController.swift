@@ -9,6 +9,8 @@
 import UIKit
 
 class AddSemesterTableViewController: UITableViewController {
+    
+    var semester: Semester?
 
     override func viewDidLoad() {
         super.viewDidLoad()

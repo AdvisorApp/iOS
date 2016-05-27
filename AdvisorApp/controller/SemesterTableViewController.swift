@@ -10,21 +10,7 @@ import UIKit
 
 class SemesterTableViewController: UITableViewController {
     
-    @IBOutlet weak var semesterNavigationItem: UINavigationItem!
-    
-    var semesters: [Semester] = [
-        Semester(id: 1, number: 1, uvs: [Uv(name: "UV1", description: "Le premier UV", chs: 2), Uv(name: "UV2", description: "Le second UV", chs: 4)]),
-        Semester(id: 2, number: 2, uvs: [])
-    ]
-    
-    var selectedStudyPlan: StudyPlan? {
-        didSet {
-            if let studyPlan = selectedStudyPlan {
-                // TODO : Where display it ?
-                // semesterNavigationItem.prompt = studyPlan.name
-            }
-        }
-    }
+    var selectedStudyPlan: StudyPlan?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -48,12 +34,12 @@ class SemesterTableViewController: UITableViewController {
     }
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return semesters.count
+        return (selectedStudyPlan?.semesters.count)!
     }
 
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("SemesterCell", forIndexPath: indexPath)
-        let semester = semesters[indexPath.row] as Semester
+        let semester = (selectedStudyPlan?.semesters[indexPath.row])! as Semester
         
         cell.textLabel?.text = "Semestre \(semester.number)"
 
@@ -102,9 +88,19 @@ class SemesterTableViewController: UITableViewController {
             if let uvViewController = segue.destinationViewController as? UvViewController, cell = sender as? UITableViewCell {
                 let indexPath = tableView.indexPathForCell(cell)
                 if let index = indexPath?.row {
-                    uvViewController.selectedSemester = semesters[index]
+                    uvViewController.selectedSemester = (selectedStudyPlan?.semesters[index])!
                 }
             }
+        }
+    }
+    
+    @IBAction func cancelToSemesterViewController(segue: UIStoryboardSegue) {
+        
+    }
+    
+    @IBAction func saveSemester(segue: UIStoryboardSegue) {
+        if let addSemesterTableViewController = segue.sourceViewController as? AddSemesterTableViewController {
+            // Get new semester and add it to the table view
         }
     }
 

@@ -15,7 +15,6 @@ class UvDetailViewController: UIViewController {
     var selectedUv: Uv? {
         didSet {
             if let uv = selectedUv {
-                print(uv)
                 navigationItem.title = uv.name
                 //descriptionTextView.text = uv.description
             }

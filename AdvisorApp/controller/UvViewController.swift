@@ -54,7 +54,6 @@ class UvViewController: UIViewController, UITableViewDelegate, UITableViewDataSo
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == "UvDetailSegue" {
             if let navigationController = segue.destinationViewController as? UINavigationController, cell = sender as? UITableViewCell {
-                
                 if let uvDetailViewController = navigationController.topViewController as? UvDetailViewController {
                     let indexPath = uvTableView.indexPathForCell(cell)
                     if let index = indexPath?.row {
@@ -65,8 +64,14 @@ class UvViewController: UIViewController, UITableViewDelegate, UITableViewDataSo
         }
     }
     
-    @IBAction func returnToUvViewController(segue: UIStoryboardSegue) {
+    @IBAction func cancelToUvViewController(segue: UIStoryboardSegue) {
         
+    }
+    
+    @IBAction func saveUv(segue: UIStoryboardSegue) {
+        if let addUvTableViewController = segue.sourceViewController as? AddUvTableViewController {
+            // Get new semester and add it to the table view
+        }
     }
 
 }

@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15G7b" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="FRX-lD-W7b">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15G7b" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="eES-sp-aqm">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
     </dependencies>
     <scenes>
-        <!--Item 2-->
+        <!--Signup View Controller-->
         <scene sceneID="8DV-W0-HXu">
             <objects>
-                <viewController id="FeV-OR-WM7" sceneMemberID="viewController">
+                <viewController id="FeV-OR-WM7" userLabel="Signup View Controller" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="efh-Gs-jt9"/>
                         <viewControllerLayoutGuide type="bottom" id="5TB-gA-Ifl"/>
@@ -18,30 +18,78 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item 2" id="o7U-fP-jka"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fzc-N9-xdB" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="748" y="758"/>
+            <point key="canvasLocation" x="951.5" y="305.5"/>
         </scene>
-        <!--Tab Bar Controller-->
-        <scene sceneID="V1D-kb-l8E">
+        <!--Login View Controller-->
+        <scene sceneID="gZe-Ug-pNs">
             <objects>
-                <tabBarController id="FRX-lD-W7b" sceneMemberID="viewController">
+                <viewController id="eES-sp-aqm" userLabel="Login View Controller" customClass="LoginViewController" customModule="AdvisorApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="pqj-o7-qWo"/>
+                        <viewControllerLayoutGuide type="bottom" id="yBE-7b-Nsk"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="YTG-yF-eix">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="LMR-LO-w0B" userLabel="Identifier">
+                                <rect key="frame" x="72" y="281" width="230" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="RIp-B8-f0H" userLabel="Password">
+                                <rect key="frame" x="72" y="342" width="230" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Identifiant" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uOo-qh-8hz">
+                                <rect key="frame" x="72" y="258" width="77" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Mot de passe" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nVL-6X-FmF">
+                                <rect key="frame" x="72" y="319" width="88" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uc5-kW-ngL" userLabel="Signin">
+                                <rect key="frame" x="151" y="380" width="73" height="30"/>
+                                <state key="normal" title="Connexion"/>
+                                <connections>
+                                    <action selector="signin:" destination="eES-sp-aqm" eventType="touchUpInside" id="FKS-2X-dEf"/>
+                                    <segue destination="eJ8-2s-w0Y" kind="show" id="rfm-gd-8JA"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="AdvisorApp" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2tE-Nw-cJ7">
+                                <rect key="frame" x="108" y="89" width="159" height="37"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VP2-n8-Wbq" userLabel="Signup">
+                                <rect key="frame" x="130" y="418" width="115" height="30"/>
+                                <state key="normal" title="Créer un compte"/>
+                                <connections>
+                                    <segue destination="FeV-OR-WM7" kind="show" id="fP1-tB-Fa6"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
-                    <tabBar key="tabBar" contentMode="scaleToFill" id="XTp-lD-OOG">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="49"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                    </tabBar>
                     <connections>
-                        <segue destination="eJ8-2s-w0Y" kind="relationship" relationship="viewControllers" id="3Bh-fg-WbM"/>
-                        <segue destination="FeV-OR-WM7" kind="relationship" relationship="viewControllers" id="xIa-4m-aGE"/>
+                        <outlet property="identifierTextField" destination="LMR-LO-w0B" id="udJ-UH-7SV"/>
+                        <outlet property="passwordTextField" destination="RIp-B8-f0H" id="uJM-KN-ey1"/>
                     </connections>
-                </tabBarController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="prM-Fy-QeP" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="o0b-Bo-zVi" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="45.5" y="405.5"/>
+            <point key="canvasLocation" x="167.5" y="-146.5"/>
         </scene>
         <!--StudyPlan-->
         <scene sceneID="dhx-yd-JO2">
@@ -95,7 +143,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="elz-Ub-d7Y" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1385.5" y="-19.5"/>
+            <point key="canvasLocation" x="1485.5" y="-471.5"/>
         </scene>
         <!--Add StudyPlan-->
         <scene sceneID="kCX-TR-Mpk">
@@ -150,7 +198,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XQl-P9-A49" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="OgQ-51-gCz" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="2465.5" y="-883.5"/>
+            <point key="canvasLocation" x="2489.5" y="-1223.5"/>
         </scene>
         <!--Semester-->
         <scene sceneID="3Oc-Bg-3NK">
@@ -187,10 +235,13 @@
                             <outlet property="delegate" destination="I2X-ME-SIt" id="EqA-6v-229"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Semestres" id="SSY-lf-yQc"/>
-                    <connections>
-                        <outlet property="semesterNavigationItem" destination="SSY-lf-yQc" id="CvT-EV-Nrn"/>
-                    </connections>
+                    <navigationItem key="navigationItem" title="Semestres" id="SSY-lf-yQc">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="6dI-cu-lY1">
+                            <connections>
+                                <segue destination="1Hi-O7-FeH" kind="show" id="qcm-Oy-4ww"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PrH-4Z-GLT" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -208,12 +259,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ROx-EI-ZYU">
-                                <rect key="frame" x="27" y="312" width="320" height="44"/>
-                                <items>
-                                    <navigationItem title="Title" id="bSU-r7-1IC"/>
-                                </items>
-                            </navigationBar>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Credit hours utilisés" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="10V-vX-hRf">
                                 <rect key="frame" x="20" y="72" width="335" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -265,12 +310,16 @@
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <variation key="default">
-                            <mask key="subviews">
-                                <exclude reference="ROx-EI-ZYU"/>
-                            </mask>
-                        </variation>
                     </view>
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" title="&lt;semestre&gt;" id="Y9k-qm-ISM">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="tcK-iJ-u7Z">
+                            <connections>
+                                <segue destination="ic2-Yw-a4B" kind="show" id="Ewf-Q0-e08"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="creditHoursLabel" destination="FS1-d8-Fqp" id="s2v-nh-7PJ"/>
                         <outlet property="uvTableView" destination="6XY-na-s40" id="j8J-lU-F1O"/>
@@ -326,10 +375,10 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Physics 1" id="2hS-lL-lcL">
+                    <navigationItem key="navigationItem" title="&lt;uv&gt;" id="2hS-lL-lcL">
                         <barButtonItem key="rightBarButtonItem" systemItem="done" id="zBs-Ew-Its">
                             <connections>
-                                <segue destination="ahG-Il-Qkc" kind="unwind" unwindAction="returnToUvViewController:" id="PNe-kJ-WYI"/>
+                                <segue destination="ahG-Il-Qkc" kind="unwind" unwindAction="cancelToUvViewController:" id="AzD-Nm-Qsq"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -340,7 +389,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Jg8-tf-se2" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="ahG-Il-Qkc" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="3595.5" y="371.5"/>
+            <point key="canvasLocation" x="3550.5" y="371.5"/>
         </scene>
         <!--StudyPlan Navigation Controller-->
         <scene sceneID="Vbk-Jb-0DA">
@@ -359,7 +408,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1vm-VG-N8V" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="747.5" y="-19.5"/>
+            <point key="canvasLocation" x="951.5" y="-471.5"/>
         </scene>
         <!--Add StudyPlan Navigation Controller-->
         <scene sceneID="2S1-go-OEV">
@@ -377,7 +426,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lhi-pb-E76" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1933" y="-883"/>
+            <point key="canvasLocation" x="1972.5" y="-1223.5"/>
         </scene>
         <!--UV Detail Navigation Controller-->
         <scene sceneID="CEG-KH-q0W">
@@ -396,6 +445,146 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Mnu-FV-TGX" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3033.5" y="371.5"/>
+        </scene>
+        <!--Add Semester-->
+        <scene sceneID="vMa-Rl-f4j">
+            <objects>
+                <tableViewController id="cuv-lR-aUV" userLabel="Add Semester" customClass="AddSemesterTableViewController" customModule="AdvisorApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="18" sectionFooterHeight="18" id="SjQ-Jg-ddN" userLabel="Add Semester Table View">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
+                        <sections>
+                            <tableViewSection headerTitle="Nom" id="9HW-MY-wHA">
+                                <cells>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" id="YdK-J5-CLH">
+                                        <rect key="frame" x="0.0" y="113.5" width="375" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="YdK-J5-CLH" id="GJa-YX-6cv">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" adjustsFontSizeToFit="NO" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="351-fa-co8" userLabel="Name Text Field">
+                                                    <rect key="frame" x="8" y="7" width="359" height="30"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <textInputTraits key="textInputTraits"/>
+                                                </textField>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
+                        </sections>
+                        <connections>
+                            <outlet property="dataSource" destination="cuv-lR-aUV" id="GgM-vR-Dqn"/>
+                            <outlet property="delegate" destination="cuv-lR-aUV" id="AzQ-ti-0Tm"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Ajouter un semestre" id="wqY-8x-ati">
+                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="Ieq-XK-Brs">
+                            <connections>
+                                <segue destination="i3S-jB-kv6" kind="unwind" unwindAction="cancelToSemesterViewController:" id="fbT-IQ-Pxw"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" systemItem="done" id="hb7-nb-47O">
+                            <connections>
+                                <segue destination="i3S-jB-kv6" kind="unwind" unwindAction="saveSemester:" id="qB0-IE-dYw"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="fcY-bv-yiE" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="i3S-jB-kv6" userLabel="Exit" sceneMemberID="exit"/>
+            </objects>
+            <point key="canvasLocation" x="2489.5" y="1216.5"/>
+        </scene>
+        <!--Add Semester Navigation Controller-->
+        <scene sceneID="yn3-Fg-diC">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="1Hi-O7-FeH" userLabel="Add Semester Navigation Controller" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Fx5-hV-ujd">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="cuv-lR-aUV" kind="relationship" relationship="rootViewController" id="49F-nA-bXe"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="CnX-yZ-hYW" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1972.5" y="1216.5"/>
+        </scene>
+        <!--Add UV-->
+        <scene sceneID="UeA-QR-mJC">
+            <objects>
+                <tableViewController id="U9W-9i-UCs" userLabel="Add UV" customClass="AddUvTableViewController" customModule="AdvisorApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="18" sectionFooterHeight="18" id="Wbj-HH-tbR" userLabel="Add UV Table View">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
+                        <sections>
+                            <tableViewSection headerTitle="Nom" id="8e5-CG-gAP">
+                                <cells>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" id="dVP-Vm-DHJ">
+                                        <rect key="frame" x="0.0" y="113.5" width="375" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="dVP-Vm-DHJ" id="igt-qD-QFp">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" adjustsFontSizeToFit="NO" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ZPT-vP-qAh" userLabel="Name Text Field">
+                                                    <rect key="frame" x="8" y="7" width="359" height="30"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <textInputTraits key="textInputTraits"/>
+                                                </textField>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
+                        </sections>
+                        <connections>
+                            <outlet property="dataSource" destination="U9W-9i-UCs" id="Wzg-Bt-tk3"/>
+                            <outlet property="delegate" destination="U9W-9i-UCs" id="RdL-bj-Mhb"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Ajouter un UV" id="Ld5-eZ-PEq">
+                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="cji-Ev-vyL">
+                            <connections>
+                                <segue destination="CRM-N9-2bL" kind="unwind" unwindAction="cancelToUvViewController:" id="qBQ-tC-hLA"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" systemItem="done" id="feK-xF-HTh">
+                            <connections>
+                                <segue destination="CRM-N9-2bL" kind="unwind" unwindAction="saveUv:" id="hbA-lY-wIE"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="z3E-j6-0ii" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="CRM-N9-2bL" userLabel="Exit" sceneMemberID="exit"/>
+            </objects>
+            <point key="canvasLocation" x="3550.5" y="-480.5"/>
+        </scene>
+        <!--Add UV Navigation Controller-->
+        <scene sceneID="Iyc-Dm-dnN">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="ic2-Yw-a4B" userLabel="Add UV Navigation Controller" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="CYk-Kz-1Or">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="U9W-9i-UCs" kind="relationship" relationship="rootViewController" id="Ker-Fc-olZ"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ibm-0R-pwC" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3033.5" y="-480.5"/>
         </scene>
     </scenes>
 </document>
