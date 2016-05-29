@@ -7,14 +7,21 @@
 //
 
 import UIKit
+import SwiftyJSON
 
 struct User {
     var id: Double
     var firstName: String
     var lastName: String
-    var password: String
-    var birthday: NSDate
-    var remoteId: String
     var email: String
+    
+    static func fromJSON(json: JSON) -> User {
+        let id = json["id"].doubleValue
+        let firstName = json["firstName"].stringValue
+        let lastName = json["lastName"].stringValue
+        let email = json["email"].stringValue
+        
+        return User(id: id, firstName: firstName, lastName: lastName, email: email)
+    }
 }
 

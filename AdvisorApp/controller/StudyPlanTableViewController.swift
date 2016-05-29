@@ -34,6 +34,13 @@ class StudyPlanTableViewController: UITableViewController {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
+    
+    // TODO : move in AppDelegate ?
+    override func viewDidAppear(animated: Bool) {
+        if !Auth.isAuthenticated() {
+            self.performSegueWithIdentifier("LoginSegue", sender: self)
+        }
+    }
 
     // MARK: - Table view data source
 
@@ -68,6 +75,8 @@ class StudyPlanTableViewController: UITableViewController {
         }
     }
     
+    // MARK: - Action methods
+    
     @IBAction func cancelToStudyPlanViewController(segue: UIStoryboardSegue) {
         
     }
@@ -83,4 +92,10 @@ class StudyPlanTableViewController: UITableViewController {
         }
     }
 
+    // TODO : Not in adapted file
+    @IBAction func signout(sender: UIBarButtonItem) {
+        print("ok")
+        Auth.clear()
+        self.performSegueWithIdentifier("LoginSegue", sender: self)
+    }
 }
