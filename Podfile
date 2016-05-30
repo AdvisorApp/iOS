@@ -4,4 +4,5 @@ target 'AdvisorApp' do
   use_frameworks!
 
   pod 'AlamofireSwiftyJSON'
+  pod 'AlamofireJsonToObjects'
 end
