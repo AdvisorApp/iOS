@@ -12,3 +12,16 @@ class User: EVObject {
     var birthday: NSDate = NSDate()
 }
 
+
+struct UserSignUp {
+    var email: String
+    var password: String
+    var firstName: String
+    var lastName: String
+    var remoteId: String
+    
+    func isEnoughComplete() -> Bool {
+        return (self.email.isValidEmail) && (password.characters.count >= 8)
+    }
+}
+
