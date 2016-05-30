@@ -35,7 +35,7 @@ class AddStudyPlanTableViewController: UITableViewController {
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == "SaveStudyPlanSegue" {
             // Call API here
-            studyPlan = StudyPlan(id: 23, name: nameTextField.text!, semesters: [])
+            studyPlan = StudyPlan(dictionary: ["id": 23, "name": nameTextField.text!, "semesters": []])
         }
     }
 

@@ -31,7 +31,7 @@ class LoginViewController: UIViewController {
             case .Other(_):
                 self.displayAlert("Une erreur est survenue")
             }
-        }) { succeed in
+        }) {
             self.dismissViewControllerAnimated(true, completion: nil)
         }
     }
