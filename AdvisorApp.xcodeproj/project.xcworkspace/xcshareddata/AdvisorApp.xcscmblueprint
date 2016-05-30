@@ -7,18 +7,14 @@
     "CE4A0F76F76DF8F66F4F95E184272750D1CE034A" : 0,
     "4B436A9B56076F5D7E20D2E7342DF0E8C9CDFB5B" : 0
   },
-<<<<<<< 8d39ae8706787bb49cdc6b8c8396184578c8a603
-  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "DAFC7FC8-146D-4738-927A-C63FB6842D4C",
-=======
-  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "C85C206F-925F-475B-AA7B-ED21124FC469",
->>>>>>> [ADV-49] Add signup
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "E37DE880-C904-466E-B2A1-5119698D46E3",
   "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
     "CE4A0F76F76DF8F66F4F95E184272750D1CE034A" : "..\/..",
     "4B436A9B56076F5D7E20D2E7342DF0E8C9CDFB5B" : "iOS\/"
   },
   "DVTSourceControlWorkspaceBlueprintNameKey" : "AdvisorApp",
   "DVTSourceControlWorkspaceBlueprintVersion" : 204,
-  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "AdvisorApp.xcworkspace",
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "AdvisorApp.xcodeproj",
   "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
     {
       "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "github.com:AdvisorApp\/iOS.git",
