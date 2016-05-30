@@ -74,7 +74,7 @@ class UserService {
         ]
         
         Alamofire
-            .request(UserRequest.Login(parameters))
+            .request(Request.url(.POST, path: "/api/auths/token", parameters: parameters))
             .validate()
             .responseJSON { response in
                 switch response.result {

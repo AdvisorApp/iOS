@@ -30,8 +30,8 @@
 		7C2F6BD51CF8E7E200E8AF5B /* AddUvTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C2F6BD41CF8E7E200E8AF5B /* AddUvTableViewController.swift */; };
 		7C2F6BD71CF8EA1C00E8AF5B /* SignupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C2F6BD61CF8EA1C00E8AF5B /* SignupViewController.swift */; };
 		7CAA9E041CFA21D9001B980C /* UserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CAA9E031CFA21D9001B980C /* UserService.swift */; };
-		7CAA9E061CFB1DD5001B980C /* RequestError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CAA9E051CFB1DD5001B980C /* RequestError.swift */; };
 		7CAA9E081CFB24B6001B980C /* Auth.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CAA9E071CFB24B6001B980C /* Auth.swift */; };
+		7CD72BA61CFC43F500140C60 /* Request.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CD72BA51CFC43F500140C60 /* Request.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -62,8 +62,8 @@
 		7C2F6BD41CF8E7E200E8AF5B /* AddUvTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddUvTableViewController.swift; sourceTree = "<group>"; };
 		7C2F6BD61CF8EA1C00E8AF5B /* SignupViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignupViewController.swift; sourceTree = "<group>"; };
 		7CAA9E031CFA21D9001B980C /* UserService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserService.swift; sourceTree = "<group>"; };
-		7CAA9E051CFB1DD5001B980C /* RequestError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RequestError.swift; sourceTree = "<group>"; };
 		7CAA9E071CFB24B6001B980C /* Auth.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Auth.swift; sourceTree = "<group>"; };
+		7CD72BA51CFC43F500140C60 /* Request.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Request.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -157,8 +157,8 @@
 			isa = PBXGroup;
 			children = (
 				7CAA9E031CFA21D9001B980C /* UserService.swift */,
-				7CAA9E051CFB1DD5001B980C /* RequestError.swift */,
 				7CAA9E071CFB24B6001B980C /* Auth.swift */,
+				7CD72BA51CFC43F500140C60 /* Request.swift */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -303,12 +303,12 @@
 				7C10F09C1CF7338C0072ADF2 /* Semester.swift in Sources */,
 				7C2F6BD71CF8EA1C00E8AF5B /* SignupViewController.swift in Sources */,
 				7C2F6BD31CF8E16500E8AF5B /* AddSemesterTableViewController.swift in Sources */,
-				7CAA9E061CFB1DD5001B980C /* RequestError.swift in Sources */,
 				7C10F09E1CF7338C0072ADF2 /* User.swift in Sources */,
 				7C10F0A51CF733AE0072ADF2 /* StudyPlanTableViewController.swift in Sources */,
 				7C10F0AE1CF7965A0072ADF2 /* UvViewController.swift in Sources */,
 				7CAA9E041CFA21D9001B980C /* UserService.swift in Sources */,
 				7C10F09B1CF7338C0072ADF2 /* Option.swift in Sources */,
+				7CD72BA61CFC43F500140C60 /* Request.swift in Sources */,
 				7C10F09A1CF7338C0072ADF2 /* Location.swift in Sources */,
 				7CAA9E081CFB24B6001B980C /* Auth.swift in Sources */,
 				7C2F6BD11CF8DD7D00E8AF5B /* LoginViewController.swift in Sources */,
