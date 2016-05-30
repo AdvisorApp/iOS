@@ -1,0 +1,30 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "4B436A9B56076F5D7E20D2E7342DF0E8C9CDFB5B",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "CE4A0F76F76DF8F66F4F95E184272750D1CE034A" : 0,
+    "4B436A9B56076F5D7E20D2E7342DF0E8C9CDFB5B" : 0
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "DAFC7FC8-146D-4738-927A-C63FB6842D4C",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "CE4A0F76F76DF8F66F4F95E184272750D1CE034A" : "..\/..",
+    "4B436A9B56076F5D7E20D2E7342DF0E8C9CDFB5B" : "iOS\/"
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "AdvisorApp",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "AdvisorApp.xcworkspace",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "github.com:AdvisorApp\/iOS.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "4B436A9B56076F5D7E20D2E7342DF0E8C9CDFB5B"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "bitbucket.org:ptango\/cours-mines.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "CE4A0F76F76DF8F66F4F95E184272750D1CE034A"
+    }
+  ]
+}
