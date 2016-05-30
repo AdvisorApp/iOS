@@ -24,18 +24,11 @@ class UserService {
             "password" : password
         ]
         
-        Alamofire
-            .request(Request.url(.POST, path: "/api/auths/token", parameters: parameters))
-            .validate()
-            .responseJSON { response in
-                switch response.result {
-                case .Success(let body):
-                    let json = JSON(body)
-                    Auth.setToken(json["token"].stringValue)
-                    succeed!()
-                case .Failure(let error):
-                    fail!(RequestError.fromNSError(error))
-                }
-            }
+        Service.request(.POST, path: "/api/auths/token", parameters: parameters, failure: { error in
+            fail!(error)
+        }) { (token: Token) in
+            Auth.setToken(token.token!)
+            succeed!()
+        }
     }
 }
