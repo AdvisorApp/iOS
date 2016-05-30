@@ -31,7 +31,9 @@
 		7C2F6BD71CF8EA1C00E8AF5B /* SignupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C2F6BD61CF8EA1C00E8AF5B /* SignupViewController.swift */; };
 		7CAA9E041CFA21D9001B980C /* UserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CAA9E031CFA21D9001B980C /* UserService.swift */; };
 		7CAA9E081CFB24B6001B980C /* Auth.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CAA9E071CFB24B6001B980C /* Auth.swift */; };
-		7CD72BA61CFC43F500140C60 /* Request.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CD72BA51CFC43F500140C60 /* Request.swift */; };
+		7CD72BA61CFC43F500140C60 /* Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CD72BA51CFC43F500140C60 /* Service.swift */; };
+		7CD72BA81CFC7BCB00140C60 /* StudyPlanService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CD72BA71CFC7BCB00140C60 /* StudyPlanService.swift */; };
+		7CF7E1F91CFCB163003ACF6E /* Token.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CF7E1F81CFCB163003ACF6E /* Token.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -63,7 +65,9 @@
 		7C2F6BD61CF8EA1C00E8AF5B /* SignupViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignupViewController.swift; sourceTree = "<group>"; };
 		7CAA9E031CFA21D9001B980C /* UserService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserService.swift; sourceTree = "<group>"; };
 		7CAA9E071CFB24B6001B980C /* Auth.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Auth.swift; sourceTree = "<group>"; };
-		7CD72BA51CFC43F500140C60 /* Request.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Request.swift; sourceTree = "<group>"; };
+		7CD72BA51CFC43F500140C60 /* Service.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Service.swift; sourceTree = "<group>"; };
+		7CD72BA71CFC7BCB00140C60 /* StudyPlanService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StudyPlanService.swift; sourceTree = "<group>"; };
+		7CF7E1F81CFCB163003ACF6E /* Token.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Token.swift; path = AdvisorApp/Model/Token.swift; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -131,6 +135,7 @@
 				7C10F0971CF7338C0072ADF2 /* Uv.swift */,
 				7C10F0981CF7338C0072ADF2 /* UvType.swift */,
 				7C10F0991CF7338C0072ADF2 /* UvUser.swift */,
+				7CF7E1F81CFCB163003ACF6E /* Token.swift */,
 			);
 			name = Model;
 			path = model;
@@ -158,7 +163,8 @@
 			children = (
 				7CAA9E031CFA21D9001B980C /* UserService.swift */,
 				7CAA9E071CFB24B6001B980C /* Auth.swift */,
-				7CD72BA51CFC43F500140C60 /* Request.swift */,
+				7CD72BA51CFC43F500140C60 /* Service.swift */,
+				7CD72BA71CFC7BCB00140C60 /* StudyPlanService.swift */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -298,6 +304,7 @@
 				7C10F09F1CF7338C0072ADF2 /* Uv.swift in Sources */,
 				7C10F0AC1CF7739B0072ADF2 /* AddStudyPlanTableViewController.swift in Sources */,
 				7C10F0AA1CF74EE60072ADF2 /* SemesterTableViewController.swift in Sources */,
+				7CD72BA81CFC7BCB00140C60 /* StudyPlanService.swift in Sources */,
 				7C2F6BD51CF8E7E200E8AF5B /* AddUvTableViewController.swift in Sources */,
 				7C10F0A11CF7338C0072ADF2 /* UvUser.swift in Sources */,
 				7C10F09C1CF7338C0072ADF2 /* Semester.swift in Sources */,
@@ -308,10 +315,11 @@
 				7C10F0AE1CF7965A0072ADF2 /* UvViewController.swift in Sources */,
 				7CAA9E041CFA21D9001B980C /* UserService.swift in Sources */,
 				7C10F09B1CF7338C0072ADF2 /* Option.swift in Sources */,
-				7CD72BA61CFC43F500140C60 /* Request.swift in Sources */,
+				7CD72BA61CFC43F500140C60 /* Service.swift in Sources */,
 				7C10F09A1CF7338C0072ADF2 /* Location.swift in Sources */,
 				7CAA9E081CFB24B6001B980C /* Auth.swift in Sources */,
 				7C2F6BD11CF8DD7D00E8AF5B /* LoginViewController.swift in Sources */,
+				7CF7E1F91CFCB163003ACF6E /* Token.swift in Sources */,
 				7C2F6BCF1CF846A100E8AF5B /* UvDetailViewController.swift in Sources */,
 				7C10F0A01CF7338C0072ADF2 /* UvType.swift in Sources */,
 				7C10F06B1CF6248E0072ADF2 /* AppDelegate.swift in Sources */,
