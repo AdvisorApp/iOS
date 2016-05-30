@@ -7,20 +7,15 @@
 //
 
 import UIKit
+import EVReflection
 
-struct Semester {
-    var id: Double
-    var number: Int
+class Semester: EVObject {
+    var id: Double?
+    var number: Int?
     var studyPlan: StudyPlan?
-    var uvs: [Uv]
-    
-    init(id: Double, number: Int, uvs: [Uv]) {
-        self.id = id;
-        self.number = number
-        self.uvs = uvs
-    }
+    var uvs: [Uv]?
     
     func getSumCreditHours() -> Int {
-        return uvs.reduce(0, combine: {$0 + $1.chs!})
+        return uvs!.reduce(0, combine: {$0 + $1.chs!})
     }
 }

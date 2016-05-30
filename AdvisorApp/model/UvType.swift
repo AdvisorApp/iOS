@@ -7,9 +7,10 @@
 //
 
 import UIKit
+import EVReflection
 
-struct UvType {
-    var id: Double
-    var type: String
-    var hoursByCredit: Double
+class UvType: EVObject {
+    var id: Double?
+    var type: String?
+    var hoursByCredit: Double?
 }

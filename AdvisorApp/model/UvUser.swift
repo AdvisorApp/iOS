@@ -7,12 +7,13 @@
 //
 
 import UIKit
+import EVReflection
 
-struct UvUser {
-    var id: Double
-    var user: User
-    var uv: Uv
-    var userAverage: Double
-    var uvMark: Double
-    var uvComment: Double
+class UvUser: EVObject {
+    var id: Double?
+    var user: User?
+    var uv: Uv?
+    var userAverage: Double?
+    var uvMark: Double?
+    var uvComment: Double?
 }
