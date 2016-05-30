@@ -10,55 +10,6 @@ import Foundation
 import Alamofire
 import SwiftyJSON
 
-enum UserRequest: URLRequestConvertible {
-    static let baseURLString = "http://localhost:8090" // "http://chardan.net:8090"
-    
-    case Create([String: AnyObject])
-    case Get()
-    case Login([String: AnyObject])
-    
-    var method: Alamofire.Method {
-        switch self {
-        case .Create:
-            return .POST
-        case .Get:
-            return .GET
-        case .Login:
-            return .POST
-        }
-    }
-    
-    var path: String {
-        switch self {
-        case .Create:
-            return "/api/users"
-        case .Get:
-            return "/api/users/me"
-        case .Login:
-            return "/api/auths/token"
-        }
-    }
-    
-    var URLRequest: NSMutableURLRequest {
-        let URL = NSURL(string: UserRequest.baseURLString)!
-        let mutableURLRequest = NSMutableURLRequest(URL: URL.URLByAppendingPathComponent(path))
-        mutableURLRequest.HTTPMethod = method.rawValue
-        
-        if let token = Auth.getToken() {
-            mutableURLRequest.setValue(token, forHTTPHeaderField: "X-Authorization")
-        }
-        
-        switch self {
-        case .Create(let parameters):
-            return Alamofire.ParameterEncoding.JSON.encode(mutableURLRequest, parameters: parameters).0
-        case .Login(let parameters):
-            return Alamofire.ParameterEncoding.JSON.encode(mutableURLRequest, parameters: parameters).0
-        default:
-            return mutableURLRequest
-        }
-    }
-}
-
 class UserService {
     
     static func signin(

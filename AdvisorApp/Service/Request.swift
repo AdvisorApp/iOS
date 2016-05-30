@@ -29,7 +29,7 @@ class Request {
     static let baseURLString = "http://localhost:8090" // "http://chardan.net:8090"
  
     static func url(method: Alamofire.Method, path: String, parameters: [String: AnyObject]?) -> NSMutableURLRequest {
-        let URL = NSURL(string: UserRequest.baseURLString)!
+        let URL = NSURL(string: Request.baseURLString)!
         let mutableURLRequest = NSMutableURLRequest(URL: URL.URLByAppendingPathComponent(path))
         mutableURLRequest.HTTPMethod = method.rawValue
         
