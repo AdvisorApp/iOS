@@ -1,14 +1,16 @@
 //
-//  StudyplanTableViewController.swift
+//  AddSemesterTableViewController.swift
 //  AdvisorApp
 //
-//  Created by Clément GARBAY on 26/05/2016.
+//  Created by Clément GARBAY on 27/05/2016.
 //  Copyright © 2016 Clément GARBAY. All rights reserved.
 //
 
 import UIKit
 
-class StudyPlanViewController: UITableViewController {
+class AddSemesterTableViewController: UITableViewController {
+    
+    var semester: Semester?
 
     override func viewDidLoad() {
         super.viewDidLoad()

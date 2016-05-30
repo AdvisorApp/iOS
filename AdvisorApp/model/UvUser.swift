@@ -6,13 +6,13 @@
 //  Copyright © 2016 Clément GARBAY. All rights reserved.
 //
 
-import Foundation
+import UIKit
 
-class UvUser {
-    var id: Double?
-    var user: User?
-    var uv: Uv?
-    var userAverage: Double?
-    var uvMark: Double?
-    var uvComment: Double?
+struct UvUser {
+    var id: Double
+    var user: User
+    var uv: Uv
+    var userAverage: Double
+    var uvMark: Double
+    var uvComment: Double
 }
