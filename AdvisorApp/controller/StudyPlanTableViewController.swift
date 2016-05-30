@@ -94,7 +94,6 @@ class StudyPlanTableViewController: UITableViewController {
 
     // TODO : Not in adapted file
     @IBAction func signout(sender: UIBarButtonItem) {
-        print("ok")
         Auth.clear()
         self.performSegueWithIdentifier("LoginSegue", sender: self)
     }
