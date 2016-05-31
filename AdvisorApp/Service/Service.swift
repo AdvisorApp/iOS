@@ -73,8 +73,8 @@ class Service {
         method: Alamofire.Method,
         path: String,
         failure fail: (RequestError -> ())? = nil,
-        success succeed: (T -> ())? = nil
-    ) {
+                success succeed: (T -> ())? = nil
+        ) {
         
         Service.request(method, path: path, parameters: nil, failure: { error in
             fail!(error)
