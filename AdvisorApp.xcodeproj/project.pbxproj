@@ -133,8 +133,8 @@
 				7C10F0951CF7338C0072ADF2 /* StudyPlan.swift */,
 				7C10F0961CF7338C0072ADF2 /* User.swift */,
 				7C10F0971CF7338C0072ADF2 /* Uv.swift */,
-				7C10F0981CF7338C0072ADF2 /* UvType.swift */,
 				7C10F0991CF7338C0072ADF2 /* UvUser.swift */,
+				7C10F0981CF7338C0072ADF2 /* UvType.swift */,
 				7CF7E1F81CFCB163003ACF6E /* Token.swift */,
 			);
 			name = Model;

@@ -29,7 +29,7 @@ class StudyPlanTableViewController: UITableViewController {
         self.refreshControl?.addTarget(self, action: #selector(StudyPlanTableViewController.refresh(_:)), forControlEvents: UIControlEvents.ValueChanged)
 
         // Uncomment the following line to preserve selection between presentations
-        self.clearsSelectionOnViewWillAppear = false
+        // self.clearsSelectionOnViewWillAppear = false
         
         //refresh()
     }
@@ -62,6 +62,25 @@ class StudyPlanTableViewController: UITableViewController {
         cell.textLabel?.text = studyPlan.name
         
         return cell
+    }
+    
+    override func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
+        return true
+    }
+    
+    override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
+        if (editingStyle == UITableViewCellEditingStyle.Delete) {
+            showConfirmAlert("Are you sure you want to delete this study plan ?", message: "All associated data will be deleted.") {
+                let studyPlan = self.studyPlans[indexPath.row]
+                StudyPlanService.delete(studyPlan.id, failure: { error in
+                    self.showAlert("Erreur lors de la suppression")
+                    print(error)
+                }) {
+                    self.studyPlans.removeAtIndex(indexPath.row)
+                    tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Automatic)
+                }
+            }
+        }
     }
     
     // MARK: - Navigation
@@ -108,7 +127,7 @@ class StudyPlanTableViewController: UITableViewController {
     func refresh() {
         if Auth.isAuthenticated() {
             StudyPlanService.get(Auth.getConnectedUserId()!, failure: { error in
-                print("Error : \(error)")
+                self.showAlert("Une erreur est survenue")
                 self.refreshControl?.endRefreshing()
             }) { (studyPlans: [StudyPlan]) in
                 self.studyPlans = studyPlans
@@ -118,5 +137,20 @@ class StudyPlanTableViewController: UITableViewController {
                 })
             }
         }
+    }
+    
+    func showAlert(title: String) {
+        let alert = UIAlertController(title: title, message: nil, preferredStyle: UIAlertControllerStyle.Alert)
+        alert.addAction(UIAlertAction(title: "Ok", style: .Default, handler: nil))
+        self.presentViewController(alert, animated: true, completion: nil)
+    }
+    
+    func showConfirmAlert(title: String, message: String, ok: (Void -> ())) {
+        let deleteAlert = UIAlertController(title: title, message: message, preferredStyle: UIAlertControllerStyle.Alert)
+        deleteAlert.addAction(UIAlertAction(title: "Ok", style: .Default, handler: { (action: UIAlertAction!) in
+            ok()
+        }))
+        deleteAlert.addAction(UIAlertAction(title: "Cancel", style: .Cancel, handler: nil))
+        presentViewController(deleteAlert, animated: true, completion: nil)
     }
 }

@@ -40,4 +40,17 @@ class StudyPlanService {
             succeed!(studyPlan)
         }
     }
+    
+    static func delete(
+        id: Int,
+        failure fail: (RequestError -> ())? = nil,
+        success succeed: (Void -> ())? = nil
+    ) {
+        
+        Service.request(.DELETE, path: "/api/studyPlans/\(id)", failure: { error in
+            fail!(error)
+        }) { _ in
+            succeed!()
+        }
+    }
 }
