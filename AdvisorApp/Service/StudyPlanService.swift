@@ -22,4 +22,22 @@ class StudyPlanService {
             succeed!(studyPlans)
         }
     }
+    
+    static func add(
+        userId: Int,
+        name: String,
+        failure fail: (RequestError -> ())? = nil,
+        success succeed: (StudyPlan -> ())? = nil
+    ) {
+        
+        let parameters: [String: AnyObject] = [
+            "name" : name
+        ]
+        
+        Service.request(.POST, path: "/api/users/\(userId)/studyPlans", parameters: parameters, failure: { error in
+            fail!(error)
+        }) { (studyPlan: StudyPlan) in
+            succeed!(studyPlan)
+        }
+    }
 }

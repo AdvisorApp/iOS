@@ -10,41 +10,38 @@ import UIKit
 
 class StudyPlanTableViewController: UITableViewController {
     
-    var studyPlans: [StudyPlan] = [
-        StudyPlan(dictionary: ["id": 1, "name": "StudyPlan1", "semesters": [
-            Semester(dictionary: ["id": 1, "number": 1, "uvs": [
-                Uv(dictionary: ["id": 1, "name": "UV1", "chs": 2]),
-                Uv(dictionary: ["id": 2, "name": "UV2", "chs": 4])
-            ]]),
-            Semester(dictionary: ["id": 2, "number": 2, "uvs": []])
-        ]]),
-        StudyPlan(dictionary: ["id": 2, "name": "StudyPlan2", "semesters": []])
-    ]
+    var studyPlans: [StudyPlan] = []
+        
+//    [
+//        StudyPlan(dictionary: ["id": 1, "name": "StudyPlan1", "semesters": [
+//            Semester(dictionary: ["id": 1, "number": 1, "uvs": [
+//                Uv(dictionary: ["id": 1, "name": "UV1", "chs": 2]),
+//                Uv(dictionary: ["id": 2, "name": "UV2", "chs": 4])
+//            ]]),
+//            Semester(dictionary: ["id": 2, "number": 2, "uvs": []])
+//        ]]),
+//        StudyPlan(dictionary: ["id": 2, "name": "StudyPlan2", "semesters": []])
+//    ]
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.refreshControl?.addTarget(self, action: #selector(StudyPlanTableViewController.refresh(_:)), forControlEvents: UIControlEvents.ValueChanged)
 
         // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem()
+        self.clearsSelectionOnViewWillAppear = false
+        
+        //refresh()
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
     
-    // TODO : move in AppDelegate ?
+    // App entry point : Checks if an user is connected
     override func viewDidAppear(animated: Bool) {
         if !Auth.isAuthenticated() {
             self.performSegueWithIdentifier("LoginSegue", sender: self)
-        } else {
-            StudyPlanService.get(1, failure: { error in
-                print("Error : \(error)")
-            }) { (studyPlans: [StudyPlan]) in
-                
-            }
         }
     }
 
@@ -63,7 +60,6 @@ class StudyPlanTableViewController: UITableViewController {
         let studyPlan = studyPlans[indexPath.row] as StudyPlan
         
         cell.textLabel?.text = studyPlan.name
-        cell.detailTextLabel?.text = String(studyPlan.id)
         
         return cell
     }
@@ -83,11 +79,11 @@ class StudyPlanTableViewController: UITableViewController {
     
     // MARK: - Action methods
     
-    @IBAction func cancelToStudyPlanViewController(segue: UIStoryboardSegue) {
+    @IBAction func toStudyPlanViewController(segue: UIStoryboardSegue) {
         
     }
     
-    @IBAction func saveStudyPlan(segue: UIStoryboardSegue) {
+    func addStudyPlan(segue: UIStoryboardSegue) {
         if let addStudyPlanViewController = segue.sourceViewController as? AddStudyPlanTableViewController {
             if let studyPlan = addStudyPlanViewController.studyPlan {
                 studyPlans.append(studyPlan)
@@ -102,5 +98,25 @@ class StudyPlanTableViewController: UITableViewController {
     @IBAction func signout(sender: UIBarButtonItem) {
         Auth.clear()
         self.performSegueWithIdentifier("LoginSegue", sender: self)
+    }
+    
+    func refresh(sender: AnyObject) {
+        refresh()
+    }
+    
+    // Refresh table data
+    func refresh() {
+        if Auth.isAuthenticated() {
+            StudyPlanService.get(Auth.getConnectedUserId()!, failure: { error in
+                print("Error : \(error)")
+                self.refreshControl?.endRefreshing()
+            }) { (studyPlans: [StudyPlan]) in
+                self.studyPlans = studyPlans
+                dispatch_async(dispatch_get_main_queue(), {
+                    self.tableView.reloadData()
+                    self.refreshControl?.endRefreshing()
+                })
+            }
+        }
     }
 }
