@@ -10,9 +10,9 @@ import UIKit
 import EVReflection
 
 class StudyPlan: EVObject {
-    var id: Double?
+    var id: Int = 0
     var user: User?
-    var name: String?
-    var semesters: [Semester]?
+    var name: String? = ""
+    var semesters: [Semester]? = []
     var options: Option?
 }

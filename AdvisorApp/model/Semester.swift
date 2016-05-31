@@ -10,10 +10,10 @@ import UIKit
 import EVReflection
 
 class Semester: EVObject {
-    var id: Double?
-    var number: Int?
+    var id: Int? = 0
+    var number: Int? = 0
     var studyPlan: StudyPlan?
-    var uvs: [Uv]?
+    var uvs: [Uv]? = []
     
     func getSumCreditHours() -> Int {
         return uvs!.reduce(0, combine: {$0 + $1.chs!})

@@ -10,7 +10,7 @@ import UIKit
 import EVReflection
 
 class UvType: EVObject {
-    var id: Double?
+    var id: Int?
     var type: String?
     var hoursByCredit: Double?
 }

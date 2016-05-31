@@ -10,6 +10,6 @@ import UIKit
 import EVReflection
 
 class Option: EVObject {
-    var id: Double?
-    var name: String?
+    var id: Int? = 0
+    var name: String? = ""
 }

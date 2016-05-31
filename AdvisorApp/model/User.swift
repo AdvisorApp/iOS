@@ -11,18 +11,9 @@ import SwiftyJSON
 import EVReflection
 
 class User: EVObject {
-    var id: Double?
-    var firstName: String?
-    var lastName: String?
-    var email: String?
-    
-//    static func fromJSON(json: JSON) -> User {
-//        let id = json["id"].doubleValue
-//        let firstName = json["firstName"].stringValue
-//        let lastName = json["lastName"].stringValue
-//        let email = json["email"].stringValue
-//        
-//        return User(id: id, firstName: firstName, lastName: lastName, email: email)
-//    }
+    var id: Int? = 0
+    var firstName: String? = ""
+    var lastName: String? = ""
+    var email: String? = ""
 }
 

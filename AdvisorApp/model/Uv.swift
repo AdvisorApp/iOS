@@ -10,19 +10,19 @@ import UIKit
 import EVReflection
 
 class Uv: EVObject {
-    var id: Int?
-    var remoteId: String?
-    var name: String?
+    var id: Int? = 0
+    var remoteId: String? = ""
+    var name: String? = ""
 //    var description: String?
-    var minSemester: Int?
-    var isAvailableForCart: Bool?
-    var chs: Int?
+    var minSemester: Int? = 0
+    var isAvailableForCart: Bool? = false
+    var chs: Int? = 0
 //    var location: Location?
     var uvType: UvType?
-    var semesters: [Semester]?
-    var corequisitesUv: [Uv]?
-    var corequisitesUvOf: [Uv]?
-    var prerequisitesUv: [Uv]?
+    var semesters: [Semester]? = []
+    var corequisitesUv: [Uv]? = []
+    var corequisitesUvOf: [Uv]? = []
+    var prerequisitesUv: [Uv]? = []
     
     func isFinished() -> Bool {
         // TODO

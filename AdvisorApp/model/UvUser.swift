@@ -10,7 +10,7 @@ import UIKit
 import EVReflection
 
 class UvUser: EVObject {
-    var id: Double?
+    var id: Int?
     var user: User?
     var uv: Uv?
     var userAverage: Double?
