@@ -27,17 +27,20 @@ class SignupViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    func isEnoughComplete(email: String, password: String) -> Bool {
+        return (email.isValidEmail) && (password.characters.count >= 8)
+    }
+    
     @IBAction func signup(sender: UIButton) {
-        let user = UserSignUp(
-            email: emailTextField.text!,
-            password: passwordTextField.text!,
-            firstName: firstNameTextField.text!,
-            lastName: lastNameTextField.text!,
-            remoteId: remoteIdTextField.text!
-        )
+        let email = emailTextField.text!
+        let password = passwordTextField.text!
+        let firstName = firstNameTextField.text!
+        let lastName = lastNameTextField.text!
+        let remoteId = remoteIdTextField.text!
         
-        if(user.isEnoughComplete()){
-            UserService.signup(user, failure: { _ in
+        
+        if(isEnoughComplete(email, password: password)){
+            UserService.signup(firstName, lastName: lastName, email: email, password: password, remoteId: remoteId, failure: { _ in
                 self.displayAlert("Error while Sign Up! Try later :)")
             }) { succeed in
                 self.dismissViewControllerAnimated(true, completion: nil)

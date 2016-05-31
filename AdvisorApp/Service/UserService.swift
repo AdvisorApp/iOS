@@ -33,22 +33,24 @@ class UserService {
     }
     
     static func signup(
-        user: UserSignUp,
+        firstName: String,
+        lastName: String,
+        email: String,
+        password: String,
+        remoteId: String,
         failure fail: (RequestError -> ())? = nil,
-                success succeed: (Void -> ())? = nil
+        success succeed: (Void -> ())? = nil
         ) {
         
         let parameters: [String: AnyObject] = [
-            "firstName" : user.firstName,
-            "lastName"  : user.lastName,
-            "email" : user.email,
-            "password": user.password,
-            "remoteId": user.remoteId,
+            "firstName" : firstName,
+            "lastName"  : lastName,
+            "email" : email,
+            "password": password,
+            "remoteId": remoteId,
         ]
         
         print("SignUp(\(parameters)")
-        
-        
         Service.request(.POST, path: "/api/auths/signup", parameters: parameters, failure: { error in
             print("Fail on sign up \(error)")
             fail!(error)
@@ -57,5 +59,8 @@ class UserService {
             succeed!()
         }
         
+        
     }
+    
+
 }
