@@ -16,14 +16,16 @@ enum RequestError: ErrorType {
     case Other(NSError)
     
     static func fromNSError(error: NSError) -> RequestError {
-        let statusCode = error.userInfo["StatusCode"] as! Int
-        
-        switch statusCode {
-        case 404:
-            return RequestError.Unauthorized
-        default:
-            return RequestError.Other(error)
-        }
+        return error.userInfo["StatusCode"]
+            .map({(e: AnyObject) -> Int in e as! Int})
+            .map({ e in
+                switch e {
+                case 404:
+                    return RequestError.Unauthorized
+                default:
+                    return RequestError.Other(error)
+                }
+            }) ?? RequestError.Other(error)
     }
 }
 

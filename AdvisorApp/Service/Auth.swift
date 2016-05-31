@@ -28,6 +28,19 @@ class Auth {
         return userDefaults.valueForKey("token") as? String
     }
     
+    // TODO : review unwrapping
+    static func getConnectedUserId() -> Int? {
+        if let token = userDefaults.valueForKey("token") as? String {
+            do {
+                let jwt = try decode(token)
+                if let subject = Int(jwt.subject!) {
+                    return subject
+                }
+            } catch _ {}
+        }
+        return nil
+    }
+    
     static func clear() {
         userDefaults.removeObjectForKey("token")
     }
