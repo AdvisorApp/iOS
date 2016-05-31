@@ -20,8 +20,6 @@ struct UserSignUp {
     var lastName: String
     var remoteId: String
     
-    func isEnoughComplete() -> Bool {
-        return (self.email.isValidEmail) && (password.characters.count >= 8)
-    }
+    
 }
 
