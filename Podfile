@@ -5,4 +5,5 @@ target 'AdvisorApp' do
 
   pod 'AlamofireSwiftyJSON'
   pod 'AlamofireJsonToObjects'
+  pod 'JWTDecode'
 end

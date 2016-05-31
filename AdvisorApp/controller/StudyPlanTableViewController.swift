@@ -40,7 +40,11 @@ class StudyPlanTableViewController: UITableViewController {
         if !Auth.isAuthenticated() {
             self.performSegueWithIdentifier("LoginSegue", sender: self)
         } else {
-            
+            StudyPlanService.get(1, failure: { error in
+                print("Error : \(error)")
+            }) { (studyPlans: [StudyPlan]) in
+                
+            }
         }
     }
 
