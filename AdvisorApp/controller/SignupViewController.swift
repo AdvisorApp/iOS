@@ -41,9 +41,15 @@ class SignupViewController: UIViewController {
         
         if(isEnoughComplete(email, password: password)){
             UserService.signup(firstName, lastName: lastName, email: email, password: password, remoteId: remoteId, failure: { _ in
-                self.displayAlert("Error while Sign Up! Try later :)")
+                self.displayAlert("Error while Sign Up! Your email should be already used. Otherwise, try later :)")
             }) { succeed in
-                self.dismissViewControllerAnimated(true, completion: nil)
+                
+                let alert = UIAlertController(title: "Success ! You successfully signed up !", message: nil, preferredStyle: UIAlertControllerStyle.Alert)
+                alert.addAction(UIAlertAction(title: "Ok", style: .Default, handler: { _ in
+                    self.dismissViewControllerAnimated(true, completion: nil)
+                }))
+                self.presentViewController(alert, animated: true, completion: nil)
+
             }
         }else{
             self.displayAlert("Your email or your password should not be correct. Your password must 8 characters lenght.")
