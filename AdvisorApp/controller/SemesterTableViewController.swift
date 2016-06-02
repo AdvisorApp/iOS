@@ -20,6 +20,8 @@ class SemesterTableViewController: UITableViewController {
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
+        
+        refresh()
     }
 
     override func didReceiveMemoryWarning() {
@@ -103,5 +105,30 @@ class SemesterTableViewController: UITableViewController {
             // Get new semester and add it to the table view
         }
     }
+    
+    func refresh(sender: AnyObject) {
+        refresh()
+    }
+    
+    // Refresh table data
+    func refresh() {
+        if Auth.isAuthenticated() {
+            SemesterService.get(selectedStudyPlan!.id, failure: { error in
+                self.showAlert("Une erreur est survenue")
+                self.refreshControl?.endRefreshing()
+            }) { (semesters: [Semester]) in
+                self.selectedStudyPlan?.semesters = semesters
+                dispatch_async(dispatch_get_main_queue(), {
+                    self.tableView.reloadData()
+                    self.refreshControl?.endRefreshing()
+                })
+            }
+        }
+    }
 
+    func showAlert(title: String) {
+        let alert = UIAlertController(title: title, message: nil, preferredStyle: UIAlertControllerStyle.Alert)
+        alert.addAction(UIAlertAction(title: "Ok", style: .Default, handler: nil))
+        self.presentViewController(alert, animated: true, completion: nil)
+    }
 }

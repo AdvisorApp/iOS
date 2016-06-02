@@ -41,7 +41,7 @@ class UvViewController: UIViewController, UITableViewDelegate, UITableViewDataSo
         let uv = (selectedSemester?.uvs[indexPath.row])! as Uv
         
         cell.textLabel?.text = uv.name
-        cell.detailTextLabel?.text = uv.description
+        cell.detailTextLabel?.text = uv._description
         if uv.isFinished() {
             cell.accessoryType = .Checkmark
         }
