@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		5111CC9C95F9C20D988426EF /* Pods_AdvisorApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 213C51745976BA651C162C21 /* Pods_AdvisorApp.framework */; };
+		7C0B569F1D006083009C7249 /* SemesterService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C0B569E1D006083009C7249 /* SemesterService.swift */; };
 		7C10F06B1CF6248E0072ADF2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C10F06A1CF6248E0072ADF2 /* AppDelegate.swift */; };
 		7C10F0721CF6248E0072ADF2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7C10F0711CF6248E0072ADF2 /* Assets.xcassets */; };
 		7C10F0751CF6248E0072ADF2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7C10F0731CF6248E0072ADF2 /* LaunchScreen.storyboard */; };
@@ -39,6 +40,7 @@
 		213C51745976BA651C162C21 /* Pods_AdvisorApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AdvisorApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4405C1C85B67C6B2C1D61C44 /* Pods-AdvisorApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AdvisorApp.debug.xcconfig"; path = "Pods/Target Support Files/Pods-AdvisorApp/Pods-AdvisorApp.debug.xcconfig"; sourceTree = "<group>"; };
 		5065FA252093F0389BBAF5BD /* Pods-AdvisorApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AdvisorApp.release.xcconfig"; path = "Pods/Target Support Files/Pods-AdvisorApp/Pods-AdvisorApp.release.xcconfig"; sourceTree = "<group>"; };
+		7C0B569E1D006083009C7249 /* SemesterService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SemesterService.swift; sourceTree = "<group>"; };
 		7C10F0671CF6248E0072ADF2 /* AdvisorApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AdvisorApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7C10F06A1CF6248E0072ADF2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7C10F0711CF6248E0072ADF2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -158,6 +160,7 @@
 		7CAA9DFE1CFA2118001B980C /* Service */ = {
 			isa = PBXGroup;
 			children = (
+				7C0B569E1D006083009C7249 /* SemesterService.swift */,
 				7CAA9E031CFA21D9001B980C /* UserService.swift */,
 				7CAA9E071CFB24B6001B980C /* Auth.swift */,
 				7CD72BA51CFC43F500140C60 /* Service.swift */,
@@ -310,6 +313,7 @@
 				7C10F09E1CF7338C0072ADF2 /* User.swift in Sources */,
 				7C10F0A51CF733AE0072ADF2 /* StudyPlanTableViewController.swift in Sources */,
 				7C10F0AE1CF7965A0072ADF2 /* UvViewController.swift in Sources */,
+				7C0B569F1D006083009C7249 /* SemesterService.swift in Sources */,
 				7CAA9E041CFA21D9001B980C /* UserService.swift in Sources */,
 				7CD72BA61CFC43F500140C60 /* Service.swift in Sources */,
 				7C10F09A1CF7338C0072ADF2 /* Location.swift in Sources */,
