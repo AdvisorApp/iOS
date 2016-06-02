@@ -1,3 +1,10 @@
+//
+//  Semester.swift
+//  AdvisorApp
+//
+//  Created by Clément GARBAY on 26/05/2016.
+//
+
 import UIKit
 import SwiftyJSON
 import EVReflection
