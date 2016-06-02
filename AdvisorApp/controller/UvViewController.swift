@@ -16,7 +16,7 @@ class UvViewController: UIViewController, UITableViewDelegate, UITableViewDataSo
     var selectedSemester: Semester? {
         didSet {
             if let semester = selectedSemester {
-                navigationItem.title = "Semestre \(semester.number!)"
+                navigationItem.title = "Semestre \(semester.number)"
             }
         }
     }
@@ -33,14 +33,14 @@ class UvViewController: UIViewController, UITableViewDelegate, UITableViewDataSo
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return (selectedSemester?.uvs!.count)!
+        return (selectedSemester?.uvs.count)!
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) ->       UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("UvCell", forIndexPath: indexPath)
-        let uv = (selectedSemester?.uvs![indexPath.row])! as Uv
+        let uv = (selectedSemester?.uvs[indexPath.row])! as Uv
         
-        cell.textLabel?.text = uv.name!
+        cell.textLabel?.text = uv.name
         cell.detailTextLabel?.text = uv.description
         if uv.isFinished() {
             cell.accessoryType = .Checkmark
@@ -57,7 +57,7 @@ class UvViewController: UIViewController, UITableViewDelegate, UITableViewDataSo
                 if let uvDetailViewController = navigationController.topViewController as? UvDetailViewController {
                     let indexPath = uvTableView.indexPathForCell(cell)
                     if let index = indexPath?.row {
-                        uvDetailViewController.selectedUv = selectedSemester?.uvs![index]
+                        uvDetailViewController.selectedUv = selectedSemester?.uvs[index]
                     }
                 }
             }

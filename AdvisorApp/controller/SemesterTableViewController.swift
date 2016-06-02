@@ -34,12 +34,12 @@ class SemesterTableViewController: UITableViewController {
     }
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return (selectedStudyPlan?.semesters!.count)!
+        return (selectedStudyPlan?.semesters.count)!
     }
 
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("SemesterCell", forIndexPath: indexPath)
-        let semester = (selectedStudyPlan?.semesters![indexPath.row])! as Semester
+        let semester = (selectedStudyPlan?.semesters[indexPath.row])! as Semester
         
         cell.textLabel?.text = "Semestre \(semester.number)"
 
@@ -88,7 +88,7 @@ class SemesterTableViewController: UITableViewController {
             if let uvViewController = segue.destinationViewController as? UvViewController, cell = sender as? UITableViewCell {
                 let indexPath = tableView.indexPathForCell(cell)
                 if let index = indexPath?.row {
-                    uvViewController.selectedSemester = (selectedStudyPlan?.semesters![index])!
+                    uvViewController.selectedSemester = (selectedStudyPlan?.semesters[index])!
                 }
             }
         }

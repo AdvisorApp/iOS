@@ -12,7 +12,6 @@
 		7C10F0721CF6248E0072ADF2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7C10F0711CF6248E0072ADF2 /* Assets.xcassets */; };
 		7C10F0751CF6248E0072ADF2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7C10F0731CF6248E0072ADF2 /* LaunchScreen.storyboard */; };
 		7C10F09A1CF7338C0072ADF2 /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C10F0921CF7338C0072ADF2 /* Location.swift */; };
-		7C10F09B1CF7338C0072ADF2 /* Option.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C10F0931CF7338C0072ADF2 /* Option.swift */; };
 		7C10F09C1CF7338C0072ADF2 /* Semester.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C10F0941CF7338C0072ADF2 /* Semester.swift */; };
 		7C10F09D1CF7338C0072ADF2 /* StudyPlan.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C10F0951CF7338C0072ADF2 /* StudyPlan.swift */; };
 		7C10F09E1CF7338C0072ADF2 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C10F0961CF7338C0072ADF2 /* User.swift */; };
@@ -46,7 +45,6 @@
 		7C10F0741CF6248E0072ADF2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		7C10F0761CF6248E0072ADF2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7C10F0921CF7338C0072ADF2 /* Location.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
-		7C10F0931CF7338C0072ADF2 /* Option.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Option.swift; sourceTree = "<group>"; };
 		7C10F0941CF7338C0072ADF2 /* Semester.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Semester.swift; sourceTree = "<group>"; };
 		7C10F0951CF7338C0072ADF2 /* StudyPlan.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StudyPlan.swift; sourceTree = "<group>"; };
 		7C10F0961CF7338C0072ADF2 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
@@ -128,7 +126,6 @@
 			isa = PBXGroup;
 			children = (
 				7C10F0921CF7338C0072ADF2 /* Location.swift */,
-				7C10F0931CF7338C0072ADF2 /* Option.swift */,
 				7C10F0941CF7338C0072ADF2 /* Semester.swift */,
 				7C10F0951CF7338C0072ADF2 /* StudyPlan.swift */,
 				7C10F0961CF7338C0072ADF2 /* User.swift */,
@@ -314,7 +311,6 @@
 				7C10F0A51CF733AE0072ADF2 /* StudyPlanTableViewController.swift in Sources */,
 				7C10F0AE1CF7965A0072ADF2 /* UvViewController.swift in Sources */,
 				7CAA9E041CFA21D9001B980C /* UserService.swift in Sources */,
-				7C10F09B1CF7338C0072ADF2 /* Option.swift in Sources */,
 				7CD72BA61CFC43F500140C60 /* Service.swift in Sources */,
 				7C10F09A1CF7338C0072ADF2 /* Location.swift in Sources */,
 				7CAA9E081CFB24B6001B980C /* Auth.swift in Sources */,
