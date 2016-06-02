@@ -14,13 +14,9 @@ class SemesterTableViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem()
         
+        self.refreshControl?.addTarget(self, action: #selector(SemesterTableViewController.refresh(_:)), forControlEvents: UIControlEvents.ValueChanged)
+
         refresh()
     }
 
@@ -47,41 +43,21 @@ class SemesterTableViewController: UITableViewController {
 
         return cell
     }
-
-    /*
-    // Override to support conditional editing of the table view.
-    override func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
-        // Return false if you do not want the specified item to be editable.
-        return true
-    }
-    */
-
-    /*
-    // Override to support editing the table view.
+    
     override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
-        if editingStyle == .Delete {
-            // Delete the row from the data source
-            tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
-        } else if editingStyle == .Insert {
-            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-        }    
+        if (editingStyle == UITableViewCellEditingStyle.Delete) {
+            Alert.confirm("Are you sure you want to delete this semester ?", message: "All associated data will be deleted.", viewController: self) {
+                let semester = self.selectedStudyPlan?.semesters[indexPath.row]
+                SemesterService.delete(semester!.id, failure: { error in
+                    Alert.show("Error when deleting", viewController: self)
+                    print(error)
+                }) {
+                    self.selectedStudyPlan?.semesters.removeAtIndex(indexPath.row)
+                    tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Automatic)
+                }
+            }
+        }
     }
-    */
-
-    /*
-    // Override to support rearranging the table view.
-    override func tableView(tableView: UITableView, moveRowAtIndexPath fromIndexPath: NSIndexPath, toIndexPath: NSIndexPath) {
-
-    }
-    */
-
-    /*
-    // Override to support conditional rearranging of the table view.
-    override func tableView(tableView: UITableView, canMoveRowAtIndexPath indexPath: NSIndexPath) -> Bool {
-        // Return false if you do not want the item to be re-orderable.
-        return true
-    }
-    */
 
     // MARK: - Navigation
 
@@ -100,9 +76,14 @@ class SemesterTableViewController: UITableViewController {
         
     }
     
-    @IBAction func saveSemester(segue: UIStoryboardSegue) {
-        if let addSemesterTableViewController = segue.sourceViewController as? AddSemesterTableViewController {
-            // Get new semester and add it to the table view
+    @IBAction func addSemester(sender: UIBarButtonItem) {
+        SemesterService.add(selectedStudyPlan!.id, failure: { error in
+            Alert.show("Une erreur est survenue", viewController: self)
+        }) { (semester: Semester) in
+            self.selectedStudyPlan?.semesters.append(semester)
+            dispatch_async(dispatch_get_main_queue(), {
+                self.tableView.reloadData()
+            })
         }
     }
     
@@ -114,7 +95,7 @@ class SemesterTableViewController: UITableViewController {
     func refresh() {
         if Auth.isAuthenticated() {
             SemesterService.get(selectedStudyPlan!.id, failure: { error in
-                self.showAlert("Une erreur est survenue")
+                Alert.show("Une erreur est survenue", viewController: self)
                 self.refreshControl?.endRefreshing()
             }) { (semesters: [Semester]) in
                 self.selectedStudyPlan?.semesters = semesters
@@ -124,11 +105,5 @@ class SemesterTableViewController: UITableViewController {
                 })
             }
         }
-    }
-
-    func showAlert(title: String) {
-        let alert = UIAlertController(title: title, message: nil, preferredStyle: UIAlertControllerStyle.Alert)
-        alert.addAction(UIAlertAction(title: "Ok", style: .Default, handler: nil))
-        self.presentViewController(alert, animated: true, completion: nil)
     }
 }

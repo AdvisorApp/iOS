@@ -21,4 +21,30 @@ class SemesterService {
             succeed!(semesters)
         }
     }
+    
+    static func add(
+        studyPlanId: Int,
+        failure fail: (RequestError -> ())? = nil,
+        success succeed: (Semester -> ())? = nil
+    ) {
+        
+        Service.request(.POST, path: "/api/studyPlans/\(studyPlanId)/semesters", parameters: [:], failure: { error in
+            fail!(error)
+        }) { (semester: Semester) in
+            succeed!(semester)
+        }
+    }
+    
+    static func delete(
+        id: Int,
+        failure fail: (RequestError -> ())? = nil,
+        success succeed: (Void -> ())? = nil
+    ) {
+        
+        Service.request(.DELETE, path: "/api/semesters/\(id)", failure: { error in
+            fail!(error)
+        }) { _ in
+            succeed!()
+        }
+    }
 }
