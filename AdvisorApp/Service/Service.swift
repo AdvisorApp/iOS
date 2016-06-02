@@ -66,7 +66,7 @@ class Service {
                 case .Failure(let error):
                     fail!(RequestError.fromNSError(error))
                 }
-        }
+            }
     }
     
     static func request<T: EVObject>(
