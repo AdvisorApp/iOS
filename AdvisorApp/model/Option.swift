@@ -7,8 +7,9 @@
 //
 
 import UIKit
+import EVReflection
 
-struct Option {
-    var id: Double
-    var name: String
+class Option: EVObject {
+    var id: Double?
+    var name: String?
 }

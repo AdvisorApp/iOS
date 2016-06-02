@@ -7,17 +7,12 @@
 //
 
 import UIKit
+import EVReflection
 
-struct StudyPlan {
-    var id: Double
+class StudyPlan: EVObject {
+    var id: Double?
     var user: User?
-    var name: String
-    var semesters: [Semester]
+    var name: String?
+    var semesters: [Semester]?
     var options: Option?
-    
-    init(id: Double, name: String, semesters: [Semester]) {
-        self.id = id
-        self.name = name
-        self.semesters = semesters
-    }
 }

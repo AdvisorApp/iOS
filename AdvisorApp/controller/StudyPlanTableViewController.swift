@@ -11,14 +11,14 @@ import UIKit
 class StudyPlanTableViewController: UITableViewController {
     
     var studyPlans: [StudyPlan] = [
-        StudyPlan(id: 1, name: "StudyPlan1", semesters: [
-            Semester(id: 1, number: 1, uvs: [
-                Uv(name: "UV1", description: "Le premier UV", chs: 2),
-                Uv(name: "UV2", description: "Le second UV", chs: 4)
-            ]),
-            Semester(id: 2, number: 2, uvs: [])
-        ]),
-        StudyPlan(id: 2, name: "StudyPlan2", semesters: [])
+        StudyPlan(dictionary: ["id": 1, "name": "StudyPlan1", "semesters": [
+            Semester(dictionary: ["id": 1, "number": 1, "uvs": [
+                Uv(dictionary: ["id": 1, "name": "UV1", "chs": 2]),
+                Uv(dictionary: ["id": 2, "name": "UV2", "chs": 4])
+            ]]),
+            Semester(dictionary: ["id": 2, "number": 2, "uvs": []])
+        ]]),
+        StudyPlan(dictionary: ["id": 2, "name": "StudyPlan2", "semesters": []])
     ]
 
     override func viewDidLoad() {
@@ -39,6 +39,8 @@ class StudyPlanTableViewController: UITableViewController {
     override func viewDidAppear(animated: Bool) {
         if !Auth.isAuthenticated() {
             self.performSegueWithIdentifier("LoginSegue", sender: self)
+        } else {
+            
         }
     }
 

@@ -8,20 +8,32 @@
 
 import UIKit
 import SwiftyJSON
+import EVReflection
 
-struct User {
-    var id: Double
+class User: EVObject {
+    var id: Double?
+    var firstName: String?
+    var lastName: String?
+    var email: String?
+    
+//    static func fromJSON(json: JSON) -> User {
+//        let id = json["id"].doubleValue
+//        let firstName = json["firstName"].stringValue
+//        let lastName = json["lastName"].stringValue
+//        let email = json["email"].stringValue
+//        
+//        return User(id: id, firstName: firstName, lastName: lastName, email: email)
+//    }
+}
+
+
+struct UserSignUp {
+    var email: String
+    var password: String
     var firstName: String
     var lastName: String
-    var email: String
+    var remoteId: String
     
-    static func fromJSON(json: JSON) -> User {
-        let id = json["id"].doubleValue
-        let firstName = json["firstName"].stringValue
-        let lastName = json["lastName"].stringValue
-        let email = json["email"].stringValue
-        
-        return User(id: id, firstName: firstName, lastName: lastName, email: email)
-    }
+    
 }
 
