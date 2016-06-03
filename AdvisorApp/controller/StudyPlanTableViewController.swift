@@ -28,10 +28,7 @@ class StudyPlanTableViewController: UITableViewController {
         
         self.refreshControl?.addTarget(self, action: #selector(StudyPlanTableViewController.refresh(_:)), forControlEvents: UIControlEvents.ValueChanged)
 
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-        
-        //refresh()
+        refresh()
     }
 
     override func didReceiveMemoryWarning() {
@@ -73,8 +70,7 @@ class StudyPlanTableViewController: UITableViewController {
             Alert.confirm("Are you sure you want to delete this study plan ?", message: "All associated data will be deleted.", viewController: self) {
                 let studyPlan = self.studyPlans[indexPath.row]
                 StudyPlanService.delete(studyPlan.id, failure: { error in
-                    Alert.show("Erreur lors de la suppression", viewController: self)
-                    print(error)
+                    Alert.show("An error has occurred when deleting", viewController: self)
                 }) {
                     self.studyPlans.removeAtIndex(indexPath.row)
                     tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Automatic)
@@ -127,7 +123,7 @@ class StudyPlanTableViewController: UITableViewController {
     func refresh() {
         if Auth.isAuthenticated() {
             StudyPlanService.get(Auth.getConnectedUserId()!, failure: { error in
-                Alert.show("Une erreur est survenue", viewController: self)
+                Alert.show("An error has occurred", viewController: self)
                 self.refreshControl?.endRefreshing()
             }) { (studyPlans: [StudyPlan]) in
                 self.studyPlans = studyPlans

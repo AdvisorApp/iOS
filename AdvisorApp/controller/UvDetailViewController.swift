@@ -43,4 +43,7 @@ class UvDetailViewController: UIViewController {
     }
     */
 
+    @IBAction func done(sender: UIBarButtonItem) {
+        self.dismissViewControllerAnimated(true, completion: nil)
+    }
 }

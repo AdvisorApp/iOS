@@ -35,6 +35,20 @@ class SemesterService {
         }
     }
     
+    static func addUv(
+        semesterId: Int,
+        uvId: Int,
+        failure fail: (RequestError -> ())? = nil,
+        success succeed: (Semester -> ())? = nil
+    ) {
+        
+        Service.request(.PUT, path: "/api/semesters/\(semesterId)/uv/\(uvId)", parameters: [:], failure: { error in
+            fail!(error)
+        }) { (semester: Semester) in
+            succeed!(semester)
+        }
+    }
+    
     static func delete(
         id: Int,
         failure fail: (RequestError -> ())? = nil,

@@ -39,7 +39,7 @@ class SemesterTableViewController: UITableViewController {
         let cell = tableView.dequeueReusableCellWithIdentifier("SemesterCell", forIndexPath: indexPath)
         let semester = (selectedStudyPlan?.semesters[indexPath.row])! as Semester
         
-        cell.textLabel?.text = "Semestre \(semester.number)"
+        cell.textLabel?.text = "Semester \(semester.number)"
 
         return cell
     }
@@ -49,7 +49,7 @@ class SemesterTableViewController: UITableViewController {
             Alert.confirm("Are you sure you want to delete this semester ?", message: "All associated data will be deleted.", viewController: self) {
                 let semester = self.selectedStudyPlan?.semesters[indexPath.row]
                 SemesterService.delete(semester!.id, failure: { error in
-                    Alert.show("Error when deleting", viewController: self)
+                    Alert.show("An error has occurred when deleting", viewController: self)
                     print(error)
                 }) {
                     self.selectedStudyPlan?.semesters.removeAtIndex(indexPath.row)
@@ -78,7 +78,7 @@ class SemesterTableViewController: UITableViewController {
     
     @IBAction func addSemester(sender: UIBarButtonItem) {
         SemesterService.add(selectedStudyPlan!.id, failure: { error in
-            Alert.show("Une erreur est survenue", viewController: self)
+            Alert.show("An error has occurred", viewController: self)
         }) { (semester: Semester) in
             self.selectedStudyPlan?.semesters.append(semester)
             dispatch_async(dispatch_get_main_queue(), {
@@ -95,7 +95,7 @@ class SemesterTableViewController: UITableViewController {
     func refresh() {
         if Auth.isAuthenticated() {
             SemesterService.get(selectedStudyPlan!.id, failure: { error in
-                Alert.show("Une erreur est survenue", viewController: self)
+                Alert.show("An error has occurred", viewController: self)
                 self.refreshControl?.endRefreshing()
             }) { (semesters: [Semester]) in
                 self.selectedStudyPlan?.semesters = semesters

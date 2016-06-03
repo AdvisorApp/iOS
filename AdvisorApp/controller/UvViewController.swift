@@ -16,7 +16,7 @@ class UvViewController: UIViewController, UITableViewDelegate, UITableViewDataSo
     var selectedSemester: Semester? {
         didSet {
             if let semester = selectedSemester {
-                navigationItem.title = "Semestre \(semester.number)"
+                navigationItem.title = "Semester \(semester.number)"
             }
         }
     }
@@ -24,19 +24,18 @@ class UvViewController: UIViewController, UITableViewDelegate, UITableViewDataSo
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        refreshCreditHoursLabel()
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return (selectedSemester?.uvs.count)!
     }
     
-    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) ->       UITableViewCell {
+    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("UvCell", forIndexPath: indexPath)
         let uv = (selectedSemester?.uvs[indexPath.row])! as Uv
         
@@ -52,7 +51,7 @@ class UvViewController: UIViewController, UITableViewDelegate, UITableViewDataSo
     // MARK: - Navigation
 
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        if segue.identifier == "UvDetailSegue" {
+        if segue.identifier == "FromUvToUvDetailSegue" {
             if let navigationController = segue.destinationViewController as? UINavigationController, cell = sender as? UITableViewCell {
                 if let uvDetailViewController = navigationController.topViewController as? UvDetailViewController {
                     let indexPath = uvTableView.indexPathForCell(cell)
@@ -61,17 +60,20 @@ class UvViewController: UIViewController, UITableViewDelegate, UITableViewDataSo
                     }
                 }
             }
+        }  else if segue.identifier == "AddUvSegue" {
+            if let navigationController = segue.destinationViewController as? UINavigationController {
+                if let addUvViewController = navigationController.topViewController as? AddUvTableViewController {
+                    addUvViewController.selectedSemester = selectedSemester
+                }
+            }
         }
     }
     
     @IBAction func cancelToUvViewController(segue: UIStoryboardSegue) {
         
     }
-    
-    @IBAction func saveUv(segue: UIStoryboardSegue) {
-        if let addUvTableViewController = segue.sourceViewController as? AddUvTableViewController {
-            // Get new semester and add it to the table view
-        }
-    }
 
+    func refreshCreditHoursLabel() {
+        creditHoursLabel.text = selectedSemester?.getSumCreditHours().description
+    }
 }

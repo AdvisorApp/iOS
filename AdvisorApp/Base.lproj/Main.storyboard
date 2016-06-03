@@ -379,7 +379,7 @@
                                             </subviews>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <segue destination="1uW-Nl-f83" kind="show" identifier="UvDetailSegue" id="0mx-pt-LnV"/>
+                                            <segue destination="1uW-Nl-f83" kind="presentation" identifier="UvDetailSegue" id="0mx-pt-LnV"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -395,13 +395,13 @@
                     <navigationItem key="navigationItem" title="&lt;semester&gt;" id="Y9k-qm-ISM">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="tcK-iJ-u7Z">
                             <connections>
-                                <segue destination="ic2-Yw-a4B" kind="show" identifier="AddUvSegue" id="Ewf-Q0-e08"/>
+                                <segue destination="ic2-Yw-a4B" kind="presentation" identifier="AddUvSegue" id="Ewf-Q0-e08"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
-                        <outlet property="creditHoursLabel" destination="FS1-d8-Fqp" id="s2v-nh-7PJ"/>
+                        <outlet property="creditHoursLabel" destination="FS1-d8-Fqp" id="GFt-0T-vXb"/>
                         <outlet property="uvTableView" destination="6XY-na-s40" id="j8J-lU-F1O"/>
                     </connections>
                 </viewController>
@@ -458,7 +458,7 @@
                     <navigationItem key="navigationItem" title="&lt;uv&gt;" id="2hS-lL-lcL">
                         <barButtonItem key="rightBarButtonItem" systemItem="done" id="zBs-Ew-Its">
                             <connections>
-                                <segue destination="ahG-Il-Qkc" kind="unwind" unwindAction="cancelToUvViewController:" id="AzD-Nm-Qsq"/>
+                                <action selector="done:" destination="qtf-RF-foA" id="uIc-TM-xJw"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -467,7 +467,6 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Jg8-tf-se2" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <exit id="ahG-Il-Qkc" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="3550.5" y="371.5"/>
         </scene>
@@ -531,34 +530,63 @@
         <scene sceneID="UeA-QR-mJC">
             <objects>
                 <tableViewController id="U9W-9i-UCs" userLabel="Add UV" customClass="AddUvTableViewController" customModule="AdvisorApp" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="Wbj-HH-tbR" userLabel="Add UV Table View">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="86" sectionHeaderHeight="28" sectionFooterHeight="28" id="Wbj-HH-tbR" userLabel="Add UV Table View">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="UvCell" textLabel="AqO-W7-fC3" detailTextLabel="5Wb-4X-HIy" style="IBUITableViewCellStyleSubtitle" id="dVP-Vm-DHJ" customClass="UvCell">
-                                <rect key="frame" x="0.0" y="92" width="375" height="44"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="9" reuseIdentifier="AddUvCell" rowHeight="86" id="dVP-Vm-DHJ" customClass="UvCell" customModule="AdvisorApp" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="92" width="375" height="86"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="dVP-Vm-DHJ" id="igt-qD-QFp">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="85.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="AqO-W7-fC3">
-                                            <rect key="frame" x="15" y="6" width="31.5" height="19.5"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9qY-SV-cjD">
+                                            <rect key="frame" x="8" y="8" width="299" height="21"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Subtitle" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="5Wb-4X-HIy">
-                                            <rect key="frame" x="15" y="25.5" width="40.5" height="13.5"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="11"/>
-                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Prerequisites : " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NdG-Tr-iE0" userLabel="Prerequisites Label">
+                                            <rect key="frame" x="8" y="37" width="97" height="21"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="kjdf; dsqfs; sqdfqd; sdqfqsdfds; " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="c7s-ng-gLe" userLabel="Prerequisites">
+                                            <rect key="frame" x="105" y="37" width="202" height="21"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Corequisites :" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ocf-xh-0fu" userLabel="Corequisites Label">
+                                            <rect key="frame" x="8" y="56" width="89" height="21"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="infoLight" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Vg2-eV-nEN" userLabel="Info">
+                                            <rect key="frame" x="345" y="32" width="22" height="22"/>
+                                            <connections>
+                                                <segue destination="1uW-Nl-f83" kind="presentation" id="N8g-8j-9cU"/>
+                                            </connections>
+                                        </button>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="kjdf; dsqfs; sqdfqd; sdqfqsdfds; " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QVi-16-m7L" userLabel="Corequisites">
+                                            <rect key="frame" x="105" y="56" width="202" height="21"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="corequisitesLabel" destination="QVi-16-m7L" id="jbZ-Eh-Ey9"/>
+                                    <outlet property="infoButton" destination="Vg2-eV-nEN" id="pof-20-XC6"/>
+                                    <outlet property="nameLabel" destination="9qY-SV-cjD" id="IRm-Mh-aJl"/>
+                                    <outlet property="prerequisitesLabel" destination="c7s-ng-gLe" id="wah-6Q-sfF"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <sections/>
@@ -571,11 +599,6 @@
                         <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="cji-Ev-vyL">
                             <connections>
                                 <segue destination="CRM-N9-2bL" kind="unwind" unwindAction="cancelToUvViewController:" id="qBQ-tC-hLA"/>
-                            </connections>
-                        </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" systemItem="done" id="feK-xF-HTh">
-                            <connections>
-                                <segue destination="CRM-N9-2bL" kind="unwind" unwindAction="saveUv:" id="hbA-lY-wIE"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -622,4 +645,7 @@
             <point key="canvasLocation" x="951.5" y="1221.5"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="N8g-8j-9cU"/>
+    </inferredMetricsTieBreakers>
 </document>
