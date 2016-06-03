@@ -51,8 +51,6 @@ class AddUvTableViewController: UITableViewController {
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         let uv = remainingUvs[indexPath.row] as Uv
         
-        self.dismissViewControllerAnimated(true, completion: nil)
-        
         SemesterService.addUv((selectedSemester?.id)!, uvId: uv.id, failure: { error in
             Alert.show("An error has occurred", viewController: self)
         }, success: { _ in
@@ -67,10 +65,12 @@ class AddUvTableViewController: UITableViewController {
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == "FromAddUvToUvDetailSegue" {
-            if let uvDetailViewController = segue.destinationViewController as? UvDetailViewController, cell = sender as? UITableViewCell {
-                let indexPath = tableView.indexPathForCell(cell)
-                if let index = indexPath?.row {
-                    uvDetailViewController.selectedUv = remainingUvs[index]
+            if let navigationController = segue.destinationViewController as? UINavigationController, cell = sender as? UITableViewCell {
+                if let uvDetailViewController = navigationController.topViewController as? UvDetailViewController {
+                    let indexPath = tableView.indexPathForCell(cell)
+                    if let index = indexPath?.row {
+                        uvDetailViewController.selectedUv = remainingUvs[index]
+                    }
                 }
             }
         }

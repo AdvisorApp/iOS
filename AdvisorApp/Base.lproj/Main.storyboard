@@ -379,7 +379,7 @@
                                             </subviews>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <segue destination="1uW-Nl-f83" kind="presentation" identifier="UvDetailSegue" id="0mx-pt-LnV"/>
+                                            <segue destination="1uW-Nl-f83" kind="presentation" identifier="FromUvToUvDetailSegue" id="0mx-pt-LnV"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -570,7 +570,7 @@
                                         <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="infoLight" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Vg2-eV-nEN" userLabel="Info">
                                             <rect key="frame" x="345" y="32" width="22" height="22"/>
                                             <connections>
-                                                <segue destination="1uW-Nl-f83" kind="presentation" id="N8g-8j-9cU"/>
+                                                <segue destination="1uW-Nl-f83" kind="presentation" identifier="FromAddUvToUvDetailSegue" id="N8g-8j-9cU"/>
                                             </connections>
                                         </button>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="kjdf; dsqfs; sqdfqd; sdqfqsdfds; " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QVi-16-m7L" userLabel="Corequisites">
