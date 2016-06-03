@@ -26,7 +26,7 @@ class UserService {
         Service.request(.POST, path: "/api/auths/token", parameters: parameters, failure: { error in
             fail!(error)
         }) { (token: Token) in
-            Auth.setToken(token.token!)
+            Auth.setToken(token.token)
             succeed!()
         }
     }

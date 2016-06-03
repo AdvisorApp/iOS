@@ -6,4 +6,5 @@ target 'AdvisorApp' do
   pod 'AlamofireSwiftyJSON'
   pod 'AlamofireJsonToObjects'
   pod 'JWTDecode'
+  pod 'Cosmos', '~> 1.2'
 end
