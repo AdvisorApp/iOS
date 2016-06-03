@@ -11,20 +11,11 @@ import UIKit
 class UvDetailViewController: UIViewController {
     
     @IBOutlet weak var descriptionTextView: UITextView!
-    
-    var selectedUv: Uv? {
-        didSet {
-            if let uv = selectedUv {
-                navigationItem.title = uv.name
-                //descriptionTextView.text = uv.description
-            }
-        }
-    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        navigationItem.title = SharedData.selectedUv!.name
     }
 
     override func didReceiveMemoryWarning() {
@@ -44,6 +35,7 @@ class UvDetailViewController: UIViewController {
     */
 
     @IBAction func done(sender: UIBarButtonItem) {
+        SharedData.selectedUv = nil
         self.dismissViewControllerAnimated(true, completion: nil)
     }
 }

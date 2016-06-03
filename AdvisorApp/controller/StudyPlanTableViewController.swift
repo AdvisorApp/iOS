@@ -83,11 +83,8 @@ class StudyPlanTableViewController: UITableViewController {
 
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == "SemesterSegue" {
-            if let semesterViewController = segue.destinationViewController as? SemesterTableViewController, cell = sender as? UITableViewCell {
-                let indexPath = tableView.indexPathForCell(cell)
-                if let index = indexPath?.row {
-                    semesterViewController.selectedStudyPlan = studyPlans[index]
-                }
+            if let indexPath = tableView.indexPathForSelectedRow {
+                SharedData.selectedStudyPlan = studyPlans[indexPath.row]
             }
         }
     }

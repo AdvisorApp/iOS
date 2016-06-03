@@ -32,6 +32,7 @@
 		7CAA9E041CFA21D9001B980C /* UserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CAA9E031CFA21D9001B980C /* UserService.swift */; };
 		7CAA9E081CFB24B6001B980C /* Auth.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CAA9E071CFB24B6001B980C /* Auth.swift */; };
 		7CBA02C71D021E4100C8B2BA /* UvCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CBA02C61D021E4100C8B2BA /* UvCell.swift */; };
+		7CBA02C91D0233D900C8B2BA /* SharedData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CBA02C81D0233D900C8B2BA /* SharedData.swift */; };
 		7CD72BA61CFC43F500140C60 /* Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CD72BA51CFC43F500140C60 /* Service.swift */; };
 		7CD72BA81CFC7BCB00140C60 /* StudyPlanService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CD72BA71CFC7BCB00140C60 /* StudyPlanService.swift */; };
 		7CE0F1D01CFE2F6900724D04 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7CE0F1CE1CFE2F6900724D04 /* Main.storyboard */; };
@@ -68,6 +69,7 @@
 		7CAA9E031CFA21D9001B980C /* UserService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserService.swift; sourceTree = "<group>"; };
 		7CAA9E071CFB24B6001B980C /* Auth.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Auth.swift; sourceTree = "<group>"; };
 		7CBA02C61D021E4100C8B2BA /* UvCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UvCell.swift; path = Component/UvCell.swift; sourceTree = "<group>"; };
+		7CBA02C81D0233D900C8B2BA /* SharedData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SharedData.swift; sourceTree = "<group>"; };
 		7CD72BA51CFC43F500140C60 /* Service.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Service.swift; sourceTree = "<group>"; };
 		7CD72BA71CFC7BCB00140C60 /* StudyPlanService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StudyPlanService.swift; sourceTree = "<group>"; };
 		7CE0F1CF1CFE2F6900724D04 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = AdvisorApp/Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -179,6 +181,7 @@
 				7CD72BA51CFC43F500140C60 /* Service.swift */,
 				7CD72BA71CFC7BCB00140C60 /* StudyPlanService.swift */,
 				7C503DCA1D017D4F00FB60E8 /* UvService.swift */,
+				7CBA02C81D0233D900C8B2BA /* SharedData.swift */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -334,6 +337,7 @@
 				7C10F09C1CF7338C0072ADF2 /* Semester.swift in Sources */,
 				7C2F6BD71CF8EA1C00E8AF5B /* SignupViewController.swift in Sources */,
 				7CBA02C71D021E4100C8B2BA /* UvCell.swift in Sources */,
+				7CBA02C91D0233D900C8B2BA /* SharedData.swift in Sources */,
 				7C10F09E1CF7338C0072ADF2 /* User.swift in Sources */,
 				7C10F0A51CF733AE0072ADF2 /* StudyPlanTableViewController.swift in Sources */,
 				7C10F0AE1CF7965A0072ADF2 /* UvViewController.swift in Sources */,

@@ -55,6 +55,7 @@ class AddUvTableViewController: UITableViewController {
             Alert.show("An error has occurred", viewController: self)
         }, success: { _ in
             // TODO : adding new UV to UV list (UvView)
+            // SharedData.selectedSemester?.uvs.append(uv)
             self.dismissViewControllerAnimated(true, completion: nil)
         })
     }
@@ -62,16 +63,10 @@ class AddUvTableViewController: UITableViewController {
 
     // MARK: - Navigation
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == "FromAddUvToUvDetailSegue" {
-            if let navigationController = segue.destinationViewController as? UINavigationController, cell = sender as? UITableViewCell {
-                if let uvDetailViewController = navigationController.topViewController as? UvDetailViewController {
-                    let indexPath = tableView.indexPathForCell(cell)
-                    if let index = indexPath?.row {
-                        uvDetailViewController.selectedUv = remainingUvs[index]
-                    }
-                }
+            if let indexPath = tableView.indexPathForSelectedRow {
+                SharedData.selectedUv = remainingUvs[indexPath.row]
             }
         }
     }
@@ -79,8 +74,8 @@ class AddUvTableViewController: UITableViewController {
     // Refresh table data
     func refresh() {
         if Auth.isAuthenticated() {
-            UvService.get((selectedSemester?.studyPlan?.id)!, failure: { error in
-                Alert.show("Une erreur est survenue", viewController: self)
+            UvService.get((SharedData.selectedSemester?.studyPlan?.id)!, failure: { error in
+                Alert.show("An error has occurred", viewController: self)
             }) { (uvs: [Uv]) in
                 self.remainingUvs = uvs
                 dispatch_async(dispatch_get_main_queue(), {
