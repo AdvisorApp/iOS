@@ -484,7 +484,7 @@
                             <rect key="frame" x="0.0" y="64" width="375" height="235"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <subviews>
-                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" text="Commentaires :" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="Hc4-Ik-78O">
+                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" editable="NO" text="Commentaires :" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="Hc4-Ik-78O">
                                     <rect key="frame" x="15" y="199" width="196" height="37"/>
                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     <color key="textColor" red="0.5" green="0.0" blue="0.5" alpha="1" colorSpace="calibratedRGB"/>
@@ -502,14 +502,14 @@
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         </view>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="UvDetailCell" id="SKt-Pf-0dw" userLabel="UvDetailCell">
-                                <rect key="frame" x="0.0" y="327" width="375" height="44"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="UvDetailCell" rowHeight="83" id="SKt-Pf-0dw" userLabel="UvDetailCell" customClass="BasicCell" customModule="AdvisorApp" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="327" width="375" height="83"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="SKt-Pf-0dw" id="uq8-YZ-j8q">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="82.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2i1-Zh-t8u">
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="85" translatesAutoresizingMaskIntoConstraints="NO" id="2i1-Zh-t8u">
                                             <rect key="frame" x="25" y="11" width="309" height="21"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -517,11 +517,14 @@
                                         </label>
                                     </subviews>
                                     <constraints>
-                                        <constraint firstItem="2i1-Zh-t8u" firstAttribute="top" secondItem="uq8-YZ-j8q" secondAttribute="top" constant="20" id="jdh-V9-KYk"/>
-                                        <constraint firstItem="2i1-Zh-t8u" firstAttribute="leading" secondItem="uq8-YZ-j8q" secondAttribute="leading" constant="20" id="kJa-fI-mIY"/>
-                                        <constraint firstAttribute="trailing" secondItem="2i1-Zh-t8u" secondAttribute="trailing" constant="20" id="wfS-XX-X6W"/>
+                                        <constraint firstAttribute="trailing" secondItem="2i1-Zh-t8u" secondAttribute="trailing" constant="20" id="J1y-Aa-cav"/>
+                                        <constraint firstItem="2i1-Zh-t8u" firstAttribute="leading" secondItem="uq8-YZ-j8q" secondAttribute="leading" constant="20" id="NaN-aq-Rca"/>
+                                        <constraint firstAttribute="bottom" secondItem="2i1-Zh-t8u" secondAttribute="bottom" constant="20" id="kbI-oe-94r"/>
                                     </constraints>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="label" destination="2i1-Zh-t8u" id="9m3-U6-iom"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -539,7 +542,6 @@
                     </navigationItem>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
-                        <outlet property="uvCellLabel" destination="2i1-Zh-t8u" id="AdA-V7-orc"/>
                         <outlet property="uvDescription" destination="vRR-VX-3Wh" id="quo-hk-cU9"/>
                     </connections>
                 </tableViewController>

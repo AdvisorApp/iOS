@@ -16,7 +16,6 @@ class UvDetailViewController: UITableViewController {
     
     @IBOutlet weak var uvDescription: UITextView!
     
-    @IBOutlet weak var uvCellLabel: UILabel!
     var uvComments: [UvUser] = []
 
     override func viewDidLoad() {
@@ -55,12 +54,11 @@ class UvDetailViewController: UITableViewController {
 
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("UvDetailCell", forIndexPath: indexPath)
+        let cell = tableView.dequeueReusableCellWithIdentifier("UvDetailCell", forIndexPath: indexPath) as! BasicCell
         
         let uv = (uvComments[indexPath.row]) as UvUser
         
-    
-        cell.textLabel?.text = uv.uvComment
+        cell.label?.text = uv.uvComment
 
         return cell
     }

@@ -14,6 +14,7 @@
 		6D3AABB11D04BF830029AC5F /* SharedData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D3AABB01D04BF820029AC5F /* SharedData.swift */; };
 		6D3AABB31D04C1820029AC5F /* UvService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D3AABB21D04C1820029AC5F /* UvService.swift */; };
 		6D3AABB51D04C49C0029AC5F /* Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D3AABB41D04C49C0029AC5F /* Alert.swift */; };
+		6D809F591D09D42D00ADEC97 /* BasicCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D809F581D09D42D00ADEC97 /* BasicCell.swift */; };
 		6D928F021CFCB29B00E31820 /* EmailValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D928F011CFCB29B00E31820 /* EmailValidator.swift */; };
 		6DF6B70C1D007C9B0063250E /* SemesterService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DF6B70A1D007C9B0063250E /* SemesterService.swift */; };
 		7C10F06B1CF6248E0072ADF2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C10F06A1CF6248E0072ADF2 /* AppDelegate.swift */; };
@@ -52,6 +53,7 @@
 		6D3AABB01D04BF820029AC5F /* SharedData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SharedData.swift; sourceTree = "<group>"; };
 		6D3AABB21D04C1820029AC5F /* UvService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UvService.swift; sourceTree = "<group>"; };
 		6D3AABB41D04C49C0029AC5F /* Alert.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Alert.swift; sourceTree = "<group>"; };
+		6D809F581D09D42D00ADEC97 /* BasicCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BasicCell.swift; sourceTree = "<group>"; };
 		6D928F011CFCB29B00E31820 /* EmailValidator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmailValidator.swift; sourceTree = "<group>"; };
 		6DF6B70A1D007C9B0063250E /* SemesterService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SemesterService.swift; sourceTree = "<group>"; };
 		7C10F0671CF6248E0072ADF2 /* AdvisorApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AdvisorApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -176,6 +178,7 @@
 				7C2F6BD61CF8EA1C00E8AF5B /* SignupViewController.swift */,
 				6D14148B1D021C9B00F7730F /* UvDetailViewControllerTableViewController.swift */,
 				6D3AABAE1D0232F10029AC5F /* AddUvCommentController.swift */,
+				6D809F581D09D42D00ADEC97 /* BasicCell.swift */,
 			);
 			name = Controller;
 			path = controller;
@@ -336,6 +339,7 @@
 				7C10F0A11CF7338C0072ADF2 /* UvUser.swift in Sources */,
 				7C10F09C1CF7338C0072ADF2 /* Semester.swift in Sources */,
 				7C2F6BD71CF8EA1C00E8AF5B /* SignupViewController.swift in Sources */,
+				6D809F591D09D42D00ADEC97 /* BasicCell.swift in Sources */,
 				6D3AABB31D04C1820029AC5F /* UvService.swift in Sources */,
 				7C2F6BD31CF8E16500E8AF5B /* AddSemesterTableViewController.swift in Sources */,
 				6D928F021CFCB29B00E31820 /* EmailValidator.swift in Sources */,
