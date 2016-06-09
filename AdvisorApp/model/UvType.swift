@@ -1,16 +1,15 @@
 //
-//  UvType.swift
+//  Semester.swift
 //  AdvisorApp
 //
 //  Created by Clément GARBAY on 26/05/2016.
-//  Copyright © 2016 Clément GARBAY. All rights reserved.
 //
 
 import UIKit
 import EVReflection
 
 class UvType: EVObject {
-    var id: Double?
-    var type: String?
-    var hoursByCredit: Double?
+    var id: Int = 0
+    var type: String = ""
+    var hoursByCredit: Double = 0.0
 }

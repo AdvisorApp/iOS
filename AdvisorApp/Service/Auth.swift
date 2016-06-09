@@ -3,10 +3,10 @@
 //  AdvisorApp
 //
 //  Created by Clément GARBAY on 29/05/2016.
-//  Copyright © 2016 Clément GARBAY. All rights reserved.
 //
 
 import Foundation
+import JWTDecode
 
 class Auth {
     
@@ -25,6 +25,19 @@ class Auth {
     
     static func getToken() -> String? {
         return userDefaults.valueForKey("token") as? String
+    }
+    
+    // TODO : review unwrapping
+    static func getConnectedUserId() -> Int? {
+        if let token = userDefaults.valueForKey("token") as? String {
+            do {
+                let jwt = try decode(token)
+                if let subject = Int(jwt.subject!) {
+                    return subject
+                }
+            } catch _ {}
+        }
+        return nil
     }
     
     static func clear() {

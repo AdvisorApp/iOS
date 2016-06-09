@@ -34,9 +34,14 @@ class AddStudyPlanTableViewController: UITableViewController {
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == "SaveStudyPlanSegue" {
-            // Call API here
-            studyPlan = StudyPlan(dictionary: ["id": 23, "name": nameTextField.text!, "semesters": []])
+            StudyPlanService.add(Auth.getConnectedUserId()!, name: nameTextField.text!, failure: { error in
+                print("Error : \(error)")
+            }) { (studyPlan: StudyPlan) in
+                dispatch_async(dispatch_get_main_queue()) {
+                    self.studyPlan = studyPlan
+                    (segue.destinationViewController as? StudyPlanTableViewController)?.addStudyPlan(segue)
+                }
+            }
         }
     }
-
 }

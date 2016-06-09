@@ -1,14 +1,13 @@
 //
-//  Token.swift
+//  Semester.swift
 //  AdvisorApp
 //
-//  Created by Clément GARBAY on 30/05/2016.
-//  Copyright © 2016 Clément GARBAY. All rights reserved.
+//  Created by Clément GARBAY on 26/05/2016.
 //
 
 import Foundation
 import EVReflection
 
 class Token: EVObject {
-    var token: String?
+    var token: String = ""
 }

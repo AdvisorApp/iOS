@@ -3,7 +3,6 @@
 //  AdvisorApp
 //
 //  Created by Clément GARBAY on 30/05/2016.
-//  Copyright © 2016 Clément GARBAY. All rights reserved.
 //
 
 import Foundation
@@ -42,11 +41,7 @@ class Service {
             mutableURLRequest.setValue(token, forHTTPHeaderField: "X-Authorization")
         }
         
-        if parameters == nil {
-            return mutableURLRequest
-        }
-        
-        return Alamofire.ParameterEncoding.JSON.encode(mutableURLRequest, parameters: parameters).0
+        return parameters == nil ? mutableURLRequest : Alamofire.ParameterEncoding.JSON.encode(mutableURLRequest, parameters: parameters).0
     }
     
     static func request<T: EVObject>(
@@ -60,6 +55,10 @@ class Service {
         Alamofire
             .request(Service.getMutableURLRequest(method, path: path, parameters: parameters))
             .validate()
+//            .response { request, response, data, error in
+//                let resultText = NSString(data: data!, encoding: NSUTF8StringEncoding)
+//                print(resultText)
+//            }
             .responseObject { (response: Result<T, NSError>) in
                 switch response {
                 case .Success(let object):
@@ -67,7 +66,7 @@ class Service {
                 case .Failure(let error):
                     fail!(RequestError.fromNSError(error))
                 }
-        }
+            }
     }
     
     static func request<T: EVObject>(

@@ -1,14 +1,13 @@
 //
-//  Location.swift
+//  Semester.swift
 //  AdvisorApp
 //
 //  Created by Clément GARBAY on 26/05/2016.
-//  Copyright © 2016 Clément GARBAY. All rights reserved.
 //
 
 import Foundation
 
-enum Location {
+enum Location: String {
     case DEPARTMENT
     case FACULTY
     case UNIVERSITY

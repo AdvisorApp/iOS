@@ -10,38 +10,25 @@ import UIKit
 
 class StudyPlanTableViewController: UITableViewController {
     
-    var studyPlans: [StudyPlan] = [
-        StudyPlan(dictionary: ["id": 1, "name": "StudyPlan1", "semesters": [
-            Semester(dictionary: ["id": 1, "number": 1, "uvs": [
-                Uv(dictionary: ["id": 1, "name": "UV1", "chs": 2]),
-                Uv(dictionary: ["id": 2, "name": "UV2", "chs": 4])
-            ]]),
-            Semester(dictionary: ["id": 2, "number": 2, "uvs": []])
-        ]]),
-        StudyPlan(dictionary: ["id": 2, "name": "StudyPlan2", "semesters": []])
-    ]
+    var studyPlans: [StudyPlan] = []
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem()
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
+        
+        self.refreshControl?.addTarget(self, action: #selector(StudyPlanTableViewController.refresh(_:)), forControlEvents: UIControlEvents.ValueChanged)
     }
     
-    // TODO : move in AppDelegate ?
+    // App entry point : Checks if an user is connected
     override func viewDidAppear(animated: Bool) {
         if !Auth.isAuthenticated() {
             self.performSegueWithIdentifier("LoginSegue", sender: self)
         } else {
-            
+            refresh()
         }
+    }
+    
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
     }
 
     // MARK: - Table view data source
@@ -59,31 +46,45 @@ class StudyPlanTableViewController: UITableViewController {
         let studyPlan = studyPlans[indexPath.row] as StudyPlan
         
         cell.textLabel?.text = studyPlan.name
-        cell.detailTextLabel?.text = String(studyPlan.id)
         
         return cell
+    }
+    
+    override func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
+        return true
+    }
+    
+    override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
+        if (editingStyle == UITableViewCellEditingStyle.Delete) {
+            Alert.confirm("Are you sure you want to delete this study plan ?", message: "All associated data will be deleted.", viewController: self) {
+                let studyPlan = self.studyPlans[indexPath.row]
+                StudyPlanService.delete(studyPlan.id, failure: { error in
+                    Alert.show("An error has occurred when deleting", viewController: self)
+                }) {
+                    self.studyPlans.removeAtIndex(indexPath.row)
+                    tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Automatic)
+                }
+            }
+        }
     }
     
     // MARK: - Navigation
 
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == "SemesterSegue" {
-            if let semesterViewController = segue.destinationViewController as? SemesterTableViewController, cell = sender as? UITableViewCell {
-                let indexPath = tableView.indexPathForCell(cell)
-                if let index = indexPath?.row {
-                    semesterViewController.selectedStudyPlan = studyPlans[index]
-                }
+            if let indexPath = tableView.indexPathForSelectedRow {
+                SharedData.selectedStudyPlan = studyPlans[indexPath.row]
             }
         }
     }
     
     // MARK: - Action methods
     
-    @IBAction func cancelToStudyPlanViewController(segue: UIStoryboardSegue) {
+    @IBAction func toStudyPlanViewController(segue: UIStoryboardSegue) {
         
     }
     
-    @IBAction func saveStudyPlan(segue: UIStoryboardSegue) {
+    func addStudyPlan(segue: UIStoryboardSegue) {
         if let addStudyPlanViewController = segue.sourceViewController as? AddStudyPlanTableViewController {
             if let studyPlan = addStudyPlanViewController.studyPlan {
                 studyPlans.append(studyPlan)
@@ -98,5 +99,28 @@ class StudyPlanTableViewController: UITableViewController {
     @IBAction func signout(sender: UIBarButtonItem) {
         Auth.clear()
         self.performSegueWithIdentifier("LoginSegue", sender: self)
+    }
+    
+    func refresh(sender: AnyObject) {
+        refresh()
+    }
+    
+    // Refresh table data
+    func refresh() {
+        if Auth.isAuthenticated() {
+            StudyPlanService.get(Auth.getConnectedUserId()!, failure: { error in
+                Alert.show("An error has occurred", viewController: self)
+                self.refreshControl?.endRefreshing()
+            }) { (studyPlans: [StudyPlan]) in
+                studyPlans.first.map({sp in
+                    SharedData.currentUser = sp.user
+                })
+                self.studyPlans = studyPlans
+                dispatch_async(dispatch_get_main_queue(), {
+                    self.tableView.reloadData()
+                    self.refreshControl?.endRefreshing()
+                })
+            }
+        }
     }
 }

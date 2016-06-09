@@ -1,19 +1,19 @@
 //
-//  UvUser.swift
+//  Semester.swift
 //  AdvisorApp
 //
 //  Created by Clément GARBAY on 26/05/2016.
-//  Copyright © 2016 Clément GARBAY. All rights reserved.
 //
 
 import UIKit
 import EVReflection
 
 class UvUser: EVObject {
-    var id: Double?
+    var id: Int = 0
     var user: User?
     var uv: Uv?
-    var userAverage: Double?
-    var uvMark: Double?
-    var uvComment: Double?
+    var userAverage: Double = 0.0
+    var uvMark: Double = 0.0
+    var uvComment: String = ""
+    var teacherComment: String = ""
 }

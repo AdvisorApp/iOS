@@ -12,6 +12,7 @@ class LoginViewController: UIViewController {
 
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
+    @IBOutlet weak var alfred: UITextField!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,9 +28,9 @@ class LoginViewController: UIViewController {
         UserService.signin(emailTextField.text!, password: passwordTextField.text!, failure: { error in
             switch error {
             case .Unauthorized:
-                self.displayAlert("Email ou mot de passe incorrect")
+                self.showAlert("Email or password incorrect")
             case .Other(_):
-                self.displayAlert("Une erreur est survenue")
+                self.showAlert("An error has occurred")
             }
         }) {
             self.dismissViewControllerAnimated(true, completion: nil)
@@ -50,7 +51,7 @@ class LoginViewController: UIViewController {
         
     }
     
-    func displayAlert(title: String) {
+    func showAlert(title: String) {
         let alert = UIAlertController(title: title, message: nil, preferredStyle: UIAlertControllerStyle.Alert)
         alert.addAction(UIAlertAction(title: "Ok", style: .Default, handler: nil))
         self.presentViewController(alert, animated: true, completion: nil)

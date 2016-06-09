@@ -3,7 +3,6 @@
 //  AdvisorApp
 //
 //  Created by Clément GARBAY on 28/05/2016.
-//  Copyright © 2016 Clément GARBAY. All rights reserved.
 //
 
 import Foundation
@@ -27,7 +26,7 @@ class UserService {
         Service.request(.POST, path: "/api/auths/token", parameters: parameters, failure: { error in
             fail!(error)
         }) { (token: Token) in
-            Auth.setToken(token.token!)
+            Auth.setToken(token.token)
             succeed!()
         }
     }
