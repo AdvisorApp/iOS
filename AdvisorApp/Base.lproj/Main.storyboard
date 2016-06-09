@@ -3,6 +3,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--Signup-->
@@ -484,7 +485,7 @@
                             <rect key="frame" x="0.0" y="64" width="375" height="235"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <subviews>
-                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" editable="NO" text="Commentaires :" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="Hc4-Ik-78O">
+                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" editable="NO" text="Commentaires :" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hc4-Ik-78O">
                                     <rect key="frame" x="15" y="199" width="196" height="37"/>
                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     <color key="textColor" red="0.5" green="0.0" blue="0.5" alpha="1" colorSpace="calibratedRGB"/>
@@ -502,14 +503,14 @@
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         </view>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="UvDetailCell" rowHeight="83" id="SKt-Pf-0dw" userLabel="UvDetailCell" customClass="BasicCell" customModule="AdvisorApp" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="327" width="375" height="83"/>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="BasicCell" rowHeight="90" id="SKt-Pf-0dw" userLabel="BasicCell" customClass="BasicCell" customModule="AdvisorApp" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="327" width="375" height="90"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="SKt-Pf-0dw" id="uq8-YZ-j8q">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="82.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="89.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="85" translatesAutoresizingMaskIntoConstraints="NO" id="2i1-Zh-t8u">
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2i1-Zh-t8u">
                                             <rect key="frame" x="25" y="11" width="309" height="21"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -517,9 +518,10 @@
                                         </label>
                                     </subviews>
                                     <constraints>
-                                        <constraint firstAttribute="trailing" secondItem="2i1-Zh-t8u" secondAttribute="trailing" constant="20" id="J1y-Aa-cav"/>
-                                        <constraint firstItem="2i1-Zh-t8u" firstAttribute="leading" secondItem="uq8-YZ-j8q" secondAttribute="leading" constant="20" id="NaN-aq-Rca"/>
-                                        <constraint firstAttribute="bottom" secondItem="2i1-Zh-t8u" secondAttribute="bottom" constant="20" id="kbI-oe-94r"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="2i1-Zh-t8u" secondAttribute="bottom" constant="4" id="2hx-vm-mi5"/>
+                                        <constraint firstItem="2i1-Zh-t8u" firstAttribute="top" secondItem="uq8-YZ-j8q" secondAttribute="topMargin" id="Liv-CC-zPc"/>
+                                        <constraint firstItem="2i1-Zh-t8u" firstAttribute="leading" secondItem="uq8-YZ-j8q" secondAttribute="leadingMargin" id="MMb-BX-AbQ"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="2i1-Zh-t8u" secondAttribute="trailing" id="dSY-tV-2cZ"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
@@ -542,6 +544,7 @@
                     </navigationItem>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
+                        <outlet property="tableView" destination="VLf-IY-bBF" id="ePC-HX-oyA"/>
                         <outlet property="uvDescription" destination="vRR-VX-3Wh" id="quo-hk-cU9"/>
                     </connections>
                 </tableViewController>

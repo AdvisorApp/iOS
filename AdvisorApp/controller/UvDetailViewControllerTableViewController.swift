@@ -22,11 +22,16 @@ class UvDetailViewController: UITableViewController {
         
         super.viewDidLoad()
         
+    
         //self.refreshControl?.addTarget(self, action: #selector(UvDetailViewController.refresh(_:)), forControlEvents: UIControlEvents.ValueChanged)
         
         refresh()
         
+        
+        
         uvDescription.text = selectedUv?._description
+        
+        //self.tableView.contentInset = UIEdgeInsetsMake(20, 0, 0, 0) // Status bar inset
 
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
@@ -34,6 +39,15 @@ class UvDetailViewController: UITableViewController {
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
     }
+    
+    func refreshList(){
+        tableView.estimatedRowHeight = 10
+        tableView.rowHeight = UITableViewAutomaticDimension
+        
+        tableView.setNeedsLayout()
+        tableView.layoutIfNeeded()
+    }
+    
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -42,10 +56,10 @@ class UvDetailViewController: UITableViewController {
 
     // MARK: - Table view data source
 
-//    override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-//        // #warning Incomplete implementation, return the number of sections
-//        return 5
-//    }
+    override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+        // #warning Incomplete implementation, return the number of sections
+        return 1
+    }
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
@@ -54,7 +68,7 @@ class UvDetailViewController: UITableViewController {
 
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("UvDetailCell", forIndexPath: indexPath) as! BasicCell
+        let cell = tableView.dequeueReusableCellWithIdentifier("BasicCell", forIndexPath: indexPath) as! BasicCell
         
         let uv = (uvComments[indexPath.row]) as UvUser
         
@@ -139,6 +153,7 @@ class UvDetailViewController: UITableViewController {
                 print("success \(data)")
                 SharedData.selectedUvComment = nil
                 self.refresh()
+                self.refreshList()
         })
     }
     
@@ -154,6 +169,7 @@ class UvDetailViewController: UITableViewController {
                 }, success: { data in
                     print(data)
                     self.uvComments = data
+                    self.refreshList()
                     dispatch_async(dispatch_get_main_queue(), {
                         self.tableView.reloadData()
                         self.refreshControl?.endRefreshing()
