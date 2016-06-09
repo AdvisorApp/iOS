@@ -42,6 +42,9 @@ class SemesterService {
         success succeed: (Semester -> ())? = nil
     ) {
         
+        print("semesterId \(semesterId)")
+        print("uvId \(uvId)")
+        
         Service.request(.PUT, path: "/api/semesters/\(semesterId)/uv/\(uvId)", parameters: [:], failure: { error in
             fail!(error)
         }) { (semester: Semester) in

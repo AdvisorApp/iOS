@@ -38,7 +38,7 @@ class StudyPlanTableViewController: UITableViewController {
     // App entry point : Checks if an user is connected
     override func viewDidAppear(animated: Bool) {
         if !Auth.isAuthenticated() {
-            //self.performSegueWithIdentifier("LoginSegue", sender: self)
+            self.performSegueWithIdentifier("LoginSegue", sender: self)
         }
     }
 

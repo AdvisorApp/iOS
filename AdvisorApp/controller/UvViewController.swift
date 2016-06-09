@@ -17,7 +17,10 @@ class UvViewController: UIViewController, UITableViewDelegate, UITableViewDataSo
         super.viewDidLoad()
 
         navigationItem.title = "Semester \(SharedData.selectedSemester!.number)"
-        refreshCreditHoursLabel()
+    }
+    
+    override func viewDidAppear(animated: Bool) {
+        refreshViewData()
     }
 
     override func didReceiveMemoryWarning() {
@@ -51,7 +54,16 @@ class UvViewController: UIViewController, UITableViewDelegate, UITableViewDataSo
         }
     }
 
-    func refreshCreditHoursLabel() {
-        creditHoursLabel.text = SharedData.selectedSemester?.getSumCreditHours().description
+    // MARK: - Action methods
+    
+    @IBAction func toUvViewController(segue: UIStoryboardSegue) {
+        
+    }
+    
+    func refreshViewData() {
+        dispatch_async(dispatch_get_main_queue(), {
+            self.creditHoursLabel.text = SharedData.selectedSemester?.getSumCreditHours().description
+            self.uvTableView.reloadData()
+        })
     }
 }

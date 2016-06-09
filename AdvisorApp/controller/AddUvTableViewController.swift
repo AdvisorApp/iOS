@@ -9,7 +9,6 @@ import UIKit
 
 class AddUvTableViewController: UITableViewController {
     
-    var selectedSemester: Semester?
     var remainingUvs: [Uv] = []
 
     override func viewDidLoad() {
@@ -45,17 +44,20 @@ class AddUvTableViewController: UITableViewController {
         let corequisitesUv = uv.corequisitesUv.map {uv in uv.name}
         cell.corequisitesLabel.text = (corequisitesUv.count == 0) ? "None" : corequisitesUv.joinWithSeparator(",")
         
+        cell.infoButton.tag = indexPath.row
+        
         return cell
     }
     
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         let uv = remainingUvs[indexPath.row] as Uv
         
-        SemesterService.addUv((selectedSemester?.id)!, uvId: uv.id, failure: { error in
+        SemesterService.addUv((SharedData.selectedSemester?.id)!, uvId: uv.id, failure: { error in
+            print(error)
             Alert.show("An error has occurred", viewController: self)
         }, success: { _ in
             // TODO : adding new UV to UV list (UvView)
-            // SharedData.selectedSemester?.uvs.append(uv)
+            SharedData.selectedSemester?.uvs.append(uv)
             self.dismissViewControllerAnimated(true, completion: nil)
         })
     }
@@ -65,9 +67,8 @@ class AddUvTableViewController: UITableViewController {
 
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == "FromAddUvToUvDetailSegue" {
-            if let indexPath = tableView.indexPathForSelectedRow {
-                SharedData.selectedUv = remainingUvs[indexPath.row]
-            }
+            let button = sender as! UIButton
+            SharedData.selectedUv = remainingUvs[button.tag]
         }
     }
     
@@ -75,12 +76,17 @@ class AddUvTableViewController: UITableViewController {
     func refresh() {
         if Auth.isAuthenticated() {
             UvService.get((SharedData.selectedSemester?.studyPlan?.id)!, failure: { error in
+                print(error)
                 Alert.show("An error has occurred", viewController: self)
             }) { (uvs: [Uv]) in
-                self.remainingUvs = uvs
-                dispatch_async(dispatch_get_main_queue(), {
-                    self.tableView.reloadData()
-                })
+                if uvs.count == 0 {
+                    Alert.show("No UV available", viewController: self)
+                } else {
+                    self.remainingUvs = uvs
+                    dispatch_async(dispatch_get_main_queue(), {
+                        self.tableView.reloadData()
+                    })
+                }
             }
         }
     }

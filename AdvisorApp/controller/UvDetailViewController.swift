@@ -14,7 +14,7 @@ class UvDetailViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         navigationItem.title = SharedData.selectedUv!.name
     }
 
