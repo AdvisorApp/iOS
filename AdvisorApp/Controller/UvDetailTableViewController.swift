@@ -7,13 +7,14 @@
 //
 
 import UIKit
+import Cosmos
 
-class UvDetailViewController: UITableViewController {
+class UvDetailTableViewController: UITableViewController {
     
-    var selectedUv: Uv?
-    
+    @IBOutlet weak var averageLabel: UILabel!
+    @IBOutlet weak var rateView: CosmosView!
+    @IBOutlet weak var popularityLabel: UILabel!
     @IBOutlet weak var userComment: UITextView!
-    
     @IBOutlet weak var uvDescription: UITextView!
     
     var uvComments: [UvUser] = []
@@ -24,20 +25,16 @@ class UvDetailViewController: UITableViewController {
         
         //self.refreshControl?.addTarget(self, action: #selector(UvDetailViewController.refresh(_:)), forControlEvents: UIControlEvents.ValueChanged)
         
-        refresh()
+        navigationItem.title = SharedData.selectedUv?.name
+        uvDescription.text = SharedData.selectedUv?._description
         
-        uvDescription.text = selectedUv?._description
-
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem()
+        // TODO : SHOW AVERAGE AND RATE
+        
+        refresh()
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
 
     // MARK: - Table view data source
@@ -51,7 +48,6 @@ class UvDetailViewController: UITableViewController {
         // #warning Incomplete implementation, return the number of rows
         return uvComments.count
     }
-
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("UvDetailCell", forIndexPath: indexPath) as! BasicCell
@@ -107,13 +103,10 @@ class UvDetailViewController: UITableViewController {
         print("prepareForSegue Uv detail")
     }
  
-    
-    
     @IBAction func cancelToUvDetailViewController(segue: UIStoryboardSegue) {
         
     }
-    
-    
+   
     @IBAction func saveUvComment(segue: UIStoryboardSegue) {
         print("HELLEOOELAZDAMZLJDM")
         print(SharedData.selectedUvComment)
@@ -122,7 +115,7 @@ class UvDetailViewController: UITableViewController {
         let selectedCommentContent = SharedData.selectedUvComment
  
         let userId = (SharedData.currentUser?.id)!
-        let uvId   = (selectedUv?.id)!
+        let uvId   = (SharedData.selectedUv?.id)!
         
         UvService.addCommentOrMark(
             userId,
@@ -142,12 +135,11 @@ class UvDetailViewController: UITableViewController {
         })
     }
     
-    
     // Refresh table data
     func refresh() {
         if Auth.isAuthenticated() {
             UvService.getUvUsersFromUvId(
-                (selectedUv?.id)!,
+                (SharedData.selectedUv?.id)!,
                 failure: { error in
                     print("error : \(error)")
                     Alert.show("An error has occurred", viewController: self)
@@ -165,5 +157,8 @@ class UvDetailViewController: UITableViewController {
         }
     }
     
+    @IBAction func done(sender: UIBarButtonItem) {
+        self.dismissViewControllerAnimated(true, completion: nil)
+    }
 
 }

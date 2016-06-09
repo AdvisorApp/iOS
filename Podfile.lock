@@ -6,8 +6,8 @@ PODS:
   - AlamofireSwiftyJSON (0.1.0):
     - Alamofire (~> 3.1)
     - SwiftyJSON (~> 2.3)
-  - Cosmos (1.2.3)
-  - EVReflection (2.30.1)
+  - Cosmos (1.2.2)
+  - EVReflection (2.32.0)
   - JWTDecode (1.0.0)
   - SwiftyJSON (2.3.2)
 
@@ -21,8 +21,8 @@ SPEC CHECKSUMS:
   Alamofire: c19a627cefd6a95f840401c49ab1f124e07f54ee
   AlamofireJsonToObjects: e5155c1c58493c44d7ebe56bbb1aa65d95e82c68
   AlamofireSwiftyJSON: 171e4fa7d09a1d20d05797d0253a36f4241adf3a
-  Cosmos: efddd01b729956ad6335bc58bc92e5735a1d12a3
-  EVReflection: cbadc6ef7c077d86efc1a47fa23f1c9d0a5540dc
+  Cosmos: 87c49100c69d2cb2eebfa4eb8d1e801fe29ff774
+  EVReflection: a429746887f8191cd16ceea3fbf4b070255b003c
   JWTDecode: d172edcb1607cc15aed85d58eceedcbb675a4534
   SwiftyJSON: 04ccea08915aa0109039157c7974cf0298da292a
 
