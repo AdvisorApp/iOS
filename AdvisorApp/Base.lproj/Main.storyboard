@@ -380,7 +380,7 @@
                                     <action selector="addSemester:" destination="I2X-ME-SIt" id="a2Q-pv-fJQ"/>
                                 </connections>
                             </barButtonItem>
-                            <barButtonItem style="plain" systemItem="organize" id="WtP-BW-SN7">
+                            <barButtonItem image="Eye" style="plain" id="WtP-BW-SN7">
                                 <connections>
                                     <segue destination="0q6-71-hb0" kind="presentation" id="dGE-mY-eqW"/>
                                 </connections>
@@ -467,7 +467,7 @@
                                     <segue destination="ic2-Yw-a4B" kind="presentation" identifier="AddUvSegue" id="Ewf-Q0-e08"/>
                                 </connections>
                             </barButtonItem>
-                            <barButtonItem style="plain" systemItem="organize" id="b7t-sP-TGx">
+                            <barButtonItem image="Eye" style="plain" id="b7t-sP-TGx">
                                 <connections>
                                     <segue destination="0q6-71-hb0" kind="presentation" id="EFy-Go-TfI"/>
                                 </connections>
@@ -639,7 +639,7 @@
                                     <segue destination="8ff-iJ-tqr" kind="presentation" id="PfQ-og-gcY"/>
                                 </connections>
                             </barButtonItem>
-                            <barButtonItem systemItem="organize" id="PR2-Dg-Gb3">
+                            <barButtonItem image="Eye" id="PR2-Dg-Gb3">
                                 <connections>
                                     <segue destination="0q6-71-hb0" kind="presentation" id="COO-2l-Agz"/>
                                 </connections>
@@ -835,6 +835,9 @@
             <point key="canvasLocation" x="951.5" y="1221.5"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="Eye" width="25" height="16"/>
+    </resources>
     <inferredMetricsTieBreakers>
         <segue reference="0mx-pt-LnV"/>
         <segue reference="COO-2l-Agz"/>
