@@ -721,11 +721,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-<<<<<<< ab652990b32caf0ec7ff433f629b41716852257e
-        <segue reference="33r-b1-0XB"/>
-=======
         <segue reference="0mx-pt-LnV"/>
         <segue reference="EFy-Go-TfI"/>
->>>>>>> [WIP]
     </inferredMetricsTieBreakers>
 </document>
