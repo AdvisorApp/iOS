@@ -8,8 +8,10 @@
 
 import UIKit
 
-class AddUvCommentController: UIView {
-
+class AddUvCommentController: UITableViewController {
+    
+    @IBOutlet weak var commentTextView: UITextView!
+    
     /*
     // Only override drawRect: if you perform custom drawing.
     // An empty implementation adversely affects performance during animation.
@@ -17,5 +19,16 @@ class AddUvCommentController: UIView {
         // Drawing code
     }
     */
+    
+    
+    // MARK: - Navigation
+    
+    // In a storyboard-based application, you will often want to do a little preparation before navigation
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        SharedData.selectedUvComment = commentTextView.text
+    }
+    
+    
+    
 
 }
