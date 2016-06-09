@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0355380B1D0581E0006C81C1 /* GlobalStudyPlanTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0355380A1D0581E0006C81C1 /* GlobalStudyPlanTableViewController.swift */; };
 		5111CC9C95F9C20D988426EF /* Pods_AdvisorApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 213C51745976BA651C162C21 /* Pods_AdvisorApp.framework */; };
 		7C0B569F1D006083009C7249 /* SemesterService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C0B569E1D006083009C7249 /* SemesterService.swift */; };
 		7C0B56A61D007A23009C7249 /* Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C0B56A51D007A23009C7249 /* Alert.swift */; };
@@ -40,6 +41,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0355380A1D0581E0006C81C1 /* GlobalStudyPlanTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GlobalStudyPlanTableViewController.swift; sourceTree = "<group>"; };
 		213C51745976BA651C162C21 /* Pods_AdvisorApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AdvisorApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4405C1C85B67C6B2C1D61C44 /* Pods-AdvisorApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AdvisorApp.debug.xcconfig"; path = "Pods/Target Support Files/Pods-AdvisorApp/Pods-AdvisorApp.debug.xcconfig"; sourceTree = "<group>"; };
 		5065FA252093F0389BBAF5BD /* Pods-AdvisorApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AdvisorApp.release.xcconfig"; path = "Pods/Target Support Files/Pods-AdvisorApp/Pods-AdvisorApp.release.xcconfig"; sourceTree = "<group>"; };
@@ -167,6 +169,7 @@
 				7C2F6BD01CF8DD7D00E8AF5B /* LoginViewController.swift */,
 				7C2F6BD41CF8E7E200E8AF5B /* AddUvTableViewController.swift */,
 				7C2F6BD61CF8EA1C00E8AF5B /* SignupViewController.swift */,
+				0355380A1D0581E0006C81C1 /* GlobalStudyPlanTableViewController.swift */,
 			);
 			name = Controller;
 			path = controller;
@@ -341,6 +344,7 @@
 				7C10F09E1CF7338C0072ADF2 /* User.swift in Sources */,
 				7C10F0A51CF733AE0072ADF2 /* StudyPlanTableViewController.swift in Sources */,
 				7C10F0AE1CF7965A0072ADF2 /* UvViewController.swift in Sources */,
+				0355380B1D0581E0006C81C1 /* GlobalStudyPlanTableViewController.swift in Sources */,
 				7C0B569F1D006083009C7249 /* SemesterService.swift in Sources */,
 				7CAA9E041CFA21D9001B980C /* UserService.swift in Sources */,
 				7CD72BA61CFC43F500140C60 /* Service.swift in Sources */,
