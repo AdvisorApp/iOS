@@ -11,38 +11,24 @@ import UIKit
 class StudyPlanTableViewController: UITableViewController {
     
     var studyPlans: [StudyPlan] = []
-        
-//    [
-//        StudyPlan(dictionary: ["id": 1, "name": "StudyPlan1", "semesters": [
-//            Semester(dictionary: ["id": 1, "number": 1, "uvs": [
-//                Uv(dictionary: ["id": 1, "name": "UV1", "chs": 2]),
-//                Uv(dictionary: ["id": 2, "name": "UV2", "chs": 4])
-//            ]]),
-//            Semester(dictionary: ["id": 2, "number": 2, "uvs": []])
-//        ]]),
-//        StudyPlan(dictionary: ["id": 2, "name": "StudyPlan2", "semesters": []])
-//    ]
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
         self.refreshControl?.addTarget(self, action: #selector(StudyPlanTableViewController.refresh(_:)), forControlEvents: UIControlEvents.ValueChanged)
-
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-        
-        //refresh()
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
     }
     
     // App entry point : Checks if an user is connected
     override func viewDidAppear(animated: Bool) {
         if !Auth.isAuthenticated() {
-            //self.performSegueWithIdentifier("LoginSegue", sender: self)
+            self.performSegueWithIdentifier("LoginSegue", sender: self)
+        } else {
+            refresh()
         }
+    }
+    
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
     }
 
     // MARK: - Table view data source
@@ -70,11 +56,10 @@ class StudyPlanTableViewController: UITableViewController {
     
     override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
         if (editingStyle == UITableViewCellEditingStyle.Delete) {
-            showConfirmAlert("Are you sure you want to delete this study plan ?", message: "All associated data will be deleted.") {
+            Alert.confirm("Are you sure you want to delete this study plan ?", message: "All associated data will be deleted.", viewController: self) {
                 let studyPlan = self.studyPlans[indexPath.row]
                 StudyPlanService.delete(studyPlan.id, failure: { error in
-                    self.showAlert("Erreur lors de la suppression")
-                    print(error)
+                    Alert.show("An error has occurred when deleting", viewController: self)
                 }) {
                     self.studyPlans.removeAtIndex(indexPath.row)
                     tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Automatic)
@@ -87,11 +72,8 @@ class StudyPlanTableViewController: UITableViewController {
 
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == "SemesterSegue" {
-            if let semesterViewController = segue.destinationViewController as? SemesterTableViewController, cell = sender as? UITableViewCell {
-                let indexPath = tableView.indexPathForCell(cell)
-                if let index = indexPath?.row {
-                    semesterViewController.selectedStudyPlan = studyPlans[index]
-                }
+            if let indexPath = tableView.indexPathForSelectedRow {
+                SharedData.selectedStudyPlan = studyPlans[indexPath.row]
             }
         }
     }
@@ -127,7 +109,7 @@ class StudyPlanTableViewController: UITableViewController {
     func refresh() {
         if Auth.isAuthenticated() {
             StudyPlanService.get(Auth.getConnectedUserId()!, failure: { error in
-                self.showAlert("Une erreur est survenue")
+                Alert.show("An error has occurred", viewController: self)
                 self.refreshControl?.endRefreshing()
             }) { (studyPlans: [StudyPlan]) in
                 studyPlans.first.map({sp in
@@ -140,20 +122,5 @@ class StudyPlanTableViewController: UITableViewController {
                 })
             }
         }
-    }
-    
-    func showAlert(title: String) {
-        let alert = UIAlertController(title: title, message: nil, preferredStyle: UIAlertControllerStyle.Alert)
-        alert.addAction(UIAlertAction(title: "Ok", style: .Default, handler: nil))
-        self.presentViewController(alert, animated: true, completion: nil)
-    }
-    
-    func showConfirmAlert(title: String, message: String, ok: (Void -> ())) {
-        let deleteAlert = UIAlertController(title: title, message: message, preferredStyle: UIAlertControllerStyle.Alert)
-        deleteAlert.addAction(UIAlertAction(title: "Ok", style: .Default, handler: { (action: UIAlertAction!) in
-            ok()
-        }))
-        deleteAlert.addAction(UIAlertAction(title: "Cancel", style: .Cancel, handler: nil))
-        presentViewController(deleteAlert, animated: true, completion: nil)
     }
 }

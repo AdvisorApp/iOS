@@ -28,9 +28,9 @@ class LoginViewController: UIViewController {
         UserService.signin(emailTextField.text!, password: passwordTextField.text!, failure: { error in
             switch error {
             case .Unauthorized:
-                self.showAlert("Email ou mot de passe incorrect")
+                self.showAlert("Email or password incorrect")
             case .Other(_):
-                self.showAlert("Une erreur est survenue")
+                self.showAlert("An error has occurred")
             }
         }) {
             self.dismissViewControllerAnimated(true, completion: nil)

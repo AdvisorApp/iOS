@@ -59,6 +59,10 @@ class Service {
         Alamofire
             .request(Service.getMutableURLRequest(method, path: path, parameters: parameters))
             .validate()
+//            .response { request, response, data, error in
+//                let resultText = NSString(data: data!, encoding: NSUTF8StringEncoding)
+//                print(resultText)
+//            }
             .responseObject { (response: Result<T, NSError>) in
                 switch response {
                 case .Success(let object):

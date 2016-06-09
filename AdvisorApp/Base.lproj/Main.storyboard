@@ -38,7 +38,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Prénom" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1zr-z5-qUg" userLabel="Firstname Label">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Firstname" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1zr-z5-qUg" userLabel="Firstname Label">
                                 <rect key="frame" x="20" y="292" width="77" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -49,13 +49,13 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Nom" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iC0-Di-elB" userLabel="Lastname Label">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Lastname" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iC0-Di-elB" userLabel="Lastname Label">
                                 <rect key="frame" x="20" y="359" width="77" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Mot de passe" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6fk-PG-IKO" userLabel="Password Label">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Password" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6fk-PG-IKO" userLabel="Password Label">
                                 <rect key="frame" x="20" y="197" width="88" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -73,16 +73,23 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Numéro étudiant" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7Ng-R8-LHj" userLabel="Identifier Label">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Student number" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7Ng-R8-LHj" userLabel="Identifier Label">
                                 <rect key="frame" x="20" y="426" width="109" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="43o-hX-8pi" userLabel="Confirm">
+                                <rect key="frame" x="153" y="502" width="69" height="30"/>
+                                <state key="normal" title="Ok!"/>
+                                <connections>
+                                    <action selector="signin:" destination="eES-sp-aqm" eventType="touchUpInside" id="Zpd-Cc-mSe"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Créer un compte" id="KKf-Mc-Tjl">
+                    <navigationItem key="navigationItem" title="Create new account" id="KKf-Mc-Tjl">
                         <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="GrR-ef-Sif">
                             <connections>
                                 <segue destination="DqJ-Jt-Upt" kind="unwind" unwindAction="cancelToLoginViewController:" id="V8P-HC-L8m"/>
@@ -131,7 +138,7 @@
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Mot de passe" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nVL-6X-FmF" userLabel="Password Label">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Password" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nVL-6X-FmF" userLabel="Password Label">
                                 <rect key="frame" x="20" y="301" width="88" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -145,14 +152,14 @@
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uc5-kW-ngL" userLabel="Signin">
                                 <rect key="frame" x="151" y="395" width="73" height="30"/>
-                                <state key="normal" title="Connexion"/>
+                                <state key="normal" title="Sign in"/>
                                 <connections>
                                     <action selector="signin:" destination="eES-sp-aqm" eventType="touchUpInside" id="FKS-2X-dEf"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VP2-n8-Wbq" userLabel="Signup">
-                                <rect key="frame" x="130" y="433" width="115" height="30"/>
-                                <state key="normal" title="Créer un compte"/>
+                                <rect key="frame" x="113" y="433" width="148" height="30"/>
+                                <state key="normal" title="New user? Sign up"/>
                                 <connections>
                                     <segue destination="Byc-Ad-zJ8" kind="presentation" id="P5F-xF-8tK"/>
                                 </connections>
@@ -205,7 +212,7 @@
                             <outlet property="delegate" destination="y9s-HL-m02" id="UK0-mg-RY7"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Plans d'études" id="FTm-IZ-Sgb" userLabel="Study Plan">
+                    <navigationItem key="navigationItem" title="Study plans" id="FTm-IZ-Sgb" userLabel="Study Plan">
                         <barButtonItem key="leftBarButtonItem" systemItem="stop" id="5GI-89-8c1" userLabel="Signout">
                             <connections>
                                 <action selector="signout:" destination="y9s-HL-m02" id="KFA-lj-CIj"/>
@@ -262,7 +269,7 @@
                             <outlet property="delegate" destination="Yc0-Ou-omt" id="ZjC-65-O48"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Ajouter un study plan" id="n02-3Z-NVw">
+                    <navigationItem key="navigationItem" title="Add a study plan" id="n02-3Z-NVw">
                         <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="7T1-HU-75e">
                             <connections>
                                 <segue destination="OgQ-51-gCz" kind="unwind" unwindAction="toStudyPlanViewController:" id="rlG-Bi-Rms"/>
@@ -319,10 +326,10 @@
                             <outlet property="delegate" destination="I2X-ME-SIt" id="EqA-6v-229"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Semestres" id="SSY-lf-yQc">
+                    <navigationItem key="navigationItem" title="Semesters" id="SSY-lf-yQc">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="6dI-cu-lY1">
                             <connections>
-                                <segue destination="1Hi-O7-FeH" kind="show" id="qcm-Oy-4ww"/>
+                                <action selector="addSemester:" destination="I2X-ME-SIt" id="a2Q-pv-fJQ"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -346,7 +353,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Credit hours utilisés" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="10V-vX-hRf">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Credit hours used" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="10V-vX-hRf">
                                 <rect key="frame" x="20" y="72" width="335" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <color key="textColor" name="headerColor" catalog="System" colorSpace="catalog"/>
@@ -386,7 +393,7 @@
                                             </subviews>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <segue destination="1uW-Nl-f83" kind="show" identifier="UvDetailSegue" id="0mx-pt-LnV"/>
+                                            <segue destination="1uW-Nl-f83" kind="presentation" identifier="FromUvToUvDetailSegue" id="0mx-pt-LnV"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -399,16 +406,16 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <toolbarItems/>
-                    <navigationItem key="navigationItem" title="&lt;semestre&gt;" id="Y9k-qm-ISM">
+                    <navigationItem key="navigationItem" title="&lt;semester&gt;" id="Y9k-qm-ISM">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="tcK-iJ-u7Z">
                             <connections>
-                                <segue destination="ic2-Yw-a4B" kind="show" id="Ewf-Q0-e08"/>
+                                <segue destination="ic2-Yw-a4B" kind="presentation" identifier="AddUvSegue" id="Ewf-Q0-e08"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
-                        <outlet property="creditHoursLabel" destination="FS1-d8-Fqp" id="s2v-nh-7PJ"/>
+                        <outlet property="creditHoursLabel" destination="FS1-d8-Fqp" id="GFt-0T-vXb"/>
                         <outlet property="uvTableView" destination="6XY-na-s40" id="j8J-lU-F1O"/>
                     </connections>
                 </viewController>
@@ -679,45 +686,75 @@
         <scene sceneID="UeA-QR-mJC">
             <objects>
                 <tableViewController id="U9W-9i-UCs" userLabel="Add UV" customClass="AddUvTableViewController" customModule="AdvisorApp" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="18" sectionFooterHeight="18" id="Wbj-HH-tbR" userLabel="Add UV Table View">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="80" sectionHeaderHeight="28" sectionFooterHeight="28" id="Wbj-HH-tbR" userLabel="Add UV Table View">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
-                        <sections>
-                            <tableViewSection headerTitle="Nom" id="8e5-CG-gAP">
-                                <cells>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" id="dVP-Vm-DHJ">
-                                        <rect key="frame" x="0.0" y="113.5" width="375" height="44"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="dVP-Vm-DHJ" id="igt-qD-QFp">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" adjustsFontSizeToFit="NO" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ZPT-vP-qAh" userLabel="Name Text Field">
-                                                    <rect key="frame" x="8" y="7" width="359" height="30"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <textInputTraits key="textInputTraits"/>
-                                                </textField>
-                                            </subviews>
-                                        </tableViewCellContentView>
-                                    </tableViewCell>
-                                </cells>
-                            </tableViewSection>
-                        </sections>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="9" reuseIdentifier="AddUvCell" rowHeight="80" id="dVP-Vm-DHJ" customClass="UvCell" customModule="AdvisorApp" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="92" width="375" height="80"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="dVP-Vm-DHJ" id="igt-qD-QFp">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="79.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9qY-SV-cjD">
+                                            <rect key="frame" x="8" y="8" width="328" height="21"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="infoLight" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Vg2-eV-nEN" userLabel="Info">
+                                            <rect key="frame" x="345" y="29" width="22" height="22"/>
+                                            <connections>
+                                                <segue destination="1uW-Nl-f83" kind="presentation" identifier="FromAddUvToUvDetailSegue" id="33r-b1-0XB"/>
+                                            </connections>
+                                        </button>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="kjdf; dsqfs; sqdfqd; sdqfqsdfds; " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="c7s-ng-gLe" userLabel="Prerequisites">
+                                            <rect key="frame" x="105" y="31" width="232" height="21"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="kjdf; dsqfs; sqdfqd; sdqfqsdfds; " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QVi-16-m7L" userLabel="Corequisites">
+                                            <rect key="frame" x="105" y="50" width="232" height="21"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Corequisites :" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ocf-xh-0fu" userLabel="Corequisites Label">
+                                            <rect key="frame" x="8" y="50" width="89" height="21"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Prerequisites : " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NdG-Tr-iE0" userLabel="Prerequisites Label">
+                                            <rect key="frame" x="8" y="31" width="97" height="21"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="corequisitesLabel" destination="QVi-16-m7L" id="jbZ-Eh-Ey9"/>
+                                    <outlet property="infoButton" destination="Vg2-eV-nEN" id="pof-20-XC6"/>
+                                    <outlet property="nameLabel" destination="9qY-SV-cjD" id="IRm-Mh-aJl"/>
+                                    <outlet property="prerequisitesLabel" destination="c7s-ng-gLe" id="wah-6Q-sfF"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <sections/>
                         <connections>
                             <outlet property="dataSource" destination="U9W-9i-UCs" id="Wzg-Bt-tk3"/>
                             <outlet property="delegate" destination="U9W-9i-UCs" id="RdL-bj-Mhb"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Ajouter un UV" id="Ld5-eZ-PEq">
+                    <navigationItem key="navigationItem" title="Add an UV" id="Ld5-eZ-PEq">
                         <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="cji-Ev-vyL">
                             <connections>
-                                <segue destination="CRM-N9-2bL" kind="unwind" unwindAction="cancelToUvViewController:" id="qBQ-tC-hLA"/>
-                            </connections>
-                        </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" systemItem="done" id="feK-xF-HTh">
-                            <connections>
-                                <segue destination="CRM-N9-2bL" kind="unwind" unwindAction="saveUv:" id="hbA-lY-wIE"/>
+                                <segue destination="CRM-N9-2bL" kind="unwind" unwindAction="toUvViewController:" id="L8S-Y0-A1q"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -766,4 +803,7 @@
             <point key="canvasLocation" x="951.5" y="1221.5"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="33r-b1-0XB"/>
+    </inferredMetricsTieBreakers>
 </document>
