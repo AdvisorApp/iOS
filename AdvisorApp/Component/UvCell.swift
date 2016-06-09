@@ -10,7 +10,6 @@ import UIKit
 class UvCell: UITableViewCell {
     
     @IBOutlet var nameLabel: UILabel!
-    @IBOutlet var typeLabel: UILabel!
     @IBOutlet var prerequisitesLabel: UILabel!
     @IBOutlet var corequisitesLabel: UILabel!
     @IBOutlet var infoButton: UIButton!

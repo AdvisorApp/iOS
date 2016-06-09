@@ -36,7 +36,7 @@ class AddUvTableViewController: UITableViewController {
         let cell = tableView.dequeueReusableCellWithIdentifier("AddUvCell", forIndexPath: indexPath) as! UvCell
         let uv = remainingUvs[indexPath.row] as Uv
         
-        cell.nameLabel?.text = uv.name
+        cell.nameLabel?.text = "\(uv.remoteId) : \(uv.name)"
         
         let prerequisitesUv = uv.prerequisitesUv.map {uv in uv.name}
         cell.prerequisitesLabel.text = (prerequisitesUv.count == 0) ? "None" : prerequisitesUv.joinWithSeparator(",")
@@ -53,10 +53,8 @@ class AddUvTableViewController: UITableViewController {
         let uv = remainingUvs[indexPath.row] as Uv
         
         SemesterService.addUv((SharedData.selectedSemester?.id)!, uvId: uv.id, failure: { error in
-            print(error)
             Alert.show("An error has occurred", viewController: self)
         }, success: { _ in
-            // TODO : adding new UV to UV list (UvView)
             SharedData.selectedSemester?.uvs.append(uv)
             self.dismissViewControllerAnimated(true, completion: nil)
         })
