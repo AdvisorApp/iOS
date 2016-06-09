@@ -504,7 +504,7 @@
                                 <color key="textColor" name="headerColor" catalog="System" colorSpace="catalog"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="13 / 15" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FS1-d8-Fqp">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="-" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FS1-d8-Fqp">
                                 <rect key="frame" x="20" y="99" width="335" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="21" id="ffx-XT-eXA"/>
@@ -1019,6 +1019,6 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="0mx-pt-LnV"/>
-        <segue reference="COO-2l-Agz"/>
+        <segue reference="EFy-Go-TfI"/>
     </inferredMetricsTieBreakers>
 </document>
