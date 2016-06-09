@@ -10,6 +10,10 @@
 		5111CC9C95F9C20D988426EF /* Pods_AdvisorApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 213C51745976BA651C162C21 /* Pods_AdvisorApp.framework */; };
 		6D14148A1D020F1D00F7730F /* UvComment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D1414891D020F1D00F7730F /* UvComment.swift */; };
 		6D14148C1D021C9B00F7730F /* UvDetailViewControllerTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D14148B1D021C9B00F7730F /* UvDetailViewControllerTableViewController.swift */; };
+		6D3AABAF1D0232F10029AC5F /* AddUvCommentController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D3AABAE1D0232F10029AC5F /* AddUvCommentController.swift */; };
+		6D3AABB11D04BF830029AC5F /* SharedData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D3AABB01D04BF820029AC5F /* SharedData.swift */; };
+		6D3AABB31D04C1820029AC5F /* UvService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D3AABB21D04C1820029AC5F /* UvService.swift */; };
+		6D3AABB51D04C49C0029AC5F /* Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D3AABB41D04C49C0029AC5F /* Alert.swift */; };
 		6D928F021CFCB29B00E31820 /* EmailValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D928F011CFCB29B00E31820 /* EmailValidator.swift */; };
 		6DF6B70C1D007C9B0063250E /* SemesterService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DF6B70A1D007C9B0063250E /* SemesterService.swift */; };
 		7C10F06B1CF6248E0072ADF2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C10F06A1CF6248E0072ADF2 /* AppDelegate.swift */; };
@@ -44,6 +48,10 @@
 		5065FA252093F0389BBAF5BD /* Pods-AdvisorApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AdvisorApp.release.xcconfig"; path = "Pods/Target Support Files/Pods-AdvisorApp/Pods-AdvisorApp.release.xcconfig"; sourceTree = "<group>"; };
 		6D1414891D020F1D00F7730F /* UvComment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UvComment.swift; sourceTree = "<group>"; };
 		6D14148B1D021C9B00F7730F /* UvDetailViewControllerTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UvDetailViewControllerTableViewController.swift; sourceTree = "<group>"; };
+		6D3AABAE1D0232F10029AC5F /* AddUvCommentController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddUvCommentController.swift; sourceTree = "<group>"; };
+		6D3AABB01D04BF820029AC5F /* SharedData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SharedData.swift; sourceTree = "<group>"; };
+		6D3AABB21D04C1820029AC5F /* UvService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UvService.swift; sourceTree = "<group>"; };
+		6D3AABB41D04C49C0029AC5F /* Alert.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Alert.swift; sourceTree = "<group>"; };
 		6D928F011CFCB29B00E31820 /* EmailValidator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmailValidator.swift; sourceTree = "<group>"; };
 		6DF6B70A1D007C9B0063250E /* SemesterService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SemesterService.swift; sourceTree = "<group>"; };
 		7C10F0671CF6248E0072ADF2 /* AdvisorApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AdvisorApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -99,6 +107,7 @@
 			isa = PBXGroup;
 			children = (
 				6D928F011CFCB29B00E31820 /* EmailValidator.swift */,
+				6D3AABB41D04C49C0029AC5F /* Alert.swift */,
 			);
 			name = Util;
 			sourceTree = "<group>";
@@ -166,6 +175,7 @@
 				7C2F6BD41CF8E7E200E8AF5B /* AddUvTableViewController.swift */,
 				7C2F6BD61CF8EA1C00E8AF5B /* SignupViewController.swift */,
 				6D14148B1D021C9B00F7730F /* UvDetailViewControllerTableViewController.swift */,
+				6D3AABAE1D0232F10029AC5F /* AddUvCommentController.swift */,
 			);
 			name = Controller;
 			path = controller;
@@ -179,6 +189,8 @@
 				7CAA9E071CFB24B6001B980C /* Auth.swift */,
 				7CD72BA51CFC43F500140C60 /* Service.swift */,
 				7CD72BA71CFC7BCB00140C60 /* StudyPlanService.swift */,
+				6D3AABB01D04BF820029AC5F /* SharedData.swift */,
+				6D3AABB21D04C1820029AC5F /* UvService.swift */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -324,16 +336,20 @@
 				7C10F0A11CF7338C0072ADF2 /* UvUser.swift in Sources */,
 				7C10F09C1CF7338C0072ADF2 /* Semester.swift in Sources */,
 				7C2F6BD71CF8EA1C00E8AF5B /* SignupViewController.swift in Sources */,
+				6D3AABB31D04C1820029AC5F /* UvService.swift in Sources */,
 				7C2F6BD31CF8E16500E8AF5B /* AddSemesterTableViewController.swift in Sources */,
 				6D928F021CFCB29B00E31820 /* EmailValidator.swift in Sources */,
+				6D3AABAF1D0232F10029AC5F /* AddUvCommentController.swift in Sources */,
 				6D14148A1D020F1D00F7730F /* UvComment.swift in Sources */,
 				7C10F09E1CF7338C0072ADF2 /* User.swift in Sources */,
 				7C10F0A51CF733AE0072ADF2 /* StudyPlanTableViewController.swift in Sources */,
 				7C10F0AE1CF7965A0072ADF2 /* UvViewController.swift in Sources */,
 				7CAA9E041CFA21D9001B980C /* UserService.swift in Sources */,
+				6D3AABB11D04BF830029AC5F /* SharedData.swift in Sources */,
 				7CD72BA61CFC43F500140C60 /* Service.swift in Sources */,
 				7C10F09A1CF7338C0072ADF2 /* Location.swift in Sources */,
 				6DF6B70C1D007C9B0063250E /* SemesterService.swift in Sources */,
+				6D3AABB51D04C49C0029AC5F /* Alert.swift in Sources */,
 				7CAA9E081CFB24B6001B980C /* Auth.swift in Sources */,
 				7C2F6BD11CF8DD7D00E8AF5B /* LoginViewController.swift in Sources */,
 				7CF7E1F91CFCB163003ACF6E /* Token.swift in Sources */,

@@ -130,6 +130,9 @@ class StudyPlanTableViewController: UITableViewController {
                 self.showAlert("Une erreur est survenue")
                 self.refreshControl?.endRefreshing()
             }) { (studyPlans: [StudyPlan]) in
+                studyPlans.first.map({sp in
+                    SharedData.currentUser = sp.user
+                })
                 self.studyPlans = studyPlans
                 dispatch_async(dispatch_get_main_queue(), {
                     self.tableView.reloadData()

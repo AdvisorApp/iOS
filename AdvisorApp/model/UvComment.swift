@@ -10,5 +10,7 @@ import Foundation
 import EVReflection
 
 class UvComment: EVObject {
-    var content: String = ""
+    var userId: Int = -1
+    var uvId: Int = -1
+    var uv_comment: String = ""
 }

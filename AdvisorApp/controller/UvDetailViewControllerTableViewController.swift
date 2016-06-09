@@ -12,38 +12,22 @@ class UvDetailViewController: UITableViewController {
     
     var selectedUv: Uv?
     
-    var uvComments = [
-        UvComment(dictionary: ["content": "test 1"]),
-        UvComment(dictionary: ["content": "test 2"]),
-        UvComment(dictionary: ["content": "test 3"]),
-        UvComment(dictionary: ["content": "test 4"]),
-        UvComment(dictionary: ["content": "test 5"]),
-        UvComment(dictionary: ["content": "test 6"]),
-        UvComment(dictionary: ["content": "test 7"]),
-        UvComment(dictionary: ["content": "test 8"]),
-        UvComment(dictionary: ["content": "test 9"]),
-        UvComment(dictionary: ["content": "test 2"]),
-        UvComment(dictionary: ["content": "test 3"]),
-        UvComment(dictionary: ["content": "test 4"]),
-        UvComment(dictionary: ["content": "test 5"]),
-        UvComment(dictionary: ["content": "test 6"]),
-        UvComment(dictionary: ["content": "test 7"]),
-        UvComment(dictionary: ["content": "test 8"]),
-        UvComment(dictionary: ["content": "test 9"]),
-        UvComment(dictionary: ["content": "test 2"]),
-        UvComment(dictionary: ["content": "test 3"]),
-        UvComment(dictionary: ["content": "test 4"]),
-        UvComment(dictionary: ["content": "test 5"]),
-        UvComment(dictionary: ["content": "test 6"]),
-        UvComment(dictionary: ["content": "test 7"]),
-        UvComment(dictionary: ["content": "test 8"]),
-        UvComment(dictionary: ["content": "test 9"]),
-        UvComment(dictionary: ["content": "test 10"])
-    ]
+    @IBOutlet weak var userComment: UITextView!
     
+    @IBOutlet weak var uvDescription: UITextView!
+    
+    @IBOutlet weak var uvCellLabel: UILabel!
+    var uvComments: [UvUser] = []
 
     override func viewDidLoad() {
+        
         super.viewDidLoad()
+        
+        //self.refreshControl?.addTarget(self, action: #selector(UvDetailViewController.refresh(_:)), forControlEvents: UIControlEvents.ValueChanged)
+        
+        refresh()
+        
+        uvDescription.text = selectedUv?._description
 
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
@@ -73,10 +57,10 @@ class UvDetailViewController: UITableViewController {
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("UvDetailCell", forIndexPath: indexPath)
         
-        let uv = (uvComments[indexPath.row]) as UvComment
+        let uv = (uvComments[indexPath.row]) as UvUser
         
-        
-        cell.textLabel?.text = uv.content
+    
+        cell.textLabel?.text = uv.uvComment
 
         return cell
     }
@@ -117,14 +101,71 @@ class UvDetailViewController: UITableViewController {
     }
     */
 
-    /*
+    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+        print("prepareForSegue Uv detail")
     }
-    */
+ 
+    
+    
+    @IBAction func cancelToUvDetailViewController(segue: UIStoryboardSegue) {
+        
+    }
+    
+    
+    @IBAction func saveUvComment(segue: UIStoryboardSegue) {
+        print("HELLEOOELAZDAMZLJDM")
+        print(SharedData.selectedUvComment)
+        //let comment = "azdazd"
+        
+        let selectedCommentContent = SharedData.selectedUvComment
+ 
+        let userId = (SharedData.currentUser?.id)!
+        let uvId   = (selectedUv?.id)!
+        
+        UvService.addCommentOrMark(
+            userId,
+            uvId: uvId,
+            comment: selectedCommentContent,
+            mark: nil,
+            failure: { error in
+                print("error : \(error)")
+                Alert.show("An error has occurred", viewController: self)
+            }, success: { data in
+                // TODO : adding new UV to UV list (UvView)
+                // SharedData.selectedSemester?.uvs.append(uv)
+                //self.dismissViewControllerAnimated(true, completion: nil)
+                print("success \(data)")
+                SharedData.selectedUvComment = nil
+                self.refresh()
+        })
+    }
+    
+    
+    // Refresh table data
+    func refresh() {
+        if Auth.isAuthenticated() {
+            UvService.getUvUsersFromUvId(
+                (selectedUv?.id)!,
+                failure: { error in
+                    print("error : \(error)")
+                    Alert.show("An error has occurred", viewController: self)
+                }, success: { data in
+                    print(data)
+                    self.uvComments = data
+                    dispatch_async(dispatch_get_main_queue(), {
+                        self.tableView.reloadData()
+                        self.refreshControl?.endRefreshing()
+                    })
+
+                }
+            )
+
+        }
+    }
+    
 
 }

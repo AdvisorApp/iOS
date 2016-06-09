@@ -6,6 +6,7 @@ PODS:
   - AlamofireSwiftyJSON (0.1.0):
     - Alamofire (~> 3.1)
     - SwiftyJSON (~> 2.3)
+  - Cosmos (1.2.3)
   - EVReflection (2.30.1)
   - JWTDecode (1.0.0)
   - SwiftyJSON (2.3.2)
@@ -13,16 +14,18 @@ PODS:
 DEPENDENCIES:
   - AlamofireJsonToObjects
   - AlamofireSwiftyJSON
+  - Cosmos (~> 1.2)
   - JWTDecode
 
 SPEC CHECKSUMS:
   Alamofire: c19a627cefd6a95f840401c49ab1f124e07f54ee
   AlamofireJsonToObjects: e5155c1c58493c44d7ebe56bbb1aa65d95e82c68
   AlamofireSwiftyJSON: 171e4fa7d09a1d20d05797d0253a36f4241adf3a
+  Cosmos: efddd01b729956ad6335bc58bc92e5735a1d12a3
   EVReflection: cbadc6ef7c077d86efc1a47fa23f1c9d0a5540dc
   JWTDecode: d172edcb1607cc15aed85d58eceedcbb675a4534
   SwiftyJSON: 04ccea08915aa0109039157c7974cf0298da292a
 
-PODFILE CHECKSUM: 402123209d81c6018ce6c20e2595e9f11ba47460
+PODFILE CHECKSUM: 8cb61993abcffec413e08ee951730557a2f127de
 
 COCOAPODS: 1.0.0
