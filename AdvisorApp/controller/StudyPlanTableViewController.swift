@@ -11,35 +11,24 @@ import UIKit
 class StudyPlanTableViewController: UITableViewController {
     
     var studyPlans: [StudyPlan] = []
-        
-//    [
-//        StudyPlan(dictionary: ["id": 1, "name": "StudyPlan1", "semesters": [
-//            Semester(dictionary: ["id": 1, "number": 1, "uvs": [
-//                Uv(dictionary: ["id": 1, "name": "UV1", "chs": 2]),
-//                Uv(dictionary: ["id": 2, "name": "UV2", "chs": 4])
-//            ]]),
-//            Semester(dictionary: ["id": 2, "number": 2, "uvs": []])
-//        ]]),
-//        StudyPlan(dictionary: ["id": 2, "name": "StudyPlan2", "semesters": []])
-//    ]
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
         self.refreshControl?.addTarget(self, action: #selector(StudyPlanTableViewController.refresh(_:)), forControlEvents: UIControlEvents.ValueChanged)
-
-        refresh()
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
     }
     
     // App entry point : Checks if an user is connected
     override func viewDidAppear(animated: Bool) {
         if !Auth.isAuthenticated() {
             self.performSegueWithIdentifier("LoginSegue", sender: self)
+        } else {
+            refresh()
         }
+    }
+    
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
     }
 
     // MARK: - Table view data source

@@ -35,7 +35,7 @@ class UvViewController: UIViewController, UITableViewDelegate, UITableViewDataSo
         let cell = tableView.dequeueReusableCellWithIdentifier("UvCell", forIndexPath: indexPath)
         let uv = (SharedData.selectedSemester?.uvs[indexPath.row])! as Uv
         
-        cell.textLabel?.text = uv.name
+        cell.textLabel?.text = "\(uv.remoteId) : \(uv.name)"
         cell.detailTextLabel?.text = uv._description
         if uv.isFinished() {
             cell.accessoryType = .Checkmark
