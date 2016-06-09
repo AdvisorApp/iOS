@@ -29,7 +29,7 @@ enum RequestError: ErrorType {
 }
 
 class Service {
-    static let baseURLString = "http://localhost:8096" // "http://chardan.net:8090"
+    static let baseURLString = "http://localhost:8090" // "http://chardan.net:8090"
     
     static func getMutableURLRequest(method: Alamofire.Method, path: String, parameters: [String: AnyObject]?) -> NSMutableURLRequest {
         let URL = NSURL(string: Service.baseURLString)!
