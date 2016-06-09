@@ -36,7 +36,7 @@ class AddUvTableViewController: UITableViewController {
         let cell = tableView.dequeueReusableCellWithIdentifier("AddUvCell", forIndexPath: indexPath) as! UvCell
         let uv = remainingUvs[indexPath.row] as Uv
         
-        cell.nameLabel?.text = "\(uv.remoteId) : \(uv.name)"
+        cell.nameLabel?.text = "\(uv.remoteId) : \(uv.name) (\(uv.uvType!.type))"
         
         let prerequisitesUv = uv.prerequisitesUv.map {uv in uv.name}
         cell.prerequisitesLabel.text = (prerequisitesUv.count == 0) ? "None" : prerequisitesUv.joinWithSeparator(",")
