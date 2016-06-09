@@ -3,6 +3,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Navigation items with more than one left or right bar item" minToolsVersion="7.0"/>
     </dependencies>
     <scenes>
         <!--Signup-->
@@ -103,6 +104,59 @@
             </objects>
             <point key="canvasLocation" x="1485.5" y="1221.5"/>
         </scene>
+        <!--<study_plan>-->
+        <scene sceneID="Sf1-4G-CmN">
+            <objects>
+                <tableViewController id="fVr-KY-ZJA" customClass="GlobalStudyPlanTableViewController" customModule="AdvisorApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="Fou-Da-ppL">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="UvCell" id="QFE-a6-Zmo">
+                                <rect key="frame" x="0.0" y="92" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="QFE-a6-Zmo" id="6Pw-pC-xkm">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="fVr-KY-ZJA" id="AW5-4g-HlK"/>
+                            <outlet property="delegate" destination="fVr-KY-ZJA" id="IZz-79-0Lb"/>
+                        </connections>
+                    </tableView>
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" title="&lt;study_plan&gt;" id="AHe-tp-4DB">
+                        <barButtonItem key="rightBarButtonItem" systemItem="done" id="y3j-HW-PXj">
+                            <connections>
+                                <action selector="done:" destination="fVr-KY-ZJA" id="vW1-jD-bqv"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="jLi-bA-kMG" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3033.5" y="1248.5"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="FqT-eV-91T">
+            <objects>
+                <navigationController id="0q6-71-hb0" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="hde-dU-ftU">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="fVr-KY-ZJA" kind="relationship" relationship="rootViewController" id="2b2-sT-8B8"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Asw-ft-HDa" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2489.5" y="1248.5"/>
+        </scene>
         <!--Login-->
         <scene sceneID="gZe-Ug-pNs">
             <objects>
@@ -168,7 +222,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="o0b-Bo-zVi" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="951.5" y="371.5"/>
+            <point key="canvasLocation" x="951.5" y="351.5"/>
         </scene>
         <!--StudyPlan-->
         <scene sceneID="dhx-yd-JO2">
@@ -226,7 +280,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="elz-Ub-d7Y" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1485.5" y="-471.5"/>
+            <point key="canvasLocation" x="1485.5" y="-480.5"/>
         </scene>
         <!--Add StudyPlan-->
         <scene sceneID="kCX-TR-Mpk">
@@ -320,11 +374,18 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Semesters" id="SSY-lf-yQc">
-                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="6dI-cu-lY1">
-                            <connections>
-                                <action selector="addSemester:" destination="I2X-ME-SIt" id="a2Q-pv-fJQ"/>
-                            </connections>
-                        </barButtonItem>
+                        <rightBarButtonItems>
+                            <barButtonItem systemItem="add" id="6dI-cu-lY1">
+                                <connections>
+                                    <action selector="addSemester:" destination="I2X-ME-SIt" id="a2Q-pv-fJQ"/>
+                                </connections>
+                            </barButtonItem>
+                            <barButtonItem style="plain" systemItem="organize" id="WtP-BW-SN7">
+                                <connections>
+                                    <segue destination="0q6-71-hb0" kind="presentation" id="dGE-mY-eqW"/>
+                                </connections>
+                            </barButtonItem>
+                        </rightBarButtonItems>
                     </navigationItem>
                     <refreshControl key="refreshControl" opaque="NO" multipleTouchEnabled="YES" contentMode="center" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" id="cva-99-alD">
                         <autoresizingMask key="autoresizingMask"/>
@@ -332,7 +393,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PrH-4Z-GLT" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1972.5" y="371.5"/>
+            <point key="canvasLocation" x="1972.5" y="351.5"/>
         </scene>
         <!--UV-->
         <scene sceneID="hKJ-13-moD">
@@ -400,11 +461,18 @@
                     </view>
                     <toolbarItems/>
                     <navigationItem key="navigationItem" title="&lt;semester&gt;" id="Y9k-qm-ISM">
-                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="tcK-iJ-u7Z">
-                            <connections>
-                                <segue destination="ic2-Yw-a4B" kind="presentation" identifier="AddUvSegue" id="Ewf-Q0-e08"/>
-                            </connections>
-                        </barButtonItem>
+                        <rightBarButtonItems>
+                            <barButtonItem systemItem="add" id="tcK-iJ-u7Z">
+                                <connections>
+                                    <segue destination="ic2-Yw-a4B" kind="presentation" identifier="AddUvSegue" id="Ewf-Q0-e08"/>
+                                </connections>
+                            </barButtonItem>
+                            <barButtonItem style="plain" systemItem="organize" id="b7t-sP-TGx">
+                                <connections>
+                                    <segue destination="0q6-71-hb0" kind="presentation" id="EFy-Go-TfI"/>
+                                </connections>
+                            </barButtonItem>
+                        </rightBarButtonItems>
                     </navigationItem>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
@@ -414,7 +482,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mMp-9j-aQH" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2489.5" y="371.5"/>
+            <point key="canvasLocation" x="2489.5" y="351.5"/>
         </scene>
         <!--StudyPlan Navigation Controller-->
         <scene sceneID="Vbk-Jb-0DA">
@@ -434,7 +502,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1vm-VG-N8V" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="951.5" y="-471.5"/>
+            <point key="canvasLocation" x="951.5" y="-480.5"/>
         </scene>
         <!--Add StudyPlan Navigation Controller-->
         <scene sceneID="2S1-go-OEV">
@@ -565,11 +633,18 @@
                                 <action selector="done:" destination="Mon-6d-RXA" id="PlE-ih-Opd"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="SV0-vk-QFi">
-                            <connections>
-                                <segue destination="8ff-iJ-tqr" kind="presentation" id="PfQ-og-gcY"/>
-                            </connections>
-                        </barButtonItem>
+                        <rightBarButtonItems>
+                            <barButtonItem systemItem="add" id="SV0-vk-QFi">
+                                <connections>
+                                    <segue destination="8ff-iJ-tqr" kind="presentation" id="PfQ-og-gcY"/>
+                                </connections>
+                            </barButtonItem>
+                            <barButtonItem systemItem="organize" id="PR2-Dg-Gb3">
+                                <connections>
+                                    <segue destination="0q6-71-hb0" kind="presentation" id="COO-2l-Agz"/>
+                                </connections>
+                            </barButtonItem>
+                        </rightBarButtonItems>
                     </navigationItem>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
@@ -621,7 +696,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4td-tP-2u1" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="DDc-a5-Qu6" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="4867.5" y="396.5"/>
+            <point key="canvasLocation" x="4615.5" y="371.5"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="aCO-73-HUP">
@@ -637,7 +712,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="P0k-oN-Ulu" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4136" y="397"/>
+            <point key="canvasLocation" x="4119.5" y="371.5"/>
         </scene>
         <!--Add UV-->
         <scene sceneID="UeA-QR-mJC">
@@ -659,7 +734,7 @@
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9qY-SV-cjD">
                                             <rect key="frame" x="8" y="8" width="328" height="21"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="infoLight" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Vg2-eV-nEN" userLabel="Info">
@@ -671,25 +746,25 @@
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="kjdf; dsqfs; sqdfqd; sdqfqsdfds; " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="c7s-ng-gLe" userLabel="Prerequisites">
                                             <rect key="frame" x="105" y="31" width="232" height="21"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="kjdf; dsqfs; sqdfqd; sdqfqsdfds; " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QVi-16-m7L" userLabel="Corequisites">
                                             <rect key="frame" x="105" y="50" width="232" height="21"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Corequisites :" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ocf-xh-0fu" userLabel="Corequisites Label">
                                             <rect key="frame" x="8" y="50" width="89" height="21"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Prerequisites : " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NdG-Tr-iE0" userLabel="Prerequisites Label">
                                             <rect key="frame" x="8" y="31" width="97" height="21"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
@@ -762,5 +837,6 @@
     </scenes>
     <inferredMetricsTieBreakers>
         <segue reference="0mx-pt-LnV"/>
+        <segue reference="COO-2l-Agz"/>
     </inferredMetricsTieBreakers>
 </document>

@@ -41,11 +41,7 @@ class Service {
             mutableURLRequest.setValue(token, forHTTPHeaderField: "X-Authorization")
         }
         
-        if parameters == nil {
-            return mutableURLRequest
-        }
-        
-        return Alamofire.ParameterEncoding.JSON.encode(mutableURLRequest, parameters: parameters).0
+        return parameters == nil ? mutableURLRequest : Alamofire.ParameterEncoding.JSON.encode(mutableURLRequest, parameters: parameters).0
     }
     
     static func request<T: EVObject>(
