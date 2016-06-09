@@ -20,9 +20,8 @@ class UvDetailTableViewController: UITableViewController {
     var uvComments: [UvUser] = []
 
     override func viewDidLoad() {
-        
         super.viewDidLoad()
-        
+    
         //self.refreshControl?.addTarget(self, action: #selector(UvDetailViewController.refresh(_:)), forControlEvents: UIControlEvents.ValueChanged)
         
         navigationItem.title = SharedData.selectedUv?.name
@@ -32,6 +31,15 @@ class UvDetailTableViewController: UITableViewController {
         
         refresh()
     }
+    
+    func refreshList(){
+        tableView.estimatedRowHeight = 10
+        tableView.rowHeight = UITableViewAutomaticDimension
+        
+        tableView.setNeedsLayout()
+        tableView.layoutIfNeeded()
+    }
+    
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -39,10 +47,10 @@ class UvDetailTableViewController: UITableViewController {
 
     // MARK: - Table view data source
 
-//    override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-//        // #warning Incomplete implementation, return the number of sections
-//        return 5
-//    }
+    override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+        // #warning Incomplete implementation, return the number of sections
+        return 1
+    }
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
@@ -50,7 +58,7 @@ class UvDetailTableViewController: UITableViewController {
     }
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("UvDetailCell", forIndexPath: indexPath) as! BasicCell
+        let cell = tableView.dequeueReusableCellWithIdentifier("BasicCell", forIndexPath: indexPath) as! BasicCell
         
         let uv = (uvComments[indexPath.row]) as UvUser
         
@@ -132,6 +140,7 @@ class UvDetailTableViewController: UITableViewController {
                 print("success \(data)")
                 SharedData.selectedUvComment = nil
                 self.refresh()
+                self.refreshList()
         })
     }
     
@@ -146,6 +155,7 @@ class UvDetailTableViewController: UITableViewController {
                 }, success: { data in
                     print(data)
                     self.uvComments = data
+                    self.refreshList()
                     dispatch_async(dispatch_get_main_queue(), {
                         self.tableView.reloadData()
                         self.refreshControl?.endRefreshing()
