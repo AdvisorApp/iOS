@@ -53,7 +53,14 @@ class AddUvTableViewController: UITableViewController {
         let uv = remainingUvs[indexPath.row] as Uv
         
         SemesterService.addUv((SharedData.selectedSemester?.id)!, uvId: uv.id, failure: { error in
-            Alert.show("An error has occurred", viewController: self)
+            switch error {
+            case .NotAcceptable(let apiError):
+                let errorMessages: [String] = apiError.message.componentsSeparatedByString("//")
+                let errorMessage: String = errorMessages.joinWithSeparator(".")
+                Alert.show(errorMessage, viewController: self)
+            default:
+                Alert.show("An error has occurred", viewController: self)
+            }
         }, success: { _ in
             SharedData.selectedSemester?.uvs.append(uv)
             self.dismissViewControllerAnimated(true, completion: nil)
@@ -83,6 +90,7 @@ class AddUvTableViewController: UITableViewController {
                     self.remainingUvs = uvs
                     dispatch_async(dispatch_get_main_queue(), {
                         self.tableView.reloadData()
+                        self.refreshControl?.endRefreshing()
                     })
                 }
             }

@@ -44,6 +44,7 @@
 		7CD72BA61CFC43F500140C60 /* Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CD72BA51CFC43F500140C60 /* Service.swift */; };
 		7CD72BA81CFC7BCB00140C60 /* StudyPlanService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CD72BA71CFC7BCB00140C60 /* StudyPlanService.swift */; };
 		7CE0F1D01CFE2F6900724D04 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7CE0F1CE1CFE2F6900724D04 /* Main.storyboard */; };
+		7CE208461D0AB5F500543473 /* ApiError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CE208451D0AB5F500543473 /* ApiError.swift */; };
 		7CF7E1F91CFCB163003ACF6E /* Token.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CF7E1F81CFCB163003ACF6E /* Token.swift */; };
 /* End PBXBuildFile section */
 
@@ -86,6 +87,7 @@
 		7CD72BA51CFC43F500140C60 /* Service.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Service.swift; sourceTree = "<group>"; };
 		7CD72BA71CFC7BCB00140C60 /* StudyPlanService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StudyPlanService.swift; sourceTree = "<group>"; };
 		7CE0F1CF1CFE2F6900724D04 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = AdvisorApp/Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		7CE208451D0AB5F500543473 /* ApiError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ApiError.swift; path = AdvisorApp/Model/ApiError.swift; sourceTree = SOURCE_ROOT; };
 		7CF7E1F81CFCB163003ACF6E /* Token.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Token.swift; path = AdvisorApp/Model/Token.swift; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
@@ -108,14 +110,6 @@
 				5065FA252093F0389BBAF5BD /* Pods-AdvisorApp.release.xcconfig */,
 			);
 			name = Pods;
-			sourceTree = "<group>";
-		};
-		6D928F001CFCB27C00E31820 /* Util */ = {
-			isa = PBXGroup;
-			children = (
-				6D928F011CFCB29B00E31820 /* EmailValidator.swift */,
-			);
-			name = Util;
 			sourceTree = "<group>";
 		};
 		7C10F05E1CF6248E0072ADF2 = {
@@ -165,6 +159,7 @@
 				7C10F0981CF7338C0072ADF2 /* UvType.swift */,
 				7CF7E1F81CFCB163003ACF6E /* Token.swift */,
 				6D1414891D020F1D00F7730F /* UvComment.swift */,
+				7CE208451D0AB5F500543473 /* ApiError.swift */,
 			);
 			name = Model;
 			path = model;
@@ -379,6 +374,7 @@
 				6D3AABB11D04BF830029AC5F /* (null) in Sources */,
 				7CD72BA61CFC43F500140C60 /* Service.swift in Sources */,
 				7C10F09A1CF7338C0072ADF2 /* Location.swift in Sources */,
+				7CE208461D0AB5F500543473 /* ApiError.swift in Sources */,
 				7CAA9E081CFB24B6001B980C /* Auth.swift in Sources */,
 				7C33AF691D0A166500A9B195 /* SharedData.swift in Sources */,
 				7C2F6BD11CF8DD7D00E8AF5B /* LoginViewController.swift in Sources */,

@@ -38,10 +38,10 @@ class SignupViewController: UIViewController {
         let lastName = lastNameTextField.text!
         let remoteId = remoteIdTextField.text!
         
-        
-        if(isEnoughComplete(email, password: password)){
+    
+        if (isEnoughComplete(email, password: password)) {
             UserService.signup(firstName, lastName: lastName, email: email, password: password, remoteId: remoteId, failure: { _ in
-                self.displayAlert("Error while Sign Up! Your email should be already used. Otherwise, try later :)")
+                Alert.show("Error while Sign Up! Your email should be already used. Otherwise, try later 🙂", viewController: self)
             }) { succeed in
                 
                 let alert = UIAlertController(title: "Success ! You successfully signed up !", message: nil, preferredStyle: UIAlertControllerStyle.Alert)
@@ -51,8 +51,8 @@ class SignupViewController: UIViewController {
                 self.presentViewController(alert, animated: true, completion: nil)
 
             }
-        }else{
-            self.displayAlert("Your email or your password should not be correct. Your password must 8 characters lenght.")
+        } else {
+            Alert.show("Your email or your password should not be correct. Your password must 8 characters lenght.", viewController: self)
         }
         
         

@@ -16,14 +16,15 @@ class UvDetailTableViewController: UITableViewController {
     @IBOutlet weak var popularityLabel: UILabel!
     @IBOutlet weak var userComment: UITextView!
     @IBOutlet weak var uvDescription: UITextView!
+    @IBOutlet weak var commentsTitle: UILabel!
     
     var uvComments: [UvUser] = []
 
     override func viewDidLoad() {
         super.viewDidLoad()
     
-        //self.refreshControl?.addTarget(self, action: #selector(UvDetailViewController.refresh(_:)), forControlEvents: UIControlEvents.ValueChanged)
-        
+        self.refreshControl?.addTarget(self, action: #selector(UvDetailTableViewController.refresh(_:)), forControlEvents: UIControlEvents.ValueChanged)
+
         navigationItem.title = SharedData.selectedUv?.name
         uvDescription.text = SharedData.selectedUv?._description
         
@@ -66,42 +67,6 @@ class UvDetailTableViewController: UITableViewController {
 
         return cell
     }
- 
-
-    /*
-    // Override to support conditional editing of the table view.
-    override func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
-        // Return false if you do not want the specified item to be editable.
-        return true
-    }
-    */
-
-    /*
-    // Override to support editing the table view.
-    override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
-        if editingStyle == .Delete {
-            // Delete the row from the data source
-            tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
-        } else if editingStyle == .Insert {
-            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-        }    
-    }
-    */
-
-    /*
-    // Override to support rearranging the table view.
-    override func tableView(tableView: UITableView, moveRowAtIndexPath fromIndexPath: NSIndexPath, toIndexPath: NSIndexPath) {
-
-    }
-    */
-
-    /*
-    // Override to support conditional rearranging of the table view.
-    override func tableView(tableView: UITableView, canMoveRowAtIndexPath indexPath: NSIndexPath) -> Bool {
-        // Return false if you do not want the item to be re-orderable.
-        return true
-    }
-    */
 
     
     // MARK: - Navigation
@@ -116,10 +81,6 @@ class UvDetailTableViewController: UITableViewController {
     }
    
     @IBAction func saveUvComment(segue: UIStoryboardSegue) {
-        print("HELLEOOELAZDAMZLJDM")
-        print(SharedData.selectedUvComment)
-        //let comment = "azdazd"
-        
         let selectedCommentContent = SharedData.selectedUvComment
  
         let userId = (SharedData.currentUser?.id)!
@@ -144,6 +105,10 @@ class UvDetailTableViewController: UITableViewController {
         })
     }
     
+    func refresh(sender: AnyObject) {
+        refresh()
+    }
+    
     // Refresh table data
     func refresh() {
         if Auth.isAuthenticated() {
@@ -153,14 +118,12 @@ class UvDetailTableViewController: UITableViewController {
                     print("error : \(error)")
                     Alert.show("An error has occurred", viewController: self)
                 }, success: { data in
-                    print(data)
                     self.uvComments = data
                     self.refreshList()
                     dispatch_async(dispatch_get_main_queue(), {
                         self.tableView.reloadData()
                         self.refreshControl?.endRefreshing()
                     })
-
                 }
             )
 

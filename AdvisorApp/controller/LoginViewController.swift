@@ -28,9 +28,9 @@ class LoginViewController: UIViewController {
         UserService.signin(emailTextField.text!, password: passwordTextField.text!, failure: { error in
             switch error {
             case .Unauthorized:
-                self.showAlert("Email or password incorrect")
-            case .Other(_):
-                self.showAlert("An error has occurred")
+                Alert.show("Email or password incorrect", viewController: self)
+            default:
+                Alert.show("An error has occurred", viewController: self)
             }
         }) {
             self.dismissViewControllerAnimated(true, completion: nil)
@@ -49,11 +49,5 @@ class LoginViewController: UIViewController {
     
     @IBAction func cancelToLoginViewController(segue: UIStoryboardSegue) {
         
-    }
-    
-    func showAlert(title: String) {
-        let alert = UIAlertController(title: title, message: nil, preferredStyle: UIAlertControllerStyle.Alert)
-        alert.addAction(UIAlertAction(title: "Ok", style: .Default, handler: nil))
-        self.presentViewController(alert, animated: true, completion: nil)
     }
 }
