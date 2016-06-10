@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		0355380B1D0581E0006C81C1 /* GlobalStudyPlanTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0355380A1D0581E0006C81C1 /* GlobalStudyPlanTableViewController.swift */; };
-		5111CC9C95F9C20D988426EF /* Pods_AdvisorApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 213C51745976BA651C162C21 /* Pods_AdvisorApp.framework */; };
 		6D14148A1D020F1D00F7730F /* UvComment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D1414891D020F1D00F7730F /* UvComment.swift */; };
 		6D14148C1D021C9B00F7730F /* UvDetailTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D14148B1D021C9B00F7730F /* UvDetailTableViewController.swift */; };
 		6D3AABAF1D0232F10029AC5F /* AddUvCommentController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D3AABAE1D0232F10029AC5F /* AddUvCommentController.swift */; };
@@ -38,6 +37,7 @@
 		7C33AF691D0A166500A9B195 /* SharedData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CBA02C81D0233D900C8B2BA /* SharedData.swift */; };
 		7C33AF6A1D0A166B00A9B195 /* UvService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C503DCA1D017D4F00FB60E8 /* UvService.swift */; };
 		7C33AF6C1D0A168000A9B195 /* SemesterService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C33AF6B1D0A168000A9B195 /* SemesterService.swift */; };
+		7C8172AF1D0ACBCD00529AFC /* Pods_AdvisorApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 213C51745976BA651C162C21 /* Pods_AdvisorApp.framework */; };
 		7CAA9E041CFA21D9001B980C /* UserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CAA9E031CFA21D9001B980C /* UserService.swift */; };
 		7CAA9E081CFB24B6001B980C /* Auth.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CAA9E071CFB24B6001B980C /* Auth.swift */; };
 		7CBA02C71D021E4100C8B2BA /* UvCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CBA02C61D021E4100C8B2BA /* UvCell.swift */; };
@@ -96,7 +96,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5111CC9C95F9C20D988426EF /* Pods_AdvisorApp.framework in Frameworks */,
+				7C8172AF1D0ACBCD00529AFC /* Pods_AdvisorApp.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -496,6 +496,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = AdvisorApp/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.advisorapp.app;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -508,6 +509,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = AdvisorApp/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.advisorapp.app;
 				PRODUCT_NAME = "$(TARGET_NAME)";
