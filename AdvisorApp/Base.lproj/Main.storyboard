@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="eJ8-2s-w0Y">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="eJ8-2s-w0Y">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
@@ -673,7 +673,7 @@
                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </view>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Popularity :  " textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4tA-Zt-NH2" userLabel="Popularity Label">
-                                    <rect key="frame" x="143" y="57" width="66" height="21"/>
+                                    <rect key="frame" x="117" y="57" width="66" height="21"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="21" id="2xv-Dj-iFh"/>
                                     </constraints>
@@ -682,9 +682,9 @@
                                     <nil key="highlightedColor"/>
                                 </label>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="4" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IUl-19-qgv" userLabel="Popularity">
-                                    <rect key="frame" x="212" y="57" width="19" height="21"/>
+                                    <rect key="frame" x="186" y="57" width="110" height="21"/>
                                     <constraints>
-                                        <constraint firstAttribute="width" constant="19" id="Crh-oZ-pWu"/>
+                                        <constraint firstAttribute="width" constant="110" id="Crh-oZ-pWu"/>
                                     </constraints>
                                     <fontDescription key="fontDescription" type="system" pointSize="11"/>
                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -742,7 +742,7 @@
                                 <constraint firstItem="Mil-eU-hoa" firstAttribute="leading" secondItem="bWk-5c-RR7" secondAttribute="trailing" id="kSx-Mq-bgg"/>
                                 <constraint firstItem="Mil-eU-hoa" firstAttribute="top" secondItem="45z-Ne-EpD" secondAttribute="topMargin" id="kqh-F3-q8A"/>
                                 <constraint firstItem="IUl-19-qgv" firstAttribute="leading" secondItem="4tA-Zt-NH2" secondAttribute="trailing" constant="3" id="my6-VT-o0X"/>
-                                <constraint firstItem="4tA-Zt-NH2" firstAttribute="leading" secondItem="45z-Ne-EpD" secondAttribute="leading" constant="143" id="ozr-ta-eBk"/>
+                                <constraint firstItem="4tA-Zt-NH2" firstAttribute="leading" secondItem="45z-Ne-EpD" secondAttribute="leading" constant="117" id="ozr-ta-eBk"/>
                                 <constraint firstItem="vRR-VX-3Wh" firstAttribute="leading" secondItem="H1r-2C-xAZ" secondAttribute="leading" id="qDe-MV-kZ2"/>
                                 <constraint firstItem="zcq-Ji-1LF" firstAttribute="centerX" secondItem="vRR-VX-3Wh" secondAttribute="centerX" id="str-o3-1Id"/>
                                 <constraint firstItem="bWk-5c-RR7" firstAttribute="leading" secondItem="45z-Ne-EpD" secondAttribute="leading" constant="110" id="uSk-7s-N0E"/>

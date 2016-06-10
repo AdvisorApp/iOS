@@ -28,9 +28,65 @@ class UvDetailTableViewController: UITableViewController {
         navigationItem.title = SharedData.selectedUv?.name
         uvDescription.text = SharedData.selectedUv?._description
         
+        rateView.didFinishTouchingCosmos = { rating in
+            print("rating \(rating)")
+            UvService.addCommentOrMark(
+                (SharedData.currentUser?.id)!,
+                uvId: (SharedData.selectedUv?.id)!,
+                comment: nil,
+                mark: rating,
+                failure: { error in
+                    print("error : \(error)")
+                    Alert.show("An error has occurred", viewController: self)
+                }, success: { data in
+                    // TODO : adding new UV to UV list (UvView)
+                    // SharedData.selectedSemester?.uvs.append(uv)
+                    //self.dismissViewControllerAnimated(true, completion: nil)
+                    print("success \(data)")
+                    self.refresh()
+            })
+
+        }
+        
         // TODO : SHOW AVERAGE AND RATE
         
         refresh()
+    }
+    
+    func setAverage(){
+        // Popularity label
+        let marks: [Double] = uvComments
+            .map({ com in com.uvMark})
+        
+        let number: Double = Double(marks.count)
+        let sum: Double = marks
+            .reduce(0, combine: +)
+        
+        let numberOfVote = "(\(Int(number)) vote(s))"
+        
+        if(number > 0){
+            popularityLabel.text = "\(Int(sum / number)) \(numberOfVote)"
+        }else{
+            popularityLabel.text = "\(numberOfVote)"
+        }
+        
+        // Your average
+        uvComments
+            .filter({com in !sameUser(com.user, user2: SharedData.currentUser)})
+            .first
+            .map({com in
+                rateView.rating = com.uvMark
+                averageLabel.text = "\(Int(com.userAverage))/5"
+            })
+    }
+    
+    func sameUser(user1: User?, user2: User?) -> Bool {
+        switch (user1, user2) {
+            case (.Some(let u1), .Some(let u2)):
+                return u1.id == u2.id
+            default:
+                return false
+        }
     }
     
     func refreshList(){
@@ -120,6 +176,7 @@ class UvDetailTableViewController: UITableViewController {
                 }, success: { data in
                     self.uvComments = data
                     self.refreshList()
+                    self.setAverage()
                     dispatch_async(dispatch_get_main_queue(), {
                         self.tableView.reloadData()
                         self.refreshControl?.endRefreshing()
